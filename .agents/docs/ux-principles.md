@@ -4,6 +4,20 @@ Keep estate, wine, contact/visit and photo journeys direct in French and English
 Design around genuine visitor actions and practical information.
 The requirements below are acceptance criteria rather than claims of completed implementation.
 
+## Current Shared Behavior
+
+| Concern                    | Source                                                            | Contract                                                                                                    |
+| -------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Page/history/anchor scroll | [router.options.ts](../../app/router.options.ts)                  | Wait for destination readiness and overlay release; saved positions take priority over hashes               |
+| Delayed document height    | [Smooth-scroll plugin](../../app/plugins/smooth-scroll.client.ts) | Up to three seconds for a saved position to become reachable; input/new navigation/unmount cancels the wait |
+| Scroll leases              | [Overlay plugin](../../app/plugins/overlay-scroll-lock.client.ts) | Independent leases, prior style restoration and no premature Lenis restart                                  |
+| Completed-navigation focus | [Focus plugin](../../app/plugins/navigation-focus.client.ts)      | `main-content` or the decoded anchor, stale-request cancellation and temporary tabindex cleanup             |
+| Shared text                | [Locale files](../../i18n/locales/)                               | Separate page prose and component actions in French and US English                                          |
+
+These contracts concern the shared integrations; they are not evidence of completed menu, wine or gallery journeys.
+The [default layout](../../app/layouts/default.vue) supplies the shared main/skip destination, and [error.vue](../../app/error.vue) supplies independent localized error recovery.
+Root language detection follows Nuxt I18n; direct French/English URLs use `/fr` and `/en` and remain stable regardless of a different saved preference.
+
 ## Navigation And Language
 
 Expose the primary destinations and language control clearly at desktop and mobile sizes.
@@ -20,6 +34,17 @@ Do not delay route navigation solely for a decorative exit animation; coordinate
 Preserve one main landmark and one meaningful H1.
 Keep a visible-on-focus skip link with a valid focusable main destination.
 Route completion must not leave keyboard focus on removed content or under a fixed header.
+
+## Focus And Scroll Continuity
+
+The router waits for destination page readiness before scrolling and waits for the last overlay lease to release.
+Focus follows completed page/hash navigation separately, without forcing an additional scroll.
+Malformed or absent hash targets should fail quietly rather than break navigation.
+History restoration takes priority over the current hash, including same-page Back/Forward.
+When content remains shorter after the bounded height wait, restore the nearest reachable offset rather than holding navigation indefinitely.
+An input gesture, newer route or unmount cancels pending restoration so it cannot pull the visitor back afterward.
+Mark native-scroll overlays `data-lenis-prevent`; preserve browser zoom and native touch rather than synchronizing touch through Lenis.
+Do not await overlay animations before starting the route itself.
 
 ## Wine Exploration
 
@@ -88,7 +113,8 @@ Reserve media space and prioritize only genuine early-viewport candidates.
 Defer below-fold photos and large viewer images until needed.
 Do not put a blocking custom loader in front of essential content.
 
-Missing and retired URLs need meaningful recovery with their actual HTTP status.
+Recorded incoming legacy URLs redirect to the French home.
+Unknown URLs retain their actual 404 status and meaningful recovery.
 Keep recovery actions localized and preserve the visual identity without pretending an error is an ordinary content page.
 Use [SEO](SEO.md) for status, canonical and indexing requirements.
 
@@ -112,3 +138,10 @@ Check between breakpoints and with longer English content.
 For release coverage, exercise iOS Safari and Android Chrome where available and distinguish real-device results from desktop emulation.
 Check slow loading and a throttled mobile environment when performance or shared UI is affected.
 Record browser/device, language, viewport, state and outcome; report unavailable coverage.
+
+## Verification
+
+Exercise direct entry, client navigation, corresponding-locale switching and history return separately.
+Include interrupted transitions, rapid route changes, failed media and altered text size where relevant.
+Cover different consumers when changing shared behavior and verify no stale async callback changes the current destination.
+Report source checks and simulated lifecycle checks separately from actual browser/device journeys.

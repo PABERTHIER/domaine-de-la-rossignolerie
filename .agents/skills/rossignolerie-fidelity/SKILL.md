@@ -32,6 +32,7 @@ Use [Nuxt patterns](../nuxt-vue-patterns/SKILL.md) for structure, SSR and lifecy
 Use [winery assets](../winery-assets/SKILL.md) for file identity, responsive delivery and font rights.
 Use [accessibility](../accessibility/SKILL.md) for menus, wine tabs, viewers or forms.
 Use [SEO](../seo/SKILL.md) when page identity, metadata or URL behavior changes.
+Use [gallery-page](../gallery-page/SKILL.md) for a full photo-project workflow and its ordered media/navigation.
 Load only workflows needed for the requested change.
 
 ## Verification
@@ -41,3 +42,4 @@ Inspect logo, palette, hierarchy, crops, section order and open interactions.
 Check both languages, narrow/short screens, visible focus, touch targets and reduced motion.
 Use the [mobile acceptance matrix](../../docs/ux-principles.md#mobile-acceptance).
 Record intentional differences and checks actually performed; a matching desktop screenshot does not prove mobile usability.
+Check actual Nuxt Fonts family/weight output and preserve the existing Lenis/overlay/focus ownership when changing presentation around navigation.

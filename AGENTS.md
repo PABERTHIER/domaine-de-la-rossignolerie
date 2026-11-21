@@ -1,6 +1,6 @@
 # Domaine de la Rossignolerie Website Guidance
 
-This is the shared project entry point for coding agents working on Domaine de la Rossignolerie.
+This is the shared project entry point for Codex, GitHub Copilot and other coding agents working on Domaine de la Rossignolerie.
 Use [.agents/README.md](.agents/README.md) to select focused context.
 Keep project rules here, reference material in guides, reusable workflows in skills and file-specific standards in scoped instructions.
 
@@ -27,6 +27,132 @@ Do not run **any Git command** unless the user explicitly lifts this restriction
 This includes read-only commands such as `git status`, `git diff`, `git log` and `git show`.
 Do not modify Git metadata, stage files, commit, change remotes or install hooks.
 Use filesystem inspection and direct file comparisons, preserving unrelated user changes.
+
+## Build And Dev Commands
+
+Use Node.js 24 and Yarn 4.18.1, pinned by `packageManager` in [package.json](package.json).
+The [Yarn configuration](.yarnrc.yml) uses the `node-modules` linker and a three-day minimum package age.
+CI uses the same Node major and Yarn release.
+Enable Corepack when setting up the launcher; use `corepack yarn` if needed or `yarn.cmd` when PowerShell blocks `yarn.ps1`.
+Keep dependency changes within scope and let Yarn maintain [yarn.lock](yarn.lock).
+
+| Task                        | Command                    | Notes                                             |
+| --------------------------- | -------------------------- | ------------------------------------------------- |
+| Install locked dependencies | `yarn install --immutable` | Reproduce the resolved dependency graph           |
+| Start development           | `yarn dev`                 | Normally `http://localhost:3000`                  |
+| Check formatting            | `yarn format:check`        | Application Vue, TypeScript, SCSS and locale JSON |
+| Format application files    | `yarn format`              | Prefer changed-file scope for small edits         |
+| Check types                 | `yarn typecheck`           | Nuxt and Vue TypeScript checks                    |
+| Lint                        | `yarn lint`                | ESLint with its Prettier integration              |
+| Fix lint findings           | `yarn lint:fix`            | Review fixes and keep them within scope           |
+| Build production output     | `yarn build`               | Check SSR and runtime configuration               |
+| Generate static output      | `yarn generate`            | Use for a deliberate static-delivery check        |
+| Preview built output        | `yarn preview`             | Run after the corresponding build or generation   |
+| Prepare Nuxt types          | `yarn postinstall`         | Also runs automatically after installation        |
+| Profile a build             | `yarn profile`             | Use when profiling is part of the task            |
+
+There is no `test` script in the package file.
+`format` and `format:check` check application source and locale JSON; Markdown and root configuration files need an explicit file check.
+Check changed Markdown explicitly with the installed Prettier using `--prose-wrap preserve --end-of-line lf`.
+Check changed root configuration and workflow files explicitly as well.
+See [README.md](README.md) for local setup and the dependency map.
+
+## Direct Dependencies
+
+Consult [package.json](package.json) for declared versions and [yarn.lock](yarn.lock) for the resolved graph.
+This table groups every direct entry by responsibility.
+
+| Dependencies                                                                             | Purpose or current status                                                 |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `nuxt`                                                                                   | Routing, Vue application build, SSR and prerendering                      |
+| `@nuxtjs/i18n`                                                                           | French/English messages, prefixed routes and language preference          |
+| `@nuxtjs/seo`                                                                            | Site metadata, robots, sitemap and structured-data modules                |
+| `@nuxt/fonts`                                                                            | Resolves Oswald and Roboto and emits locally served font files            |
+| `lenis`                                                                                  | Client smooth scrolling, reduced motion and coordinated route restoration |
+| `rolldown`                                                                               | Build tooling satisfying Nuxt's bundler peer dependency                   |
+| `@nuxt/eslint`, `eslint`, `eslint-config-prettier`, `eslint-plugin-prettier`, `prettier` | Linting and formatting configuration/tooling                              |
+| `typescript`, `vue-tsc`, `@types/node`                                                   | Nuxt, Vue and Node API declarations and type checking                     |
+| `sass`                                                                                   | SCSS compilation                                                          |
+
+Check runtime API availability against Node 24 independently of the declaration package version.
+Nuxt Fonts resolves the two configured families through its Google provider and serves the downloaded files locally.
+Inspect generated font CSS and actual requests before claiming a family, weight or subset renders correctly.
+
+## Architecture
+
+```text
+app/
+├── app.vue, error.vue                 # Locale head and independent error shell
+├── layouts/default.vue               # Skip link and focusable main
+├── pages/index.vue                   # Minimal home container and SEO
+├── data/                             # Identity, wines, projects, media, SEO and legacy paths
+├── composables/                      # Page SEO, media queries and overlay lifecycle
+├── types/                            # Image and SEO contracts
+├── styles/                           # CSS-free tokens, base rules and shared classes
+├── plugins/                          # Lenis, overlays, focus and pointer/keyboard modality
+└── router.options.ts                 # History, anchor and page scrolling
+i18n/locales/                         # French source and US English messages
+public/                               # Estate assets, favicon, licenses and crawler policy
+server/middleware/legacy-redirects.ts # Permanent legacy redirects to the French home
+```
+
+| Concern                 | Owner                                                                                                     | Contract                                                                                                               |
+| ----------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Business identity       | [site.ts](app/data/site.ts)                                                                               | Supplied name, contact, ordered team IDs and `externalLinks`; publication review still applies                         |
+| Wheel scrolling         | [smooth-scroll.client.ts](app/plugins/smooth-scroll.client.ts)                                            | One `$lenis`; native touch and Ctrl-wheel; motion-preference changes cancel interpolation                              |
+| History readiness       | Same smooth-scroll plugin                                                                                 | `$waitForScrollPosition(top)` waits up to three seconds for content height; input, navigation and unmount cancel it    |
+| Overlay lifecycle       | [overlay-scroll-lock.client.ts](app/plugins/overlay-scroll-lock.client.ts)                                | `$overlayScroll.lock()` returns an idempotent release; only the final release restores prior styles and scrolling      |
+| Route scrolling         | [router.options.ts](app/router.options.ts)                                                                | Destination readiness, overlay release, saved-position priority, safe hash decoding and sticky-header clearance        |
+| Route focus             | [navigation-focus.client.ts](app/plugins/navigation-focus.client.ts)                                      | Targets `main-content` or a decoded hash after completion/unlock; cancels stale requests and cleans temporary tabindex |
+| Messages                | [fr-FR.json](i18n/locales/fr-FR.json), [en-US.json](i18n/locales/en-US.json)                              | Matching ownership, snake_case keys and interpolation names                                                            |
+| Modules and environment | [nuxt.config.ts](nuxt.config.ts)                                                                          | SSR, locale head, Fonts, schema, sitemap and environment indexing                                                      |
+| App shell               | [app.vue](app/app.vue), [default layout](app/layouts/default.vue), [error shell](app/error.vue)           | Locale head, one layout-owned main and independent status-preserving recovery                                          |
+| SEO                     | [registry](app/data/seo.ts), [helper](app/composables/usePageSeo.ts), [types](app/types/seo.ts)           | Actual pages only, reactive head/schema and typed image references                                                     |
+| Styles                  | [styles](app/styles/)                                                                                     | CSS-free tokens injected once; base and shared classes loaded once                                                     |
+| Public media            | [manifest](app/data/media.json), [dimension catalog](app/data/imageDimensions.ts), [public](public/)      | Supplied variants and measured file dimensions, with stable identities                                                 |
+| Legacy URLs             | [redirect mappings](app/data/legacyRoutes.ts), [server middleware](server/middleware/legacy-redirects.ts) | Incoming recorded paths redirect to the French home with their query preserved                                         |
+
+Plugins are client-only and ordered by named dependencies: smooth scrolling, overlay locking, then navigation focus.
+Call an overlay release on dismissal and unmount, and keep native-scroll overlay regions marked `data-lenis-prevent`.
+Only focus and viewport scrolling wait for `$overlayScroll.whenUnlocked()`; route navigation itself must remain immediate.
+Keep plugin state per app and preserve listener/observer/timer cleanup during hot replacement and unmount.
+The focus destination and shell landmark ID must agree; inspect their actual consumers when changing that contract.
+
+## Routes And Page Workflow
+
+French and English routes use `/fr` and `/en` through Nuxt I18n's `prefix` strategy.
+The root `/` is the language-detection entry point, with French as default and the `i18n_redirected` cookie preserving preference.
+Keep explicit localized URLs authoritative even when browser language or a saved preference differs.
+For requested page work:
+
+1. Inspect the relevant source, supplied content and shared shell before selecting components and landmark ownership.
+2. Resolve route identity, visible `pages.*` copy, `pictures.*` descriptions and `seo.*` metadata independently.
+   Use the [content naming map](.agents/skills/i18n/references/content-naming.md) rather than deriving URLs or filenames from display titles.
+3. Update corresponding French and US English message identities together and keep script-side translated collections reactive.
+4. Preserve one main and H1, direct localized links, native modified-click behavior and useful no-JavaScript content.
+5. Keep shared metadata ownership explicit, with measured real imagery and accurate HTTP dispositions.
+6. Update only affected navigation and neighboring project links, then exercise affected locales and states through shared verification.
+
+Use [gallery-page](.agents/skills/gallery-page/SKILL.md) for a photo-project workflow rather than treating a translation-only edit as page creation.
+
+## Localization And Content Boundaries
+
+| Namespace         | Content                                                                           |
+| ----------------- | --------------------------------------------------------------------------------- |
+| `app.*`           | Estate identity and logo alternative                                              |
+| `components.*`    | Layout, header/footer, language, form and viewer messages                         |
+| `pages.*`         | Page prose, `tab_name` labels, wine descriptions, projects and policy-review copy |
+| `pictures.*`      | Image descriptions indexed by stable media ID                                     |
+| `seo.*`           | Site description, page-specific titles/descriptions and sharing-image alternative |
+| `error.*`         | Missing-page and unexpected-error messages                                        |
+| `miscellaneous.*` | Shared factual-field labels                                                       |
+
+Use `fr-FR.json` and `en-US.json`, preserving supplied French names and facts while using natural US English.
+New multiword message keys use snake_case; existing wine/project/media IDs remain stable even when their punctuation differs.
+Keep component controls under their actual owner, not mixed into page prose solely because the component is used once.
+Keep shared names and destinations in site data; do not duplicate contact facts independently in messages or schema.
+Use Vue I18n-safe literal syntax for `@`, `|` and braces, and verify dynamic key families as well as literal calls.
+See [content direction](.agents/docs/content-direction.md) for editorial boundaries.
 
 ## Engineering Conventions
 
@@ -64,7 +190,7 @@ Do not install dependencies or introduce application scaffolding solely to valid
 
 ### Content, URLs And Integrations
 
-Preserve meaningful French URLs and equivalent English destinations.
+Preserve meaningful content identities and record explicit redirects when localized paths change.
 Use locale-aware route helpers instead of assembling prefixes or translating path fragments by hand.
 Keep public asset URLs and external links outside locale routing.
 Verify accented and decomposed-Unicode project paths without silently normalizing their identity.
@@ -109,22 +235,46 @@ Load only skills relevant to the task and read their linked guides on demand.
 | Winery assets        | [winery-assets](.agents/skills/winery-assets/SKILL.md)                   | Photo identity, proportions, responsive delivery and font rights    |
 | Accessibility        | [accessibility](.agents/skills/accessibility/SKILL.md)                   | Interaction implementation and focused accessibility audits         |
 | SEO                  | [seo](.agents/skills/seo/SKILL.md)                                       | Localized metadata, sharing images, schema and indexing             |
+| Gallery pages        | [gallery-page](.agents/skills/gallery-page/SKILL.md)                     | Photo-project pages, ordered images, adjacent navigation and review |
+
+## Task Entry Points
+
+| Task                            | Entry point                                                              | Shared owner                                                 |
+| ------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| New or extended winery page     | [new-winery-page.prompt.md](.github/prompts/new-winery-page.prompt.md)   | Visual-fidelity skill with task-relevant technical workflows |
+| Photo-project page              | [new-gallery-page.prompt.md](.github/prompts/new-gallery-page.prompt.md) | Gallery-page skill                                           |
+| Locale messages only            | [add-translations.prompt.md](.github/prompts/add-translations.prompt.md) | I18n skill                                                   |
+| Read-only source/journey review | Request review mode in the relevant skill                                | Acceptance-review or gallery-page skill                      |
+
+Codex can read the prompt's shared skill directly; prompt files do not require a second implementation or an installed command adapter.
 
 ## Tool Integration And Scoped Instructions
 
-[Copilot's entry point](.github/copilot-instructions.md) route to these shared rules.
+[Copilot's entry point](.github/copilot-instructions.md) routes to these shared rules.
+Codex uses this `AGENTS.md` and the applicable ancestor/current-directory instruction chain.
+Repository skills are discoverable under `.agents/skills/`; their names/descriptions guide selection, with bodies read when relevant.
 The [.agents index](.agents/README.md) is navigational; it does not replace this file.
 Before editing application files, all coding agents must select and read applicable scoped instructions from the table below.
 Match both the file pattern and the concern being changed, including overlapping scopes.
 Read them explicitly when the client does not attach `applyTo` metadata.
 
-| Instruction                                                         | File patterns                                                                                                              | Use for                                               |
-| ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| [Nuxt and Vue](.github/instructions/vue-nuxt.instructions.md)       | `app/**/*.vue`, `app/**/*.ts`, `server/**/*.ts`, `nuxt.config.ts`                                                          | Components, SSR, helpers, endpoints and configuration |
-| [Styling](.github/instructions/styles.instructions.md)              | `app/**/*.vue`, `app/styles/**/*.scss`, `nuxt.config.ts`                                                                   | Appearance, responsive layout and style loading       |
-| [Internationalization](.github/instructions/i18n.instructions.md)   | `i18n/locales/*.json`                                                                                                      | French and English keys, copy and interpolation       |
-| [Accessibility](.github/instructions/accessibility.instructions.md) | `app/**/*.vue`, `app/plugins/**/*.ts`, `app/composables/**/*.ts`, `app/styles/**/*.scss`                                   | Semantics, focus, overlays, touch and motion          |
-| [SEO](.github/instructions/seo.instructions.md)                     | `app/pages/**/*.vue`, `app/data/seo.ts`, `app/composables/usePageSeo.ts`, `app/app.vue`, `app/error.vue`, `nuxt.config.ts` | Page identity, metadata, locale head and indexing     |
+| Agent               | Shared entry point                                                                        | Scoped guidance                                                       |
+| ------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Codex               | This `AGENTS.md`, applicable `AGENTS.override.md`/ancestor guidance and repository skills | Explicitly select and read all matching rows below                    |
+| GitHub Copilot      | [copilot-instructions.md](.github/copilot-instructions.md) and shared project rules       | `description`/`applyTo` where supported; read explicitly when needed  |
+| Other coding agents | This shared guide and relevant skills                                                     | Read applicable files rather than assuming client-specific attachment |
+
+Codex's instruction discovery does not automatically apply Copilot's `applyTo` metadata.
+See [official OpenAI instruction discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md) and [repository skill discovery](https://learn.chatgpt.com/docs/build-skills).
+
+| Instruction                                                         | File patterns                                                                                                              | Use for                                                                  |
+| ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| [Nuxt and Vue](.github/instructions/vue-nuxt.instructions.md)       | `app/**/*.vue`, `app/**/*.ts`, `server/**/*.ts`, `nuxt.config.ts`                                                          | Components, SSR, helpers, endpoints and configuration                    |
+| [Styling](.github/instructions/styles.instructions.md)              | `app/**/*.vue`, `app/styles/**/*.scss`, `nuxt.config.ts`                                                                   | Appearance, responsive layout and style loading                          |
+| [Internationalization](.github/instructions/i18n.instructions.md)   | `i18n/locales/*.json`                                                                                                      | French and English keys, copy and interpolation                          |
+| [Accessibility](.github/instructions/accessibility.instructions.md) | `app/**/*.vue`, `app/plugins/**/*.ts`, `app/composables/**/*.ts`, `app/styles/**/*.scss`                                   | Semantics, focus, overlays, touch and motion                             |
+| [SEO](.github/instructions/seo.instructions.md)                     | `app/pages/**/*.vue`, `app/data/seo.ts`, `app/composables/usePageSeo.ts`, `app/app.vue`, `app/error.vue`, `nuxt.config.ts` | Page identity, metadata, locale head and indexing                        |
+| [Gallery pages](.github/instructions/gallery-page.instructions.md)  | `app/pages/photos/**/*.vue`                                                                                                | Photo projects, image order, translated captions and adjacent navigation |
 
 Reusable prompts are thin task entry points: [new winery page](.github/prompts/new-winery-page.prompt.md) and [add translations](.github/prompts/add-translations.prompt.md).
 Keep detailed procedures in their owning skills instead of duplicating them in tool-specific adapters.
@@ -152,8 +302,12 @@ Keep historical work logs and completed-check claims out of durable instructions
 | Contact processing                            | Validation and failure paths through isolated transports; no unauthorized live submissions                              |
 
 Run checks appropriate to the actual change and current tooling.
+For application/configuration changes, run `yarn format:check`, `yarn typecheck`, `yarn lint` and the relevant production build.
+The [CI workflow](.github/workflows/ci.yml) installs dependencies immutably and runs lint; its build-named job does not run the production build or generation.
 Run Nuxt type preparation and lint sequentially when they share generated configuration.
 Inspect both SSR and client navigation when changing translated state or head metadata.
+For navigation integrations, check saved-position priority, delayed content height, malformed hashes, nested overlay release and interruption by user input or a newer route.
+Check the actual compiled font URLs and served MIME types; a successful font-resolution log does not prove the browser used those faces.
 For shared UI, cover different consumers and states rather than relying on one screenshot.
 Report checks actually performed and distinguish source inspection, emulation, real-device testing and deployed verification.
 Do not claim unavailable browser, assistive-technology, delivery or production coverage.

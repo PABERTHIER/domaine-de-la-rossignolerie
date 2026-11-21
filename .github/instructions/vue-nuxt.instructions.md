@@ -24,6 +24,8 @@ Read the nearest implementation and current configuration before choosing an abs
   Keep public assets, email/telephone links and external URLs outside locale prefixing.
 - Reuse actual scroll/overlay owners and preserve native touch, reduced motion and history/anchor behavior.
   Guard asynchronous results against obsolete requests, selections and closed dialogs.
+  Use the named `smooth-scroll` → `overlay-scroll-lock` → `navigation-focus` dependency chain.
+  Keep route navigation immediate and await `$overlayScroll.whenUnlocked()` only for focus/scroll work.
 - Keep credentials and delivery adapters server-side.
   Validate request types/lengths/size and expose success only after configured service acceptance.
 
@@ -38,4 +40,7 @@ Read the nearest implementation and current configuration before choosing an abs
 | Metadata, status or indexing     | [SEO](seo.instructions.md)                                                                                    |
 
 Use [shared verification](../../AGENTS.md#verification) with commands actually declared by the project.
+Use shared [site data](../../app/data/site.ts) for identity and destinations and the [content map](../../.agents/skills/i18n/references/content-naming.md) for message ownership.
+Use [gallery instructions](gallery-page.instructions.md) when photo-project work overlaps this scope.
+Plugin-provided state belongs to the app instance, with explicit cleanup for pending restoration, listeners and temporary tabindex.
 Check different consumers when changing shared behavior and report unavailable runtime coverage.

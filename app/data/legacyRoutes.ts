@@ -1,0 +1,18 @@
+// Server redirects live in server/middleware so sitemap locale matching does not treat an unprefixed redirect as a rule for every localized page
+export const legacyDestinations: Record<string, string> = {
+  home: '/',
+  'expédition-et-livraison': '/',
+  'termes-et-conditions': '/',
+  'service-page': '/',
+  'acheter-des-produits': '/',
+  checkout: '/',
+  'booking-form': '/',
+  'thank-you-page': '/',
+  'cart-page': '/',
+  'booking-calendar': '/',
+  'book-online': '/',
+  'inquiry-services-page': '/',
+  'my-orders': '/',
+  'my-bookings': '/',
+  'account-settings': '/',
+}

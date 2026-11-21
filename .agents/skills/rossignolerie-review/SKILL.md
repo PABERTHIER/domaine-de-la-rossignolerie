@@ -26,6 +26,9 @@ Use [content direction](../../docs/content-direction.md) to check factual bounda
 Use [mobile acceptance](../../docs/ux-principles.md#mobile-acceptance) and the [manual accessibility audit](../../docs/accessibility.md#manual-release-audit) for relevant runtime coverage.
 For metadata claims, use [SEO](../seo/SKILL.md) and inspect actual output rather than configuration intent alone.
 Use test transports for contact review instead of sending live enquiries.
+Use [gallery-page](../gallery-page/SKILL.md) in review mode for project-specific naming, ordered media and adjacent-navigation checks.
+Check shared navigation ownership separately: history priority, bounded height readiness, malformed hashes, nested leases and cancellation after newer input/routes.
+Verify `en-US` key/placeholder parity and actual compiled font delivery rather than inferring either from a configuration declaration.
 
 ## Evidence And Findings
 

@@ -19,6 +19,22 @@ Inspect the current implementation before deciding which component owns a change
 For an audit request, report findings without editing unless fixes are requested.
 Use the [accessibility skill](../skills/accessibility/SKILL.md) for a focused implementation or review workflow.
 
+## Current Source And Ownership
+
+| Concern              | Current owner                                                                                                          | Review boundary                                                                                     |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Navigation focus     | [navigation-focus.client.ts](../../app/plugins/navigation-focus.client.ts)                                             | Decoded hash or `main-content`, only after completion and overlay release                           |
+| Scroll/history       | [router.options.ts](../../app/router.options.ts), [smooth-scroll.client.ts](../../app/plugins/smooth-scroll.client.ts) | Saved offsets, bounded height wait, native touch and reduced-motion changes                         |
+| Overlay coordination | [overlay-scroll-lock.client.ts](../../app/plugins/overlay-scroll-lock.client.ts)                                       | Last-lease restoration and cleanup; a scroll lease alone does not supply modal focus/inert behavior |
+| Accessible copy      | [French](../../i18n/locales/fr-FR.json), [US English](../../i18n/locales/en-US.json)                                   | Component names, field feedback, photo controls and alternatives                                    |
+
+The focus plugin's main destination is `main-content`; the shell's actual landmark and skip link must use the same destination.
+The [default layout](../../app/layouts/default.vue) owns that main and skip link; pages must not nest another main inside it.
+The standalone [error shell](../../app/error.vue) owns its separate `error-content` main, skip link, status heading and localized recovery.
+The [focus-visible plugin](../../app/plugins/focus-visible.client.ts) distinguishes pointer input from deliberate keyboard input; global styles keep editable-field feedback and restore keyboard outlines.
+Temporary tabindex is removed on blur or cleanup, and focus uses `preventScroll` so route scrolling keeps ownership.
+Do not describe a scroll-lock implementation as a completed accessible dialog.
+
 ## Semantics And Names
 
 Use native links for destinations and buttons for actions.
@@ -44,6 +60,8 @@ Keep focus contained while the modal is open and return it to a usable invoking 
 The close action must remain reachable at short viewport heights and enlarged text.
 Release scroll locks, pointer captures and observers on close and unmount, including interrupted transitions.
 Multiple active overlays must not independently restore background scrolling.
+Retain the lease and background isolation through a modal leave transition, releasing on its actual completion.
+Keep the invoking element itself as the focus-return target; touch activation does not guarantee that it became `document.activeElement`.
 
 A disclosure menu exposes expanded state without pretending to be a modal.
 A modal menu must satisfy the modal requirements in full.
@@ -77,6 +95,9 @@ Allow text wrapping, natural section height and browser pinch zoom.
 Standalone touch controls need 44 by 44 CSS px hit areas with useful spacing; the visible icon may remain smaller.
 Check short landscape viewports, browser bars and safe-area insets around fixed controls.
 Fix the source of overflow instead of masking it with document-level clipping.
+Check text spacing with 1.5 line height, 0.12em letter spacing, 0.16em word spacing and 2em paragraph spacing without loss of content or controls.
+In forced-colors mode preserve native focus, borders and controls using system colors where appropriate.
+The 44px target is this project's touch-usability requirement, not a claim that every WCAG AA target criterion mandates that exact size.
 
 Respect reduced-motion preferences in CSS and JavaScript, including smooth scrolling and automatic rotation.
 Provide a persistent pause for automatic photo sequences.
@@ -101,3 +122,7 @@ A build, screenshot or automated score does not prove conformance or mobile comp
 Report a finding with location, reproduction, expected behavior, observed impact and verification coverage.
 For shared components, inspect different consuming pages and states.
 Use [UX acceptance](ux-principles.md#mobile-acceptance) for the parallel journey checklist.
+
+## Reference
+
+Use the [W3C WCAG 2.2 quick reference](https://www.w3.org/WAI/WCAG22/quickref/) when assigning a finding to an actual success criterion.

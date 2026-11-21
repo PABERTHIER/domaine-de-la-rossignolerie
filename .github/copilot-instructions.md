@@ -14,6 +14,10 @@ Use [.agents/README.md](../.agents/README.md) for guidance ownership and evidenc
   Use locale-aware internal destinations and preserve native asset/external URLs.
 - Read applicable scoped instructions and load only task-relevant guides and skills.
   Explicitly select overlapping concerns when automatic attachment is unavailable.
+- Use `fr-FR.json` and `en-US.json` and the [content naming map](../.agents/skills/i18n/references/content-naming.md).
+  Keep `components.*` controls separate from `pages.*` prose and preserve stable wine/project/media IDs.
+- Reuse the current Lenis, overlay lease and navigation-focus owners.
+  Navigation starts immediately; only destination focus and scrolling wait for final unlock.
 
 ## Reference Documentation
 
@@ -38,6 +42,7 @@ Use [.agents/README.md](../.agents/README.md) for guidance ownership and evidenc
 | [Winery assets](../.agents/skills/winery-assets/SKILL.md)            | Photos, bottles, responsive delivery and font rights    |
 | [Accessibility](../.agents/skills/accessibility/SKILL.md)            | Accessible implementation and focused audits            |
 | [SEO](../.agents/skills/seo/SKILL.md)                                | Localized metadata, sharing images, schema and indexing |
+| [Gallery pages](../.agents/skills/gallery-page/SKILL.md)             | Photo projects, ordered media and adjacent navigation   |
 
 Canonical workflows live in `.agents/skills/`.
 The catalogs aid discovery rather than requiring every skill to be loaded.
@@ -51,6 +56,7 @@ The catalogs aid discovery rather than requiring every skill to be loaded.
 | [Internationalization](instructions/i18n.instructions.md)   | `i18n/locales/*.json`                                                                                                      | Bilingual messages and interpolation                 |
 | [Accessibility](instructions/accessibility.instructions.md) | `app/**/*.vue`, `app/plugins/**/*.ts`, `app/composables/**/*.ts`, `app/styles/**/*.scss`                                   | Semantics, focus, overlays, readability and motion   |
 | [SEO](instructions/seo.instructions.md)                     | `app/pages/**/*.vue`, `app/data/seo.ts`, `app/composables/usePageSeo.ts`, `app/app.vue`, `app/error.vue`, `nuxt.config.ts` | Page metadata, locale head, status and indexing      |
+| [Gallery pages](instructions/gallery-page.instructions.md)  | `app/pages/photos/**/*.vue`                                                                                                | Project pages, captions, media order and navigation  |
 
 Scoped files declare `description` and `applyTo` metadata.
 Use the [shared applicability rules](../AGENTS.md#tool-integration-and-scoped-instructions) when several concerns overlap or the client does not attach them automatically.
@@ -61,6 +67,7 @@ Use the [shared applicability rules](../AGENTS.md#tool-integration-and-scoped-in
 | ------------------------------------------------------ | --------------------------------------------------------------------- |
 | [New winery page](prompts/new-winery-page.prompt.md)   | Requested page work through shared visual/content/technical workflows |
 | [Add translations](prompts/add-translations.prompt.md) | Locale messages and their consumers without creating unrelated pages  |
+| [New gallery page](prompts/new-gallery-page.prompt.md) | End-to-end photo-project scope through the gallery skill              |
 
 Use [shared verification](../AGENTS.md#verification) and report checks actually performed.
 Keep tool-specific files focused on routing to shared owners.

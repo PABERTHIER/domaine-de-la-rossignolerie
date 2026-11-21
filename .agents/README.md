@@ -2,18 +2,18 @@
 
 This folder contains focused project guides and reusable skills for the winery website.
 Start with [AGENTS.md](../AGENTS.md) for shared constraints, conventions and verification.
-Select context by task instead of loading every guide and skill.
+Use this index to select the context needed for the task rather than loading every guide and skill.
 
 ## Guidance Ownership
 
-| Layer                | Location                                                              | Purpose                                                       |
-| -------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------- |
-| Shared project rules | [AGENTS.md](../AGENTS.md)                                             | Scope, Git policy, engineering conventions and verification   |
-| Reference guides     | [docs](docs/)                                                         | Brand, editorial direction, design, UX, accessibility and SEO |
-| Task skills          | [skills](skills/)                                                     | Reusable implementation and review workflows                  |
-| Scoped instructions  | [.github/instructions](../.github/instructions/)                      | File-specific standards and routing to shared owners          |
-| Task entry points    | [.github/prompts](../.github/prompts/)                                | Focused prompts that reuse shared workflows                   |
-| Tool entry points    | [Copilot](../.github/copilot-instructions.md)                         | Access to the same project rules and catalogs                 |
+| Layer                | Location                                         | Purpose                                                       |
+| -------------------- | ------------------------------------------------ | ------------------------------------------------------------- |
+| Shared project rules | [AGENTS.md](../AGENTS.md)                        | Scope, Git policy, engineering conventions and verification   |
+| Reference guides     | [docs](docs/)                                    | Brand, editorial direction, design, UX, accessibility and SEO |
+| Task skills          | [skills](skills/)                                | Reusable implementation and review workflows                  |
+| Scoped instructions  | [.github/instructions](../.github/instructions/) | File-specific standards and routing to shared owners          |
+| Task entry points    | [.github/prompts](../.github/prompts/)           | Focused prompts that reuse shared workflows                   |
+| Tool entry points    | [Copilot](../.github/copilot-instructions.md)    | Access to the same project rules and catalogs                 |
 
 Keep each detailed procedure in its owning skill and each reference topic in its guide.
 Tool-specific files route to shared guidance rather than maintaining competing requirements.
@@ -55,16 +55,21 @@ Source inspection does not establish browser behavior, measured contrast, screen
 | [winery-assets](skills/winery-assets/SKILL.md)                   | Photo provenance, bottle proportions, responsive assets and font licensing |
 | [accessibility](skills/accessibility/SKILL.md)                   | Focused interaction audits and accessible implementation                   |
 | [seo](skills/seo/SKILL.md)                                       | Reactive localized metadata, sharing images, indexing and schema           |
+| [gallery-page](skills/gallery-page/SKILL.md)                     | Create, extend or review photo projects and their ordered image sequences  |
+
+Use the [content naming map](skills/i18n/references/content-naming.md) when connecting page, wine/project, image-description and metadata identities.
+The map documents actual messages and stable IDs; it does not derive route or asset paths from translated titles.
 
 ## Scoped Instructions
 
-| Instruction                                                            | Applies to                                                          |
-| ---------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| [Nuxt and Vue](../.github/instructions/vue-nuxt.instructions.md)       | Vue files, application/server TypeScript and Nuxt configuration     |
-| [Styling](../.github/instructions/styles.instructions.md)              | Vue presentation, shared SCSS and style configuration               |
-| [Internationalization](../.github/instructions/i18n.instructions.md)   | French and English locale JSON                                      |
-| [Accessibility](../.github/instructions/accessibility.instructions.md) | Semantics, focus, overlays, responsive readability and motion       |
-| [SEO](../.github/instructions/seo.instructions.md)                     | Pages, metadata helpers, locale head, errors and site configuration |
+| Instruction                                                            | Applies to                                                           |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [Nuxt and Vue](../.github/instructions/vue-nuxt.instructions.md)       | Vue files, application/server TypeScript and Nuxt configuration      |
+| [Styling](../.github/instructions/styles.instructions.md)              | Vue presentation, shared SCSS and style configuration                |
+| [Internationalization](../.github/instructions/i18n.instructions.md)   | French and English locale JSON                                       |
+| [Accessibility](../.github/instructions/accessibility.instructions.md) | Semantics, focus, overlays, responsive readability and motion        |
+| [SEO](../.github/instructions/seo.instructions.md)                     | Pages, metadata helpers, locale head, errors and site configuration  |
+| [Gallery pages](../.github/instructions/gallery-page.instructions.md)  | Photo-project pages, captions, ordered media and adjacent navigation |
 
 Select scoped files using [AGENTS.md's applicability table](../AGENTS.md#tool-integration-and-scoped-instructions), including overlapping concerns.
 The catalogs aid discovery and do not imply every workflow applies to every task.
@@ -75,6 +80,7 @@ The catalogs aid discovery and do not imply every workflow applies to every task
 | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
 | [New winery page](../.github/prompts/new-winery-page.prompt.md)   | Visual fidelity with task-relevant content, routes and verification |
 | [Add translations](../.github/prompts/add-translations.prompt.md) | Message editing and consumer checks through the i18n skill          |
+| [New gallery page](../.github/prompts/new-gallery-page.prompt.md) | Photo-project scope through the shared gallery-page skill           |
 
 ## Maintenance
 
