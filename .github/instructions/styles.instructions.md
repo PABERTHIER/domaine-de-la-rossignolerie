@@ -8,6 +8,7 @@ applyTo: 'app/**/*.vue,app/styles/**/*.scss,nuxt.config.ts'
 Use [design system](../../.agents/docs/design-system.md) for palette, typography, page composition and stylesheet ownership.
 Use [UX principles](../../.agents/docs/ux-principles.md) for affected responsive journeys.
 Preserve the bird, real estate imagery and recognizable cream/green presentation.
+Nuxt Fonts owns Oswald/Roboto resolution; inspect configured weights, emitted URLs and actual computed faces instead of adding duplicate font-loading code.
 
 ## Ownership And Organization
 
@@ -39,6 +40,9 @@ Separate visual control size from its 44px touch hit area.
 Fix the source of overflow rather than hiding it at document level.
 Respect reduced motion in CSS and related JavaScript.
 Inspect stacking contexts and shared scroll locks before changing an overlay layer independently.
+Use the current [overlay plugin](../../app/plugins/overlay-scroll-lock.client.ts) and preserve its temporary occupied gutter/document-height handling.
+Keep native-scroll regions `data-lenis-prevent`; do not reserve a permanent empty gutter or introduce a competing viewport-height writer.
+Retain forced-colors system values and focus visibility during motion/reveal changes.
 
 Use [accessibility instructions](accessibility.instructions.md) for interaction states and [mobile acceptance](../../.agents/docs/ux-principles.md#mobile-acceptance) for viewport/journey coverage.
 Compare matching states after fonts and images load and report actual browser/device checks.

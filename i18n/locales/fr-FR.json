@@ -1,0 +1,309 @@
+{
+  "app": {
+    "name": "Domaine de la Rossignolerie",
+    "logo_alt": "Domaine de la Rossignolerie — accueil"
+  },
+  "seo": {
+    "site": {
+      "description": "Des vignes au caveau, une aventure humaine en Anjou."
+    },
+    "home": {
+      "title": "Domaine de la Rossignolerie — Accueil",
+      "description": "Découvrez le Domaine de la Rossignolerie, à Chalonnes-sur-Loire, en Anjou."
+    },
+    "estate": {
+      "title": "Notre histoire — Domaine de la Rossignolerie",
+      "description": "Découvrez l'histoire du Domaine de la Rossignolerie et l'équipe de ce domaine viticole de dix hectares en Anjou."
+    },
+    "wines": {
+      "title": "Nos vins — Domaine de la Rossignolerie",
+      "description": "Chenin, Grolleau : découvrez les six cuvées du domaine."
+    },
+    "contact": {
+      "title": "Contact — Domaine de la Rossignolerie",
+      "description": "Une question sur nos vins ou une envie de découvrir le domaine ? Écrivez-nous."
+    },
+    "gallery": {
+      "title": "Galerie photos — Domaine de la Rossignolerie",
+      "description": "Bienvenue sur la galerie photos du domaine ! Vous trouverez ici une sélection de nos différents travaux et projets. Bonne découverte !"
+    },
+    "legal": {
+      "title": "Mentions légales — Domaine de la Rossignolerie",
+      "description": "Informations légales du Domaine de la Rossignolerie, à compléter et vérifier avant publication."
+    },
+    "cookies": {
+      "title": "Cookies — Domaine de la Rossignolerie",
+      "description": "Informations sur les cookies et services utilisés par le site du Domaine de la Rossignolerie."
+    },
+    "privacy": {
+      "title": "Confidentialité — Domaine de la Rossignolerie",
+      "description": "Informations sur le traitement des coordonnées et messages adressés au Domaine de la Rossignolerie."
+    },
+    "image_alt": "Les vignes du Domaine de la Rossignolerie en Anjou",
+    "gallery_spring": {
+      "title": "Retour des beaux jours — Domaine de la Rossignolerie",
+      "description": "Voici quelques photos prises au mois de mai avec le retour du soleil : deux nichoirs sous un arbre près du domaine, les abeilles de nouveau de sortie et une fosse pédologique qui nous a permis de voir les différents horizons de notre sol."
+    },
+    "gallery_vineyards": {
+      "title": "Les vignes du domaine — Domaine de la Rossignolerie",
+      "description": "Les vignes du domaine — Chalonnes-sur-Loire, Anjou."
+    },
+    "gallery_renovation": {
+      "title": "L'aménagement — Domaine de la Rossignolerie",
+      "description": "Voici le nouveau bardage du domaine !"
+    },
+    "gallery_chenin": {
+      "title": "Grappe de Chenin — Domaine de la Rossignolerie",
+      "description": "Grappe de Chenin — Chalonnes-sur-Loire, Anjou."
+    }
+  },
+  "error": {
+    "not_found": {
+      "title": "Page introuvable",
+      "description": "Cette page n'existe pas. Retrouvez le domaine depuis l'accueil."
+    },
+    "unexpected": {
+      "title": "Une erreur est survenue",
+      "description": "Veuillez réessayer dans quelques instants."
+    },
+    "home": "Revenir à l'accueil",
+    "code": "Erreur {code}",
+    "navigation": "Revenir sur le site"
+  },
+  "components": {
+    "layout": {
+      "skip": "Aller au contenu principal"
+    },
+    "header": {
+      "nav": "Navigation principale",
+      "menu": "Menu",
+      "close_menu": "Fermer le menu"
+    },
+    "footer": {
+      "details": "Nous retrouver",
+      "information": "Informations",
+      "instagram": "Suivre le domaine sur Instagram",
+      "back_top": "Haut de page",
+      "copyright": "© {year} Domaine de la Rossignolerie"
+    },
+    "lang_switcher": {
+      "label": "Langue",
+      "french": "Français",
+      "english": "English"
+    },
+    "contact_form": {
+      "name": "Nom",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "message": "Message",
+      "required": "Les champs marqués d'un astérisque sont obligatoires.",
+      "send": "Envoyer",
+      "sending": "Envoi en cours…",
+      "success": "Votre message a été accepté par le service d'envoi. Merci de nous avoir contactés.",
+      "unavailable": "L'envoi par formulaire n'est pas disponible pour le moment. Contactez-nous par e-mail ou par téléphone.",
+      "failure": "Le message n'a pas pu être envoyé. Vos informations sont conservées dans le formulaire. Vous pouvez réessayer ou nous contacter directement.",
+      "rate": "Trop de tentatives. Veuillez patienter quelques minutes avant de réessayer.",
+      "invalid": "Veuillez vérifier les champs indiqués.",
+      "email_error": "Saisissez une adresse e-mail valide.",
+      "length_error": "Ce champ est trop long.",
+      "privacy": "Vos coordonnées et votre message servent à répondre à votre demande.",
+      "privacy_link": "Informations sur vos données",
+      "website": "Laissez ce champ vide"
+    },
+    "photo_viewer": {
+      "open": "Agrandir : {caption}",
+      "close": "Fermer les photos",
+      "previous": "Photo précédente",
+      "next": "Photo suivante",
+      "count": "Photo {number} sur {total}",
+      "full": "Ouvrir la photo entière",
+      "error": "La photo n'a pas pu être chargée.",
+      "zoom": "Zoom de la photo",
+      "zoom_in": "Agrandir",
+      "zoom_out": "Réduire",
+      "zoom_reset": "Ajuster",
+      "zoom_level": "Niveau de zoom",
+      "image_area": "Photo. Utilisez + et − pour zoomer, 0 pour ajuster. Faites défiler pour explorer la photo agrandie.",
+      "photo_navigation": "Navigation des photos",
+      "loading": "Chargement de la photo…"
+    }
+  },
+  "pages": {
+    "home": {
+      "tab_name": "Accueil",
+      "introduction": "Le domaine, ses vins et ses paysages.",
+      "contact": "Nous contacter",
+      "region": "Chalonnes-sur-Loire · Anjou",
+      "estate": "Le domaine",
+      "history": "Notre histoire",
+      "wines": "Nos vins",
+      "visit": "Rendez-nous visite",
+      "gallery": "Le domaine en images",
+      "gallery_link": "Découvrir la galerie",
+      "intro": "Des vignes au caveau, une aventure humaine en Anjou."
+    },
+    "estate": {
+      "tab_name": "À propos du domaine",
+      "title": "Notre histoire",
+      "intro": "Passionné de vin depuis toujours, j'ai repris en fin de carrière un domaine viticole de 10 hectares en Anjou, après un parcours professionnel différent. Guidé par la qualité, je découvre avec humilité ce métier exigeant, au cœur d'une aventure humaine et naturelle.",
+      "story_title": "Un changement de vie guidé par la passion",
+      "story": "Après une carrière dans un domaine totalement différent, j'ai choisi en fin de parcours de me lancer dans un projet qui m'animait depuis longtemps : devenir vigneron. Poussé par une passion constante pour le vin, je voulais comprendre et vivre pleinement le processus de vinification, de la vigne à la bouteille. M'engager pleinement, physiquement et émotionnellement, est pour moi une évidence.",
+      "team": "L'équipe",
+      "michel": {
+        "role": "Vigneron",
+        "bio": "Qu'il vente, qu'il pleuve ou qu'il neige, Michel sort toujours travailler dans les vignes. Vous pourrez le trouver dans le vignoble en train de promener Rika, sa chienne, entre deux averses."
+      },
+      "christophe": {
+        "role": "Responsable culture et cave",
+        "bio": "Avec plus de 35 ans passés dans un domaine renommé de la Loire, Christophe a toujours quelque chose à transmettre aux autres. Vous pourrez le trouver dans une cuve ou dans les rangs de vignes."
+      },
+      "tanguy": {
+        "role": "Responsable marketing et commerce",
+        "bio": "Alternant en commerce à l'École supérieure des agricultures d'Angers, Tanguy pourra vous faire déguster les différentes cuvées. Vous pourrez le retrouver au domaine entre deux sessions universitaires."
+      }
+    },
+    "wines": {
+      "tab_name": "Nos vins",
+      "title": "Nos vins",
+      "intro": "Chenin, Grolleau : découvrez les six cuvées du domaine.",
+      "production": "Production annuelle : {count} bouteilles",
+      "enquiry": "Une question sur cette cuvée ?",
+      "items": {
+        "anjou25": {
+          "title": "Anjou blanc sec 2025",
+          "origin": "Chenin nourri sur notre parcelle la plus ancienne, la « Rossignolerie ».",
+          "notes": "Nez aromatique aux notes de pêche jaune. Bouche assez opulente sur des arômes de tilleul et avec une jolie finale d'acacia.",
+          "alt": "Bouteille — Anjou blanc sec 2025"
+        },
+        "anjou24": {
+          "title": "Anjou blanc sec 2024",
+          "origin": "Chenin sur notre terroir riche en schiste, qui lui procure toute sa minéralité.",
+          "notes": "Arômes de fleurs blanches, de pâtisseries et de pêche blanche. Une bouche structurée avec une jolie tension et des notes de pierre à fusil, légèrement mentholées.",
+          "alt": "Bouteille — Anjou blanc sec 2024"
+        },
+        "rose25": {
+          "title": "Rosé de Loire sec 2025",
+          "origin": "100 % Grolleau sur un petit coteau bien exposé, lui donnant un joli reflet rosé avec des notes de fruits acidulés.",
+          "notes": "Bouche ample et gourmande avec une touche finale de framboise.",
+          "alt": "Bouteille — Rosé de Loire sec 2025"
+        },
+        "epure": {
+          "title": "Fines bulles blanches",
+          "origin": "L'Epure, pour une cuvée charpentée par le Chenin comme les coupes d'un charpentier sur son ouvrage.",
+          "notes": "Un nez légèrement brioché aux arômes de pomme verte. Bouche sur le fruit qui s'ouvre sur des notes de fleurs blanches.",
+          "alt": "Bouteille — Fines bulles blanches"
+        },
+        "eclat": {
+          "title": "Fines bulles rosées",
+          "origin": "L'Eclat, pour une cuvée qui exprime toute sa vivacité en bouche. Jolie robe colorée par le Grolleau avec une pointe de sucrosité.",
+          "notes": "Arômes de petits fruits rouges, légèrement acidulés. Bouche ronde, gourmande, avec une finale de rose.",
+          "alt": "Bouteille — Fines bulles rosées"
+        },
+        "layon25": {
+          "title": "Coteaux du Layon 2025",
+          "origin": "Le Chenin cueilli dans sa meilleure maturité dans une parcelle pentue en pleine vigueur appelée Monts Pertus.",
+          "notes": "Arômes de fruits mûrs comme la mangue ou la pomme jaune. Bouche légèrement moelleuse sur des arômes de miel de lavande avec une belle longueur.",
+          "alt": "Bouteille — Coteaux du Layon 2025"
+        }
+      }
+    },
+    "contact": {
+      "tab_name": "Contact",
+      "title": "Contactez-nous",
+      "intro": "Une question sur nos vins ou une envie de découvrir le domaine ? Écrivez-nous.",
+      "visit": "Rendez-nous visite",
+      "hours": "Lundi-vendredi : 9 h-12 h et 14 h-17 h 30",
+      "directions": "Calculer mon itinéraire"
+    },
+    "gallery": {
+      "tab_name": "Galerie photos",
+      "title": "Galerie photos",
+      "intro": "Bienvenue sur la galerie photos du domaine ! Vous trouverez ici une sélection de nos différents travaux et projets. Bonne découverte !",
+      "back": "Tous les projets",
+      "previous_project": "Projet précédent",
+      "next_project": "Projet suivant",
+      "projects": {
+        "spring": {
+          "title": "Retour des beaux jours",
+          "date": "Mai 2026",
+          "description": "Voici quelques photos prises au mois de mai avec le retour du soleil : deux nichoirs sous un arbre près du domaine, les abeilles de nouveau de sortie et une fosse pédologique qui nous a permis de voir les différents horizons de notre sol."
+        },
+        "vineyards": {
+          "title": "Les vignes du domaine",
+          "date": "Octobre 2025",
+          "description": ""
+        },
+        "renovation": {
+          "title": "L'aménagement",
+          "date": "Juin 2025",
+          "description": "Voici le nouveau bardage du domaine !"
+        },
+        "chenin": {
+          "title": "Grappe de Chenin",
+          "date": "Septembre 2025",
+          "description": ""
+        }
+      },
+      "cladding": "Bardage"
+    },
+    "policies": {
+      "pending": "Ces informations doivent être complétées et validées avant la mise en ligne publique.",
+      "legal": {
+        "tab_name": "Mentions légales",
+        "title": "Mentions légales",
+        "body": "Le domaine est présenté dans les archives sous le nom SARL La Rossignolerie, représenté par Michel Pittiglio. Les mentions complètes et les informations d'hébergement seront publiées après vérification."
+      },
+      "cookies": {
+        "tab_name": "Cookies",
+        "title": "Cookies",
+        "body": "Ce site utilise une préférence de langue gérée par Nuxt I18n. Le cookie i18n_redirected peut mémoriser votre choix Français ou English ; les URL /fr et /en restent accessibles directement. Les informations sur les autres services doivent être vérifiées avant publication."
+      },
+      "privacy": {
+        "tab_name": "Confidentialité",
+        "title": "Confidentialité",
+        "body": "Le formulaire recueille votre nom, votre téléphone, votre e-mail et votre message pour permettre au domaine de répondre. Seul l'e-mail est obligatoire. Vous pouvez aussi contacter directement le domaine. Le prestataire d'envoi, l'hébergement et la durée de conservation doivent être confirmés avant l'activation du formulaire."
+      }
+    }
+  },
+  "pictures": {
+    "hero": "Vignes et coteaux du domaine en Anjou",
+    "history": "Les rangs de vignes du domaine",
+    "home-estate": "Le vignoble du domaine",
+    "home-wine": "Une bouteille d'Anjou blanc du domaine",
+    "home-visit": "Le caveau et son bardage en bois",
+    "cellar": "Le caveau du domaine",
+    "contact": "La façade et l'entrée du caveau",
+    "pruned-vines": "Vigne de Chenin taillée court",
+    "michel": "Michel dans les vignes",
+    "christophe": "Christophe dans la cave",
+    "tanguy": "Tanguy dans les vignes",
+    "photo-1": "Le bâtiment du domaine avant les travaux de bardage",
+    "photo-2": "Le caveau après la pose du bardage en bois",
+    "photo-3": "Les rangs de vignes au soleil",
+    "photo-6": "Le feuillage des vignes au soleil",
+    "photo-9": "Un chemin entre deux rangs de vignes",
+    "photo-10": "Vue du vignoble et des coteaux",
+    "photo-11": "Le vignoble et le paysage au loin",
+    "photo-14": "Les travaux de bardage du caveau",
+    "photo-16": "La vigne et ses feuilles éclairées par le soleil",
+    "photo-18": "Les couches de terre révélées par la fosse pédologique",
+    "photo-24": "Observation du sol dans une fosse au milieu des vignes",
+    "photo-25": "Les rangs de vignes sur le coteau du domaine",
+    "photo-26": "Une grappe de Chenin sur la vigne",
+    "photo-27": "Les vignes sous la lumière du soleil",
+    "photo-29": "Les ruches dans l'herbe près du domaine",
+    "photo-30": "La lumière du soleil entre les rangs de vignes",
+    "photo-31": "Examen de la terre extraite de la fosse pédologique",
+    "photo-34": "Une allée de vignes bordée d'arbres",
+    "photo-35": "La nouvelle façade en bois du caveau",
+    "photo-37": "Le bâtiment du domaine pendant son aménagement",
+    "photo-38": "Les différents horizons du sol du domaine",
+    "photo-40": "Deux nichoirs installés dans un arbre",
+    "photo-41": "Les vignes du domaine devant les arbres"
+  },
+  "miscellaneous": {
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "E-mail"
+  }
+}

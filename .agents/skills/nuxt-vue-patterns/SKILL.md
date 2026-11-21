@@ -9,6 +9,23 @@ Follow [AGENTS.md](../../../AGENTS.md) for shared constraints and read the appli
 Inspect the affected source, nearest consumer and current configuration before choosing an API or abstraction.
 Use installed capabilities rather than assuming a helper exists because another project uses it.
 
+## Existing Building Blocks
+
+| Concern              | Current source                                                                      | Contract                                                                    |
+| -------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Business data        | [site.ts](../../../app/data/site.ts)                                                | Stable estate/team identities and supplied contact/profile destinations     |
+| Smooth scroll        | [smooth-scroll.client.ts](../../../app/plugins/smooth-scroll.client.ts)             | `$lenis` plus `$waitForScrollPosition(top)`                                 |
+| Overlay coordination | [overlay-scroll-lock.client.ts](../../../app/plugins/overlay-scroll-lock.client.ts) | Acquire/release independent leases and await `whenUnlocked()`               |
+| Route scroll         | [router.options.ts](../../../app/router.options.ts)                                 | Saved-position priority, safe anchor decoding and sticky-header clearance   |
+| Completed focus      | [navigation-focus.client.ts](../../../app/plugins/navigation-focus.client.ts)       | `main-content`/hash target, stale-request cancellation and tabindex cleanup |
+| Messages             | [locales](../../../i18n/locales/)                                                   | `app`, `components`, `pages`, `pictures`, `seo`, `error`, `miscellaneous`   |
+
+Plugin dependency names order smooth scrolling before overlay coordination and focus.
+The [default layout](../../../app/layouts/default.vue) owns `main-content`; page SFCs must not render nested main landmarks.
+Use [useOverlayScrollLock](../../../app/composables/useOverlayScrollLock.ts) to acquire an automatically disposed overlay lease and [useNativeMediaQuery](../../../app/composables/useNativeMediaQuery.ts) for cleaned-up browser queries with stable SSR state.
+The [SEO helper](../../../app/composables/usePageSeo.ts), [typed registry](../../../app/data/seo.ts) and root [app.vue](../../../app/app.vue) keep page metadata separate from locale head ownership.
+Keep internal plugin resources app-owned and release them on unmount.
+
 ## Components And State
 
 Keep SFC order `<template>`, `<script setup lang="ts">`, then scoped SCSS.
@@ -37,6 +54,10 @@ Clean up listeners, timers, observers, animation frames and pointer captures on 
 Guard asynchronous image/request results against stale selection and closed overlays.
 Use shared scrolling/overlay owners when available; do not create a second instance or independently mutate body styles.
 Preserve native touch, browser zoom, reduced motion and history/anchor restoration.
+Await overlay release only for focus/scroll, never before starting a route.
+Mark native-scroll overlays `data-lenis-prevent` and preserve whether Lenis was already stopped before a lock.
+Call every acquired release exactly through its owner's lifecycle; releasing one overlay must not unlock another.
+History waits are bounded and cancel on input/new navigation; do not replace that contract with a second animation or viewport-height writer.
 
 ## Translated Consumers And Routes
 
@@ -65,6 +86,7 @@ Use isolated transports and test data for routine verification.
 | Photos, bottle imagery or fonts | [Winery assets](../winery-assets/SKILL.md)                                                                                          |
 | Menus, tabs, dialogs or forms   | [Accessibility](../accessibility/SKILL.md)                                                                                          |
 | Metadata, status or indexing    | [SEO](../seo/SKILL.md)                                                                                                              |
+| Photo-project page workflow     | [Gallery pages](../gallery-page/SKILL.md)                                                                                           |
 
 ## Verification
 

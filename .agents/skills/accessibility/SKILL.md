@@ -8,6 +8,7 @@ description: Audit or improve Domaine de la Rossignolerie semantics, keyboard an
 Follow [AGENTS.md](../../../AGENTS.md) and the [accessibility instructions](../../../.github/instructions/accessibility.instructions.md).
 Read the relevant [accessibility guide](../../docs/accessibility.md) section and inspect the affected UI together with its consumers.
 Use WCAG 2.2 AA as the target while distinguishing source evidence from verified conformance.
+Current focus, scrolling and lease ownership is mapped in the guide's [source table](../../docs/accessibility.md#current-source-and-ownership).
 
 ## Select The Mode
 
@@ -41,12 +42,16 @@ Check close behavior on navigation, language change and responsive mode changes.
 Link field errors to inputs and announce pending/result states without flooding live regions.
 Preserve input on failure and keep practical contact alternatives available.
 Coordinate overlay locks and scrolling through their actual owners, releasing resources on dismissal/unmount.
+Use `$overlayScroll.lock()` for scroll ownership and separately verify native modal focus/inert behavior.
+Await final unlock before destination focus; keep the actual opener for focus return rather than assuming pointer activation focused it.
+Preserve the shared `main-content` destination and temporary-tabindex cleanup when changing navigation focus.
 
 ## Verification And Reporting
 
 Use the [manual audit matrix](../../docs/accessibility.md#manual-release-audit) for coverage appropriate to the request.
 Check keyboard, touch, focus visibility, narrow/short screens, text enlargement and reduced motion for affected French/English journeys.
 Measure actual text, focus and state contrast against the rendered backgrounds.
+Include text-spacing overrides and forced-colors controls where relevant; do not replace system colors with fixed brand colors.
 Use available screen readers and accessibility-tree/automated tools as complementary evidence.
 Report each finding with location, reproduction, impact and expected behavior.
 State missing browser/device/assistive-technology coverage; source fixes or a score do not establish conformance.

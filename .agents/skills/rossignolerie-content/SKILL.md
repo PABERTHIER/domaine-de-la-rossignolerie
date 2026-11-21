@@ -8,10 +8,13 @@ description: Write, adapt or review Domaine de la Rossignolerie estate copy, win
 Follow [AGENTS.md](../../../AGENTS.md).
 Read [content direction](../../docs/content-direction.md), [brand context](../../docs/brand-context.md) and the affected authored content.
 Distinguish supplied business information, explicit requirements and current verified facts.
+The [naming map](../i18n/references/content-naming.md) records current page, wine, project, picture and metadata identities.
 
 ## Editorial Work
 
 Preserve the personal French account and adapt it naturally into English.
+Use US English and keep page copy under `pages.*`, component-owned controls under `components.*`, and image descriptions under `pictures.*`.
+Keep visible `tab_name` labels distinct from full `seo.*` titles/descriptions.
 Keep official estate/wine/appellation names, vintages and quantities stable.
 Keep the two Anjou blanc vintages distinct and annual production separate from current stock.
 Preserve four photo-project identities and their authored order rather than sorting by dates.
@@ -29,6 +32,7 @@ Write useful photo alternatives and concise action names instead of filenames or
 Remove editor prompts and sample booking/order/service text from visitor-facing prose.
 Do not convert empty-shop banners into estate certifications.
 Do not change source evidence to make it match revised editorial copy.
+Complete a metadata sentence rather than cutting an authored paragraph mid-word to satisfy a character count.
 
 ## Translation And Verification
 

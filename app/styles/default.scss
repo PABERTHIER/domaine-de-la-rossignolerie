@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  color: $ink;
+  background: $paper;
+  font-family: $body-font;
+  font-size: 100%;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  &.lenis {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $green;
+  font-family: $heading-font;
+  font-weight: 400;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+
+a {
+  color: $green;
+  text-underline-offset: 0.2em;
+
+  &:hover {
+    text-decoration-thickness: 0.14em;
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  min-height: $control-size;
+  min-width: $control-size;
+  border: 1px solid $green;
+  padding: 0.6rem 1rem;
+  color: $green;
+  background: transparent;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.65;
+  }
+}
+
+:focus-visible {
+  outline: $focus-width solid $green;
+  outline-offset: $focus-offset;
+}
+
+main:focus-visible {
+  outline-offset: -$focus-width;
+}
+
+// WebKit can indicate focus on native dialog entry after a tap, then carry it into subsequent scripted focus
+// Keep focus itself and editable-field feedback
+// https://bugs.webkit.org/show_bug.cgi?id=247416
+html[data-pointer-input] {
+  --focus-ring-opacity: 0;
+
+  :focus-visible:not(:read-write) {
+    // One shared override also covers component-owned outline styles
+    outline: none !important;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (forced-colors: none) {
+  ::selection {
+    color: $paper;
+    background: $green;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -6,12 +6,13 @@ Use the [SEO skill](../skills/seo/SKILL.md) for a scoped implementation or revie
 
 ## URL Identity And Language
 
-The supplied public domain is `https://www.domainedelarossignolerie.com`.
+The supplied public domain is `https://domainedelarossignolerie.vercel.app`.
 Use the full name Domaine de la Rossignolerie rather than truncated title variants.
 Verify the chosen canonical origin and deployment configuration before publication.
 
-Preserve meaningful French paths, with French at the unprefixed root and English equivalents under `/en`.
-Do not force browser-language redirection away from existing French URLs.
+French and English use `/fr` and `/en` through the configured `prefix` strategy.
+The root `/` detects language using the browser and `i18n_redirected` cookie, with French as default.
+Explicit localized URLs must not be overridden by a different saved language preference.
 Language switching preserves page/project identity through locale-aware routing.
 Keep stable project IDs separate from translated labels and encoded slugs.
 Verify the supplied decomposed `laménagement` path and its percent-encoded form without accidental double decoding or normalization.
@@ -43,6 +44,26 @@ Translated titles, descriptions, image alternatives and schema must follow clien
 Inspect both SSR HTML and the resulting client head; a correct initial response does not prove reactive updates.
 Do not copy a bundler workaround without reproducing the problem in the current source.
 
+## Current Sources
+
+| Concern                                                  | Current owner                                                                                      |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Estate name, contact and profiles                        | [site.ts](../../app/data/site.ts)                                                                  |
+| Page/site search wording                                 | `seo.*` in [French](../../i18n/locales/fr-FR.json) and [US English](../../i18n/locales/en-US.json) |
+| Locale loading, origin, indexing and organization schema | [nuxt.config.ts](../../nuxt.config.ts)                                                             |
+
+`seo.site.description` describes the site as a whole and must not become a second page-description meta tag.
+Photo-project metadata uses route-qualified identities such as `seo.gallery_spring`.
+Visible navigation uses `pages.*.tab_name`, distinct from complete metadata titles.
+
+## Topics And Semantic Fields
+
+Use relevant visible subjects as structured-data topics only when they describe the page.
+Do not add keyword meta lists, profile/article fields to generic winery pages, or invented authors, employers and publication dates.
+Keep business identity separate from page-specific facts and avoid duplicate WebSite/publisher nodes.
+Inside a computed schema node, resolve translated values and arrays within the tracked getter; do not take setup-time snapshots or assume nested computed arrays satisfy the installed schema types.
+Inspect node IDs, URLs and actions after client navigation as well as server rendering.
+
 ## Sharing Images And Media Discovery
 
 Use representative real estate imagery with absolute public URLs and measured raster dimensions.
@@ -56,6 +77,9 @@ Preserve curated photo order and exclude errors, redirects, unapproved policy te
 Use `lastmod` only when a reliable content-change date exists.
 Project display dates do not establish a last-modified timestamp.
 Follow the generated sitemap index rather than assuming module-specific filenames.
+Open Graph should supply truthful sharing title, description, URL and image; use the large-image card selector when appropriate without fabricating a social handle.
+Keep application icons global rather than replacing them with each page's photo.
+Check actual metadata-validator output before deciding whether a warning reflects an application defect or an upstream rule.
 
 ## Origins And Indexing
 
@@ -64,24 +88,32 @@ Do not derive identity solely from an arbitrary request Host header.
 Check environment overrides against every module that reads them independently.
 When configuration is embedded at build time, rebuild and serve under a compatible runtime configuration.
 
-| Environment or response                | Required outcome                                                        |
-| -------------------------------------- | ----------------------------------------------------------------------- |
-| Local development                      | Local origin and noindex                                                |
-| Preview/review                         | Actual preview origin and non-indexable content                         |
-| Production awaiting publication review | Deliberate review policy without accidental indexing                    |
-| Approved production                    | Canonical winery origin and crawlable indexable content                 |
-| Unknown URL                            | Real 404 and noindex with useful recovery                               |
-| Explicitly retired URL                 | Real 410 where recorded, without a blanket home redirect                |
-| Server error or unavailable content    | Honest status and noindex, without misleading canonical/alternate links |
+| Environment or response                       | Required outcome                                                        |
+| --------------------------------------------- | ----------------------------------------------------------------------- |
+| Local development                             | Local origin and noindex                                                |
+| Preview/review                                | Actual preview origin and non-indexable content                         |
+| Production, including local production builds | Canonical winery origin and crawlable indexable registered content      |
+| Unknown URL                                   | Real 404 and noindex with useful recovery                               |
+| Recorded legacy URL                           | One-hop permanent redirect to the French home, preserving the query     |
+| Server error or unavailable content           | Honest status and noindex, without misleading canonical/alternate links |
 
-Treat `/home` as a single-hop permanent alias to `/` when applying the supplied URL disposition.
-Do not infer that every unknown path is retired.
-Choose redirects only when an actual equivalent destination exists and record deliberate URL changes.
+The [legacy map](../../app/data/legacyRoutes.ts) contains only the recorded unprefixed paths and their destinations.
+The server [legacy middleware](../../server/middleware/legacy-redirects.ts) handles incoming requests with one-hop permanent redirects to the French home, preserving query parameters and decoding accented path names before matching.
+Internal links target actual localized pages through Nuxt I18n rather than obsolete paths.
+Ordinary fragments remain page-anchor navigation targets.
+Keep unrelated unknown paths as 404s and record deliberate URL changes in the map.
 Keep redirects and errors out of canonical page registries and sitemaps.
 
 Robots crawl policy is distinct from access control and page-level indexing directives.
 A crawler blocked from a page cannot inspect that page's noindex directive.
 Inspect actual response headers, head output, robots and sitemap behavior for each environment.
+
+## Error And Recovery Requirements
+
+Keep actual error statuses and server-only response-header writes distinct from client head updates.
+Errors need useful localized recovery, a meaningful heading/description and no misleading canonical or alternate-language set.
+Recovery must clear the active error before navigating to a valid destination.
+Inspect client policy restoration when leaving an excluded page or recovering from an error; a correct initial noindex response does not prove later metadata is restored.
 
 ## Structured Data And Services
 
@@ -97,17 +129,54 @@ An AI development configuration is not a business content-use or publishing poli
 Vercel is the supplied hosting target; this does not establish an account connection, deployment or runtime verification.
 Keep SSR, form processing and the chosen output compatible.
 
+## Configuration Ownership
+
+[nuxt.config.ts](../../nuxt.config.ts) enables SSR, French/English locale identities, site configuration, robots, sitemap and organization schema.
+French and English use `prefix`, with browser/cookie language detection at `/` only.
+The configured language tags are `fr-FR` and `en-US`, loaded from their corresponding locale files.
+The site name and supplied Instagram destination come from shared [site data](../../app/data/site.ts).
+
+| Concern                | Configured behavior                                                                                               |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Development origin     | `http://localhost:3000`                                                                                           |
+| Preview origin         | HTTPS `VERCEL_URL` when provided outside production                                                               |
+| Production-mode origin | `https://domainedelarossignolerie.vercel.app`, overridable by build-time `NUXT_SITE_URL`                          |
+| Indexing               | Enabled in production and local production builds; disabled in development and non-production Vercel environments |
+| Alias                  | Incoming recorded legacy paths permanently redirect to the French home through server middleware                  |
+| Sitemap                | Explicit indexable registry entries, expanded into French/English; no synthetic modification dates                |
+| Structured identity    | Organization name, resolved URL and supplied Instagram profile                                                    |
+| Optional services      | AI publishing, Skew Protection and generated OG images disabled                                                   |
+
+The [typed page registry](../../app/data/seo.ts) contains actual pages only and owns their paths, schema types, representative image and sitemap images.
+The [page helper](../../app/composables/usePageSeo.ts) supplies reactive metadata/schema, while [app.vue](../../app/app.vue) owns locale head links and HTML language.
+The [image catalog](../../app/data/imageDimensions.ts) records measured pixels for every public image, including responsive variants.
+The narrow Unhead transform exclusion keeps the page helper's schema calls on the client; verify graph changes after navigation when upgrading dependencies.
+Do not interpret these configuration choices as verified page output, a deployment or a completed search audit.
+Use [README.md](../../README.md#configuration-and-ci) for the root configuration and CI map.
+Nuxt Fonts resolves configured families at build time and emits local font URLs; verify those requests in the selected output.
+On a Windows network with an organizational certificate chain, use Node 24's trusted system-CA support when needed rather than disabling TLS verification.
+
+## Robots And Sitemaps
+
+[public/_robots.txt](../../public/_robots.txt) is merged by Nuxt Robots and carries the authored allow/content-use policy.
+Do not add a second public `robots.txt` or a hardcoded sitemap origin.
+The module supplies the environment-correct sitemap declaration and blocks development/preview crawling.
+Use `/robots.txt?mockProductionEnv` to inspect production-style groups locally without enabling preview indexing.
+The sitemap uses the explicit page registry with `excludeAppSources: ['nuxt:pages']` so automatic entries cannot override authored image lists.
+Only the registered home page currently contributes content entries; the root language redirect, errors and legacy aliases are excluded.
+The standalone [error shell](../../app/error.vue) preserves 404 and other error statuses and emits noindex without canonical/hreflang links.
+
 ## Publication Verification
 
-| Concern            | Evidence to collect                                                                           |
-| ------------------ | --------------------------------------------------------------------------------------------- |
-| Localized content  | Correct French/English headings, metadata, HTML language and reciprocal alternates            |
-| Client navigation  | Head and schema update after page/locale changes and error recovery                           |
-| URLs               | Direct loads, accented/encoded paths, single-hop aliases and correct unknown/retired statuses |
-| Images             | Successful response, actual MIME/dimensions and publicly reachable sharing URL                |
-| Indexing           | Environment-specific headers/meta/robots and sitemap contents                                 |
-| Schema             | Valid supported nodes, visible matching facts and stable identities                           |
-| External discovery | Actual crawler/social checks and account validation when available and authorized             |
+| Concern            | Evidence to collect                                                                      |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| Localized content  | Correct French/English headings, metadata, HTML language and reciprocal alternates       |
+| Client navigation  | Head and schema update after page/locale changes and error recovery                      |
+| URLs               | Direct loads, accented/encoded paths, single-hop home redirects and genuine unknown 404s |
+| Images             | Successful response, actual MIME/dimensions and publicly reachable sharing URL           |
+| Indexing           | Environment-specific headers/meta/robots and sitemap contents                            |
+| Schema             | Valid supported nodes, visible matching facts and stable identities                      |
+| External discovery | Actual crawler/social checks and account validation when available and authorized        |
 
 Local builds do not prove public crawler access, rankings or social-platform cropping.
 Report deployment, account and external validation separately from local checks.

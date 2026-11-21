@@ -18,6 +18,25 @@ Clarify supplied information without inventing wine expertise, biographies or ma
 Preserve official names including Chenin, Grolleau, Anjou and Coteaux du Layon in English.
 Keep the estate name unchanged.
 Use natural English rather than literal French phrasing.
+Keep first-person estate passages in that voice instead of turning them into impersonal promotional copy.
+Utility text should be understandable out of context, including a screen reader's links list.
+Use US English spelling and conventions without changing French proper names or business facts.
+
+## Message And Page Ownership
+
+| Content                                 | Current message owner                                                                                                                                       |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stable estate name and logo alternative | `app.*`                                                                                                                                                     |
+| Main visitor copy                       | `pages.home.*`, `pages.estate.*`, `pages.wines.*`, `pages.contact.*`                                                                                        |
+| Project introduction and metadata       | `pages.gallery.*`, including `projects.<id>`                                                                                                                |
+| Shared control and state messages       | `components.layout.*`, `components.header.*`, `components.footer.*`, `components.lang_switcher.*`, `components.contact_form.*`, `components.photo_viewer.*` |
+| Image alternatives                      | `pictures.<media-id>` and wine-specific `pages.wines.items.<id>.alt`                                                                                        |
+| Search and sharing copy                 | `seo.site.*`, `seo.<page>.*` and `seo.image_alt`                                                                                                            |
+| Policy-review and recovery text         | `pages.policies.*`, `error.*`                                                                                                                               |
+
+The [French source](../../i18n/locales/fr-FR.json) and [US English messages](../../i18n/locales/en-US.json) use the same key identities.
+`pages.*.tab_name` is a navigation label; it does not replace a full search title.
+Use the [content naming map](../skills/i18n/references/content-naming.md) for stable wine/project IDs and metadata names.
 
 ## Wine Information
 
@@ -78,11 +97,18 @@ Use [brand context](brand-context.md) for supplied factual values and [UX princi
 
 Keep key paths, value shapes and interpolation names aligned across French and English.
 Use locale-aware number/date formatting without changing underlying factual values.
-Retain the supplied English regional convention when editing existing messages; a formatting locale is not a market claim.
+Use `en-US` for English formatting; a formatting locale is not a claim about sales markets or business location.
 Translate labels, validation, sending/failure/success states, captions, alt text, metadata and errors.
 Keep translated script-side data reactive rather than taking setup-time snapshots.
 Inspect Vue I18n syntax for `|`, `@` and braces; valid JSON alone does not prove a message compiles.
 Use text or structured rich-text components instead of injecting arbitrary translated HTML.
+
+## Metadata And Visible Copy
+
+Adapt a long supplied description into a complete, useful metadata sentence rather than cutting it at an arbitrary character position.
+Keep visible titles, captions and search descriptions aligned in meaning without duplicating entire paragraphs into every field.
+Use [SEO guidance](SEO.md) for ownership, images and semantic fields.
+Do not advertise a form, transaction or service as operational based only on the presence of its translated messages.
 
 ## Editorial Verification
 

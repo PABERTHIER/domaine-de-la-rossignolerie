@@ -7,6 +7,7 @@ description: Add, replace or review Domaine de la Rossignolerie bird, vineyard, 
 
 Follow [AGENTS.md](../../../AGENTS.md) and read [brand context](../../docs/brand-context.md) and the relevant [design system](../../docs/design-system.md) section.
 Inspect the supplied file and its actual consumers before changing identity, crop or delivery.
+Use the [content naming map](../i18n/references/content-naming.md) for picture and project IDs rather than guessing filenames from titles.
 
 ## Identity And Provenance
 
@@ -29,6 +30,13 @@ Exclude stock/template media that does not belong to the estate.
 Do not generate replacements for business images during routine implementation.
 Do not treat downloaded proprietary fonts as licensed for distribution.
 
+## Font Delivery
+
+[Nuxt configuration](../../../nuxt.config.ts) uses `@nuxt/fonts` with explicit Google-provider Oswald/Roboto families, weights and Latin subsets.
+Keep one font-loading owner, preserve actual licensed faces and verify emitted local font URLs instead of adding a duplicate remote stylesheet or per-family packages.
+Inspect generated CSS and HTTP responses as well as computed family/weight and accented glyphs in the browser.
+Family declarations alone do not prove which face rendered.
+
 ## Delivery And Layout
 
 Use public paths without a `/public` prefix and keep them independent of locale and canonical-origin configuration.
@@ -36,6 +44,10 @@ Supply truthful intrinsic dimensions and reserve layout space.
 Distinguish CSS display size from bytes downloaded and source pixel dimensions.
 Use real generated files for `srcset`; changing `sizes` or CSS alone does not reduce payload.
 Do not document an image provider, optimizer or derivative pipeline as present without inspecting its implementation.
+The [media manifest](../../../app/data/media.json) records 40 stable image identities and their supplied responsive variants, including actual variant byte counts.
+The [dimension catalog](../../../app/data/imageDimensions.ts) measures the files themselves, rather than assuming an original's dimensions also describe a smaller derivative.
+Keep both catalogs and the [public assets](../../../public/) synchronized; public URLs remain independent of locale prefixes and canonical origins.
+When replacing/removing media, search explicit arrays, generated names, locale descriptions, metadata, previews and configuration before deleting the original.
 
 Prioritize genuine early-viewport/LCP candidates and defer below-fold photographs.
 Eager loading and high fetch priority are separate decisions.

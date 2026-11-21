@@ -12,10 +12,31 @@ Use [content direction](../../docs/content-direction.md) for voice and factual b
 ## Message Ownership
 
 French is the source language; English preserves the same meaning and actions.
-Keep the supplied regional formatting convention rather than renaming locale files during a wording change.
+Use `fr-FR.json` and `en-US.json` and preserve natural US English without changing French proper names or factual quantities.
 Search existing namespaces before adding keys and keep component labels with their component's message owner.
 Stable IDs, proper names, contact destinations and verified numerical facts can remain shared data.
 Authored prose, accessible names, image alternatives, errors and metadata belong in translated messages.
+
+## Locale And Message Map
+
+| Route code | Language                  | Source                                         |
+| ---------- | ------------------------- | ---------------------------------------------- |
+| `fr`       | French source and default | [fr-FR.json](../../../i18n/locales/fr-FR.json) |
+| `en`       | US English                | [en-US.json](../../../i18n/locales/en-US.json) |
+
+| Namespace         | Ownership                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| `app.*`           | Site identity and logo alternative                                                        |
+| `components.*`    | Layout, header/footer, language, contact-form and viewer controls                         |
+| `pages.*`         | Page prose, `tab_name` labels, wine descriptions, project metadata and policy-review text |
+| `pictures.*`      | Image descriptions indexed by stable media ID                                             |
+| `seo.*`           | Complete localized search titles/descriptions, site summary and sharing-image alternative |
+| `error.*`         | Missing-page and unexpected-error messages                                                |
+| `miscellaneous.*` | Shared address/telephone/email labels                                                     |
+
+Use snake_case for new multiword keys and preserve the stable IDs in the [content naming map](references/content-naming.md).
+Resolve page identity, SEO name, picture key and public filename separately.
+Keep `tab_name` concise and metadata complete; do not use a visible tab label as the whole search description.
 
 | Change                  | Required handling                                                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -35,12 +56,13 @@ Use structured rich text instead of introducing arbitrary HTML injection.
 Translate in templates or tracked getters.
 Use `computed()` for script-side translated arrays, captions and navigation objects.
 Reading a computed value once into a static object still produces a stale snapshot.
+For example, `computed(() => t('pages.gallery.projects.spring.title'))` tracks the locale where a setup-time `t()` string does not.
 Keep mutable tab selection, menu expansion and viewer position separate from translated labels.
 Inspect consumers that cache measurements or rows and verify their metadata updates without a resize.
 
 ## Routing And Asset Boundaries
 
-Preserve unprefixed French and equivalent `/en` destinations as described in [SEO](../../docs/SEO.md#url-identity-and-language).
+Use `/fr` and `/en` through the `prefix` strategy described in [SEO](../../docs/SEO.md#url-identity-and-language).
 Use `useLocalePath()` for internal destinations and `useSwitchLocalePath()` for language changes where supported by the installed integration.
 Preserve page/project identity and translated dynamic parameters rather than sending every language change home.
 Do not translate or prefix public image paths, email/telephone links or external destinations.
@@ -49,6 +71,9 @@ Keep a stable project ID separate from the supplied decomposed-accent slug.
 Check URL, HTML language, visible content and metadata together.
 Changing a locale variable alone does not prove navigation succeeded.
 Do not add a parallel localStorage/cookie preference mechanism without inspecting the actual language owner.
+Root language detection and the `i18n_redirected` cookie belong to Nuxt I18n in [Nuxt configuration](../../../nuxt.config.ts); do not add parallel preference storage.
+Explicit localized URLs remain authoritative, and French `x-default` is separate from request-dependent root language detection.
+Keep current-page language hrefs stable between SSR and hydration, including query/fragment handling.
 
 ## Verification
 

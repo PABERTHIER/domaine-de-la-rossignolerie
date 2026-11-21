@@ -19,6 +19,23 @@ The supplied roles are Michel for winegrowing, Christophe for vineyard/cellar wo
 They are authored business information, not independent confirmation of present employment or responsibilities.
 The complete estate name takes precedence over truncated search-title variants.
 
+## Repository Evidence
+
+| Subject                            | Current source                                                                                           | Boundary                                                                           |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Public identity and contact        | [site.ts](../../app/data/site.ts)                                                                        | Supplied business information still needs publication review                       |
+| Estate/team wording                | `pages.estate.*` in [French](../../i18n/locales/fr-FR.json) and [English](../../i18n/locales/en-US.json) | Preserve the personal account without inventing current roles                      |
+| Wine identity and prose            | `pages.wines.items.*` in both locales                                                                    | A description is not evidence of stock or an offer                                 |
+| Project titles and dates           | `pages.gallery.projects.*`                                                                               | Authored display dates are distinct from upload/change timestamps                  |
+| Shared font and site configuration | [nuxt.config.ts](../../nuxt.config.ts)                                                                   | Configuration is not evidence that every page uses a family or has passed an audit |
+
+## Intended Character
+
+Keep the estate approachable, personal and grounded in its Anjou setting.
+Let real vineyards, cellar work, people and bottles establish the character.
+Keep ordinary navigation and practical information clear instead of replacing them with wine-marketing slogans.
+The supplied palette and typography guide presentation; they do not establish a separately approved brand manual.
+
 ## Contact Information
 
 These values describe supplied project content.
@@ -38,6 +55,7 @@ Reconfirm time-sensitive details before publishing changes or incorporating them
 | Capital         | 3 000,00 Euros                                            | Verify before publication                              |
 
 Keep shared factual values in one source so footer, contact content and schema cannot drift independently.
+Use `externalLinks.instagram` and `externalLinks.directions` from the shared site data for those destinations.
 Do not infer coordinates, holiday opening, appointment availability or a booking guarantee from an address and ordinary hours.
 
 ## Visitor Priorities
