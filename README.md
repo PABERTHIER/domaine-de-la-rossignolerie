@@ -94,6 +94,7 @@ Consult [package.json](package.json) for declared versions and [yarn.lock](yarn.
 | `@nuxtjs/i18n`                                                                           | French/English messages, prefixed routes and language preference          |
 | `@nuxtjs/seo`                                                                            | Site configuration, metadata, robots, sitemap and structured-data modules |
 | `@nuxt/fonts`                                                                            | Oswald/Roboto resolution and locally served font files                    |
+| `@nuxt/icon`, `@iconify-json/lucide`                                                     | Icon component and locally bundled Lucide icons                           |
 | `lenis`                                                                                  | Smooth wheel scrolling and coordinated history restoration                |
 | `rolldown`                                                                               | Nuxt bundler peer dependency                                              |
 | `@nuxt/eslint`, `eslint`, `eslint-config-prettier`, `eslint-plugin-prettier`, `prettier` | Linting and formatting configuration/tooling                              |

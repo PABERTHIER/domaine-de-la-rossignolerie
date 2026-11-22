@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { pageSeo, robotsContent } from './app/data/seo'
 import type { PageSeoDefinition } from './app/types/seo'
-import { externalLinks, siteName } from './app/data/site'
+import { externalLinks, siteName, socialLinks } from './app/data/site'
 
 // Production can override the canonical origin with NUXT_SITE_URL at build time
 const prodUrl = (
@@ -67,7 +67,13 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
-  modules: ['@nuxtjs/i18n', '@nuxtjs/seo', '@nuxt/fonts', '@nuxt/eslint'],
+  modules: [
+    '@nuxt/icon',
+    '@nuxtjs/i18n',
+    '@nuxtjs/seo',
+    '@nuxt/fonts',
+    '@nuxt/eslint',
+  ],
   imports: {
     dirs: [],
   },
@@ -76,6 +82,21 @@ export default defineNuxtConfig({
       i18n: {
         baseUrl: siteUrl,
       },
+    },
+  },
+  icon: {
+    mode: 'svg',
+    provider: 'none',
+    clientBundle: {
+      // Include conditional and error-page icons without a runtime API request
+      icons: [
+        'lucide:arrow-up',
+        'lucide:arrow-up-right',
+        'lucide:check',
+        'lucide:chevron-down',
+        'lucide:languages',
+        ...socialLinks.map(link => link.icon),
+      ],
     },
   },
   fonts: {

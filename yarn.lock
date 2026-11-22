@@ -1105,6 +1105,53 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iconify-json/lucide@npm:^1.2.157":
+  version: 1.2.157
+  resolution: "@iconify-json/lucide@npm:1.2.157"
+  dependencies:
+    "@iconify/types": "npm:*"
+  checksum: 10c0/ccd2fc9035a7d471ad69fb833872f2f40d2800f3fa8234e3779e56d1a4cf53a301d3cc434713009bfbea75766d418530be156200f426dbe3f22a811c999bc1ad
+  languageName: node
+  linkType: hard
+
+"@iconify/collections@npm:^1.0.765":
+  version: 1.0.767
+  resolution: "@iconify/collections@npm:1.0.767"
+  dependencies:
+    "@iconify/types": "npm:*"
+  checksum: 10c0/899a0763695f8aebe8cc6b814212e24cf81259c813266bc20fcb25c6ac251fe91df3833a874d08a657f0067cc3427d474000c936c76c8c795fe5bb3f64d2b9b2
+  languageName: node
+  linkType: hard
+
+"@iconify/types@npm:*, @iconify/types@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@iconify/types@npm:2.0.0"
+  checksum: 10c0/65a3be43500c7ccacf360e136d00e1717f050b7b91da644e94370256ac66f582d59212bdb30d00788aab4fc078262e91c95b805d1808d654b72f6d2072a7e4b2
+  languageName: node
+  linkType: hard
+
+"@iconify/utils@npm:^3.1.7":
+  version: 3.1.7
+  resolution: "@iconify/utils@npm:3.1.7"
+  dependencies:
+    "@antfu/install-pkg": "npm:^2.0.1"
+    "@iconify/types": "npm:^2.0.0"
+    import-meta-resolve: "npm:^4.2.0"
+  checksum: 10c0/26c99ceff910d84e66e46c643ad37946b34468b352a315534c023e8e59bd6504c26734d306b877660f92aa59d8ce742bf4fe882b24149ad6e862abe919db6564
+  languageName: node
+  linkType: hard
+
+"@iconify/vue@npm:^5.0.5":
+  version: 5.0.5
+  resolution: "@iconify/vue@npm:5.0.5"
+  dependencies:
+    "@iconify/types": "npm:^2.0.0"
+  peerDependencies:
+    vue: ">=3.0.0"
+  checksum: 10c0/03422cc142208d2fc1cbfd792ed212f2598031fe4d58d113975954c303999159a4cf0d24a6e6f7290adcf943a8ccf92ae2f8608409671a18b4ac59ad56857567
+  languageName: node
+  linkType: hard
+
 "@intlify/bundle-utils@npm:11.2.8":
   version: 11.2.8
   resolution: "@intlify/bundle-utils@npm:11.2.8"
@@ -1667,6 +1714,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nuxt/devtools-kit@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@nuxt/devtools-kit@npm:4.2.0"
+  dependencies:
+    nostics: "npm:^1.3.0"
+    tinyexec: "npm:^1.3.1"
+  peerDependencies:
+    "@nuxt/kit": ^4.0.0-0 || ^5.0.0-0
+    nitro: "*"
+    nitropack: ^2.0.0
+    vite: ">=6.0"
+  peerDependenciesMeta:
+    nitro:
+      optional: true
+    nitropack:
+      optional: true
+  checksum: 10c0/756f9733caffdc263dfdff2cfda599ae03b8a1f9512e83c80e339a8622a99093cfd973e83e3bc96279c025695813cc5e5cc776b049199f1ac04da1e1a904c9f9
+  languageName: node
+  linkType: hard
+
 "@nuxt/devtools-wizard@npm:3.4.4":
   version: 3.4.4
   resolution: "@nuxt/devtools-wizard@npm:3.4.4"
@@ -1840,6 +1907,29 @@ __metadata:
     subset-font:
       optional: true
   checksum: 10c0/c0200209acd8afb19121a689d2ecab6b9f51047b4c3984238a37112492444d395c2ba79f4c15fc4cc5e1a1bf592df054b37de0635c6c03cc0cd8fd21d319014d
+  languageName: node
+  linkType: hard
+
+"@nuxt/icon@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "@nuxt/icon@npm:2.6.3"
+  dependencies:
+    "@iconify/collections": "npm:^1.0.765"
+    "@iconify/types": "npm:^2.0.0"
+    "@iconify/utils": "npm:^3.1.7"
+    "@iconify/vue": "npm:^5.0.5"
+    "@nuxt/devtools-kit": "npm:^4.2.0"
+    "@nuxt/kit": "npm:^4.6.4"
+    consola: "npm:^3.4.2"
+    fnv1a-64: "npm:^0.1.2"
+    local-pkg: "npm:^2.0.0"
+    mlly: "npm:^1.8.2"
+    ohash: "npm:^2.0.12"
+    picomatch: "npm:^4.0.7"
+    std-env: "npm:^4.3.0"
+    tinyglobby: "npm:^0.2.17"
+    ufo: "npm:^1.6.4"
+  checksum: 10c0/d3218b5524ce8b4a5e31ba2d53106d6072afedd8df44da0713acdb8807bcfc4e01ba35aeed432ccc46170afb536ef9eee12aaf35574cc4abbe4807f45f75cdf2
   languageName: node
   linkType: hard
 
@@ -5099,8 +5189,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "domaine-de-la-rossignolerie@workspace:."
   dependencies:
+    "@iconify-json/lucide": "npm:^1.2.157"
     "@nuxt/eslint": "npm:^1.17.0"
     "@nuxt/fonts": "npm:^1.2.0"
+    "@nuxt/icon": "npm:^2.6.3"
     "@nuxtjs/i18n": "npm:^10.6.0"
     "@nuxtjs/seo": "npm:^6.0.1"
     "@types/node": "npm:^26.6.6"
@@ -6556,6 +6648,13 @@ __metadata:
   version: 5.2.1
   resolution: "immutable@npm:5.2.1"
   checksum: 10c0/022957e6fa4ffcdd635bbede11ef216e2e0d90bc13064d3b9eca9f979ccadec6a42a285e292cc1c7adcaa824ecef5428c5435ac9fd75d2cab598bf30a606936b
+  languageName: node
+  linkType: hard
+
+"import-meta-resolve@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "import-meta-resolve@npm:4.2.0"
+  checksum: 10c0/3ee8aeecb61d19b49d2703987f977e9d1c7d4ba47db615a570eaa02fe414f40dfa63f7b953e842cbe8470d26df6371332bfcf21b2fd92b0112f9fea80dde2c4c
   languageName: node
   linkType: hard
 
