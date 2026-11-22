@@ -112,6 +112,7 @@ Rendered heading/body rules select the families; inspect computed styles and act
 | [Default layout](app/layouts/default.vue)                         | Skip link, focusable main and safe-area-aware flex shell                                     |
 | [Home page](app/pages/index.vue)                                  | Empty home container and localized page metadata                                             |
 | [Error shell](app/error.vue)                                      | Status-preserving localized error metadata and recovery                                      |
+| [Components](app/components/)                                     | Shared UI components                                                                         |
 | [Composables](app/composables/)                                   | Page SEO, media queries, screen-size state and overlay-lease lifecycle                       |
 | [Data](app/data/)                                                 | Site/wine/project identities, responsive media, measured dimensions, SEO and legacy mappings |
 | [Shared types](app/types/)                                        | Image/media and page SEO contracts                                                           |
