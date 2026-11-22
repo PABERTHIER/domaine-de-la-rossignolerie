@@ -12,3 +12,11 @@ export interface MediaDefinition {
   src: string
   variants: readonly MediaVariant[]
 }
+
+export type ImageSource = {
+  src: string
+  title?: string
+  mobileTitle?: string
+  alt: string
+  dimensions?: string
+}

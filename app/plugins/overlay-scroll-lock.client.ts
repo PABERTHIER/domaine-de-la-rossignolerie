@@ -12,14 +12,6 @@ export default defineNuxtPlugin({
       return pendingUnlock ?? Promise.resolve()
     }
 
-    function restoreScroll() {
-      restore?.()
-      restore = undefined
-      resolveUnlock?.()
-      resolveUnlock = undefined
-      pendingUnlock = undefined
-    }
-
     function lock() {
       const token = Symbol('overlay')
 
@@ -102,14 +94,22 @@ export default defineNuxtPlugin({
 
       return () => {
         if (locks.delete(token) && locks.size === 0) {
-          restoreScroll()
+          restore?.()
+          restore = undefined
+          resolveUnlock?.()
+          resolveUnlock = undefined
+          pendingUnlock = undefined
         }
       }
     }
 
     nuxtApp.vueApp.onUnmount(() => {
+      restore?.()
       locks.clear()
-      restoreScroll()
+      restore = undefined
+      resolveUnlock?.()
+      resolveUnlock = undefined
+      pendingUnlock = undefined
     })
 
     return { provide: { overlayScroll: { lock, whenUnlocked } } }

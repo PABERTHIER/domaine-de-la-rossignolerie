@@ -86,7 +86,7 @@ app/
 ├── app.vue, error.vue                 # Locale head and independent error shell
 ├── layouts/default.vue               # Skip link and focusable main
 ├── pages/                            # File-based page compositions and page SEO
-├── components/common/                # Shared image, logo and language controls
+├── components/common/                # Shared image, photo grid/viewer, logo and language controls
 ├── components/layout/                # Header, primary navigation and footer
 ├── data/                             # Identity, navigation, media, SEO and legacy paths
 ├── composables/                      # Page SEO, media queries and overlay lifecycle

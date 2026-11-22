@@ -46,6 +46,25 @@
     },
     "lang_switcher": {
       "label": "Language"
+    },
+    "photo_grid": {
+      "open": "Enlarge: {caption}"
+    },
+    "photo_viewer": {
+      "close_label": "Close photos",
+      "previous": "Previous photo",
+      "next": "Next photo",
+      "zoom_label": "Photo zoom",
+      "zoom_in": "Zoom in",
+      "zoom_out": "Zoom out",
+      "zoom_fit": "Fit photo",
+      "image_region": "Enlarged photo",
+      "aria_label": "Photo preview",
+      "image_loading": "Loading photo…",
+      "image_unavailable": "The photo could not be loaded.",
+      "retry": "Try again",
+      "pan_hint": "Drag the zoomed photo or use the arrow keys to pan. Click the photo or use the zoom controls to enlarge it.",
+      "dimensions_label": "Dimensions"
     }
   },
   "pages": {
@@ -85,6 +104,81 @@
     },
     "tanguy": {
       "title": "Tanguy in the vineyard"
+    },
+    "cellar": {
+      "title": "The estate cellar"
+    },
+    "pruned-vines": {
+      "title": "Short-pruned Chenin vines"
+    },
+    "photo-1": {
+      "title": "The estate building before the cladding work"
+    },
+    "photo-2": {
+      "title": "The cellar after the timber cladding was fitted"
+    },
+    "photo-3": {
+      "title": "Rows of vines in the sunshine"
+    },
+    "photo-6": {
+      "title": "Vine leaves in the sunshine"
+    },
+    "photo-9": {
+      "title": "A path between two rows of vines"
+    },
+    "photo-10": {
+      "title": "A view across the vineyard and hills"
+    },
+    "photo-11": {
+      "title": "The vineyard with the landscape beyond"
+    },
+    "photo-14": {
+      "title": "Cladding work at the cellar"
+    },
+    "photo-16": {
+      "title": "Sunlit leaves on the vines"
+    },
+    "photo-18": {
+      "title": "Soil layers revealed by the soil pit"
+    },
+    "photo-24": {
+      "title": "Examining the soil in a pit among the vines"
+    },
+    "photo-25": {
+      "title": "Rows of vines on the estate hillside"
+    },
+    "photo-26": {
+      "title": "A bunch of Chenin grapes on the vine"
+    },
+    "photo-27": {
+      "title": "Vines in the sunlight"
+    },
+    "photo-29": {
+      "title": "Beehives in the grass near the estate"
+    },
+    "photo-30": {
+      "title": "Sunlight between the vine rows"
+    },
+    "photo-31": {
+      "title": "Examining earth from the soil pit"
+    },
+    "photo-34": {
+      "title": "A vine row beside trees"
+    },
+    "photo-35": {
+      "title": "The cellar’s new timber facade"
+    },
+    "photo-37": {
+      "title": "The estate building during renovation"
+    },
+    "photo-38": {
+      "title": "The different layers of the estate’s soil"
+    },
+    "photo-40": {
+      "title": "Two nesting boxes installed in a tree"
+    },
+    "photo-41": {
+      "title": "The estate vines with trees beyond"
     }
   }
 }
