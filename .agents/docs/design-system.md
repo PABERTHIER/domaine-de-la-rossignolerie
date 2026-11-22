@@ -6,19 +6,19 @@ Improvements should address concrete readability, layout or interaction needs wi
 
 ## Styling Ownership
 
-Current owners are [variables.scss](../../app/styles/variables.scss) for CSS-free tokens, [default.scss](../../app/styles/default.scss) for base/focus/motion rules and [shared.scss](../../app/styles/shared.scss) for reusable classes.
-[Nuxt configuration](../../nuxt.config.ts) loads the two CSS-emitting sheets once and injects only tokens into component SCSS.
+Current owners are [variables.scss](../../app/styles/variables.scss) for CSS-free tokens, [default.scss](../../app/styles/default.scss) for base/focus/motion rules, [keyframes.scss](../../app/styles/keyframes.scss) for shared animations and [shared.scss](../../app/styles/shared.scss) for reusable classes.
+[Nuxt configuration](../../nuxt.config.ts) loads the base, keyframe and shared-class sheets once and injects only tokens into component SCSS.
 The [default layout](../../app/layouts/default.vue) owns the flex shell, focusable main and safe-area-aware content padding.
 
-| Concern              | Ownership rule                                                                                       |
-| -------------------- | ---------------------------------------------------------------------------------------------------- |
-| Sass tokens          | Keep colors, typography, spacing, controls, layers, motion and breakpoints in a CSS-free token owner |
-| Global defaults      | Load resets, base typography, focus and reduced-motion rules once                                    |
-| Shared classes       | Add reusable utilities for demonstrated cross-component use                                          |
-| Shared animation     | Centralize a definition only when actual consumers need it                                           |
-| Shell structure      | Keep header/footer/main composition with the layout                                                  |
-| Local appearance     | Keep page and component rules in scoped SCSS beside their owner                                      |
-| Dynamic measurements | Keep measured image/zoom geometry in its owning behavior; use SCSS for static presentation           |
+| Concern              | Ownership rule                                                                                           |
+| -------------------- | -------------------------------------------------------------------------------------------------------- |
+| Sass tokens          | Keep colors, typography, spacing, controls, layers, motion and breakpoints in a CSS-free token owner     |
+| Global defaults      | Load resets, base typography, focus and reduced-motion rules once                                        |
+| Shared classes       | Add reusable utilities for demonstrated cross-component use                                              |
+| Shared animation     | Keep reusable definitions in [keyframes.scss](../../app/styles/keyframes.scss), loaded once through Nuxt |
+| Shell structure      | Keep header/footer/main composition with the layout                                                      |
+| Local appearance     | Keep page and component rules in scoped SCSS beside their owner                                          |
+| Dynamic measurements | Keep measured image/zoom geometry in its owning behavior; use SCSS for static presentation               |
 
 Do not inject CSS-emitting stylesheets into every component.
 Use qualified BEM blocks, nested `&__element` and `&--modifier` rules where the relationship is intentional.

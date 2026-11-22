@@ -104,7 +104,11 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
   },
-  css: ['~/styles/default.scss', '~/styles/shared.scss'],
+  css: [
+    '~/styles/default.scss',
+    '~/styles/keyframes.scss',
+    '~/styles/shared.scss',
+  ],
   vite: {
     css: {
       preprocessorOptions: {

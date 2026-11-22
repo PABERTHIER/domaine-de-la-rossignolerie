@@ -88,7 +88,7 @@ app/
 ├── data/                             # Identity, wines, projects, media, SEO and legacy paths
 ├── composables/                      # Page SEO, media queries and overlay lifecycle
 ├── types/                            # Image and SEO contracts
-├── styles/                           # CSS-free tokens, base rules and shared classes
+├── styles/                           # CSS-free tokens, base rules, shared keyframes and classes
 ├── plugins/                          # Lenis, overlays, focus and pointer/keyboard modality
 └── router.options.ts                 # History, anchor and page scrolling
 i18n/locales/                         # French source and US English messages
@@ -108,7 +108,7 @@ server/middleware/legacy-redirects.ts # Permanent legacy redirects to the French
 | Modules and environment | [nuxt.config.ts](nuxt.config.ts)                                                                          | SSR, locale head, Fonts, schema, sitemap and environment indexing                                                      |
 | App shell               | [app.vue](app/app.vue), [default layout](app/layouts/default.vue), [error shell](app/error.vue)           | Locale head, one layout-owned main and independent status-preserving recovery                                          |
 | SEO                     | [registry](app/data/seo.ts), [helper](app/composables/usePageSeo.ts), [types](app/types/seo.ts)           | Actual pages only, reactive head/schema and typed image references                                                     |
-| Styles                  | [styles](app/styles/)                                                                                     | CSS-free tokens injected once; base and shared classes loaded once                                                     |
+| Styles                  | [styles](app/styles/)                                                                                     | CSS-free tokens injected once; base, shared keyframes and classes loaded once                                          |
 | Public media            | [manifest](app/data/media.json), [dimension catalog](app/data/imageDimensions.ts), [public](public/)      | Supplied variants and measured file dimensions, with stable identities                                                 |
 | Legacy URLs             | [redirect mappings](app/data/legacyRoutes.ts), [server middleware](server/middleware/legacy-redirects.ts) | Incoming recorded paths redirect to the French home with their query preserved                                         |
 
