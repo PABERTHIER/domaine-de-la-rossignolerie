@@ -14,7 +14,19 @@ export const pageSeo: Record<PageName, PageSeoDefinition> = {
     path: '/',
     type: 'WebPage',
     image: '/images/social.jpg',
-    imageAlt: 'seo.image_alt',
+    imageAlt: 'pictures.social.title',
     images: [],
+  },
+  about: {
+    path: '/about',
+    type: 'AboutPage',
+    image: '/images/history-1600.webp',
+    imageAlt: 'pictures.history.title',
+    images: [
+      '/images/history-1600.webp',
+      '/images/michel-944.webp',
+      '/images/christophe-980.webp',
+      '/images/tanguy-1282.webp',
+    ],
   },
 }

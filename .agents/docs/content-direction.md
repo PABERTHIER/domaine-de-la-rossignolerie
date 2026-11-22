@@ -27,11 +27,11 @@ Use US English spelling and conventions without changing French proper names or 
 | Content                                 | Current message owner                                                                                                                                       |
 | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Stable estate name and logo alternative | `app.*`                                                                                                                                                     |
-| Main visitor copy                       | `pages.home.*`, `pages.estate.*`, `pages.wines.*`, `pages.contact.*`                                                                                        |
+| Main visitor copy                       | `pages.home.*`, `pages.about.*`, `pages.wines.*`, `pages.contact.*`                                                                                         |
 | Project introduction and metadata       | `pages.gallery.*`, including `projects.<id>`                                                                                                                |
 | Shared control and state messages       | `components.layout.*`, `components.header.*`, `components.footer.*`, `components.lang_switcher.*`, `components.contact_form.*`, `components.photo_viewer.*` |
-| Image alternatives                      | `pictures.<media-id>` and wine-specific `pages.wines.items.<id>.alt`                                                                                        |
-| Search and sharing copy                 | `seo.site.*`, `seo.<page>.*` and `seo.image_alt`                                                                                                            |
+| Image alternatives                      | `pictures.<media-id>.title` and wine-specific `pages.wines.items.<id>.alt`                                                                                  |
+| Search and sharing copy                 | `seo.site.*`, `seo.<page>.*` and `pictures.social.title`                                                                                                    |
 | Policy-review and recovery text         | `pages.policies.*`, `error.*`                                                                                                                               |
 
 The [French source](../../i18n/locales/fr-FR.json) and [US English messages](../../i18n/locales/en-US.json) use the same key identities.

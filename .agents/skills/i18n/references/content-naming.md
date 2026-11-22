@@ -9,9 +9,9 @@ Resolve actual route names and public files from their owning source before impl
 | Concern            | Current identity                                                                                            | Rule                                                            |
 | ------------------ | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
 | Shared identity    | `app.name`, `app.logo_alt`, [site data](../../../../app/data/site.ts)                                       | Keep the estate name and factual destinations consistent        |
-| Page prose         | `pages.home`, `estate`, `wines`, `contact`, `gallery`, `policies` under `pages`                             | Keep page content separate from component controls              |
+| Page prose         | `pages.home`, `about`, `wines`, `contact`, `gallery`, `policies` under `pages`                              | Keep page content separate from component controls              |
 | Component controls | `components.layout`, `header`, `footer`, `lang_switcher`, `contact_form`, `photo_viewer` under `components` | Keep mutable UI state independent of translated display strings |
-| Pictures           | `pictures.<media-id>`                                                                                       | Preserve stable media IDs and inspect actual image content      |
+| Pictures           | `pictures.<media-id>.title`                                                                                 | Preserve stable media IDs and inspect actual image content      |
 | Metadata           | `seo.<page>.title`, `.description`                                                                          | Use complete text independent of `pages.*.tab_name`             |
 
 ## Wine Identities
@@ -42,6 +42,8 @@ The supplied decomposed `laménagement` slug is distinct from a title apostroph
 Choose an explicit equivalent-page mapping when changing localized project paths.
 
 ## Picture And Control Keys
+
+Image alternatives use `pictures.<media-id>.title`; the sharing JPEG uses `pictures.social.title`.
 
 `pictures` retains stable media IDs such as `home-estate`, `pruned-vines` and `photo-40`.
 The hyphens are part of those existing identities and do not justify renaming the assets or deriving a numbered range.

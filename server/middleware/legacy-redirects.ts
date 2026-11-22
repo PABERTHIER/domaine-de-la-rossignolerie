@@ -1,7 +1,7 @@
 import { defineEventHandler, getRequestURL, sendRedirect } from 'h3'
 import { legacyDestinations } from '../../app/data/legacyRoutes'
 
-// This server middleware returns a 301 for old paths such as /galerie, before the page loads
+// Redirect recorded legacy paths to their French destination before rendering
 export default defineEventHandler(event => {
   const requestUrl = getRequestURL(event)
   let legacyPath: string

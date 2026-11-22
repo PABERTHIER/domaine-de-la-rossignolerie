@@ -1,6 +1,6 @@
 import type { imageDimensions } from '~/data/imageDimensions'
 
-export type PageName = 'home'
+export type PageName = 'home' | 'about'
 
 export interface PageSeoDefinition {
   path: string

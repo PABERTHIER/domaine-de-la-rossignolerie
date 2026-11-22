@@ -21,13 +21,13 @@ The complete estate name takes precedence over truncated search-title variants.
 
 ## Repository Evidence
 
-| Subject                            | Current source                                                                                           | Boundary                                                                           |
-| ---------------------------------- | -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Public identity and contact        | [site.ts](../../app/data/site.ts)                                                                        | Supplied business information still needs publication review                       |
-| Estate/team wording                | `pages.estate.*` in [French](../../i18n/locales/fr-FR.json) and [English](../../i18n/locales/en-US.json) | Preserve the personal account without inventing current roles                      |
-| Wine identity and prose            | `pages.wines.items.*` in both locales                                                                    | A description is not evidence of stock or an offer                                 |
-| Project titles and dates           | `pages.gallery.projects.*`                                                                               | Authored display dates are distinct from upload/change timestamps                  |
-| Shared font and site configuration | [nuxt.config.ts](../../nuxt.config.ts)                                                                   | Configuration is not evidence that every page uses a family or has passed an audit |
+| Subject                            | Current source                             | Boundary                                                                           |
+| ---------------------------------- | ------------------------------------------ | ---------------------------------------------------------------------------------- |
+| Public identity and contact        | [site.ts](../../app/data/site.ts)          | Supplied business information still needs publication review                       |
+| Estate/team wording                | `pages.about.*                             | Preserve the personal account without inventing current roles                      |
+| Wine identity and prose            | `pages.wines.items.*`                      | A description is not evidence of stock or an offer                                 |
+| Project titles and dates           | `pages.gallery.projects.*`                 | Authored display dates are distinct from upload/change timestamps                  |
+| Shared font and site configuration | [nuxt.config.ts](../../nuxt.config.ts)     | Configuration is not evidence that every page uses a family or has passed an audit |
 
 ## Intended Character
 

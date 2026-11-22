@@ -95,6 +95,8 @@ export default defineNuxtConfig({
         'lucide:check',
         'lucide:chevron-down',
         'lucide:languages',
+        'lucide:menu',
+        'lucide:x',
         ...socialLinks.map(link => link.icon),
       ],
     },

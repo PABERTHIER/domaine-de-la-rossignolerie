@@ -14,8 +14,7 @@ French and English use `/fr` and `/en` through the configured `prefix` strategy.
 The root `/` detects language using the browser and `i18n_redirected` cookie, with French as default.
 Explicit localized URLs must not be overridden by a different saved language preference.
 Language switching preserves page/project identity through locale-aware routing.
-Keep stable project IDs separate from translated labels and encoded slugs.
-Verify the supplied decomposed `laménagement` path and its percent-encoded form without accidental double decoding or normalization.
+Keep stable project IDs separate from translated labels and route paths.
 
 Each complete indexable translation is self-canonical with reciprocal, self-inclusive language alternates.
 Use the French equivalent for `x-default`.
@@ -88,17 +87,17 @@ Do not derive identity solely from an arbitrary request Host header.
 Check environment overrides against every module that reads them independently.
 When configuration is embedded at build time, rebuild and serve under a compatible runtime configuration.
 
-| Environment or response                       | Required outcome                                                        |
-| --------------------------------------------- | ----------------------------------------------------------------------- |
-| Local development                             | Local origin and noindex                                                |
-| Preview/review                                | Actual preview origin and non-indexable content                         |
-| Production, including local production builds | Canonical winery origin and crawlable indexable registered content      |
-| Unknown URL                                   | Real 404 and noindex with useful recovery                               |
-| Recorded legacy URL                           | One-hop permanent redirect to the French home, preserving the query     |
-| Server error or unavailable content           | Honest status and noindex, without misleading canonical/alternate links |
+| Environment or response                       | Required outcome                                                           |
+| --------------------------------------------- | -------------------------------------------------------------------------- |
+| Local development                             | Local origin and noindex                                                   |
+| Preview/review                                | Actual preview origin and non-indexable content                            |
+| Production, including local production builds | Canonical winery origin and crawlable indexable registered content         |
+| Unknown URL                                   | Real 404 and noindex with useful recovery                                  |
+| Recorded legacy URL                           | One-hop permanent redirect to its French destination, preserving the query |
+| Server error or unavailable content           | Honest status and noindex, without misleading canonical/alternate links    |
 
-The [legacy map](../../app/data/legacyRoutes.ts) contains only the recorded unprefixed paths and their destinations.
-The server [legacy middleware](../../server/middleware/legacy-redirects.ts) handles incoming requests with one-hop permanent redirects to the French home, preserving query parameters and decoding accented path names before matching.
+The [legacy map](../../app/data/legacyRoutes.ts) records source paths and unprefixed destination paths.
+The [middleware](../../server/middleware/legacy-redirects.ts) prepends `/fr`, preserves query parameters and safely decodes accented source paths before matching.
 Internal links target actual localized pages through Nuxt I18n rather than obsolete paths.
 Ordinary fragments remain page-anchor navigation targets.
 Keep unrelated unknown paths as 404s and record deliberate URL changes in the map.
@@ -142,12 +141,13 @@ The site name and supplied Instagram destination come from shared [site data](..
 | Preview origin         | HTTPS `VERCEL_URL` when provided outside production                                                               |
 | Production-mode origin | `https://domainedelarossignolerie.vercel.app`, overridable by build-time `NUXT_SITE_URL`                          |
 | Indexing               | Enabled in production and local production builds; disabled in development and non-production Vercel environments |
-| Alias                  | Incoming recorded legacy paths permanently redirect to the French home through server middleware                  |
+| Alias                  | Recorded source paths permanently redirect to French pages through server middleware                              |
 | Sitemap                | Explicit indexable registry entries, expanded into French/English; no synthetic modification dates                |
 | Structured identity    | Organization name, resolved URL and supplied Instagram profile                                                    |
 | Optional services      | AI publishing, Skew Protection and generated OG images disabled                                                   |
 
-The [typed page registry](../../app/data/seo.ts) contains actual pages only and owns their paths, schema types, representative image and sitemap images.
+The [typed page registry](../../app/data/seo.ts) contains actual pages only and owns their shared paths, schema types, representative image and sitemap images.
+The helper resolves registered paths with `localePath()`.
 The [page helper](../../app/composables/usePageSeo.ts) supplies reactive metadata/schema, while [app.vue](../../app/app.vue) owns locale head links and HTML language.
 The [image catalog](../../app/data/imageDimensions.ts) records measured pixels for every public image, including responsive variants.
 The narrow Unhead transform exclusion keeps the page helper's schema calls on the client; verify graph changes after navigation when upgrading dependencies.
@@ -163,7 +163,7 @@ Do not add a second public `robots.txt` or a hardcoded sitemap origin.
 The module supplies the environment-correct sitemap declaration and blocks development/preview crawling.
 Use `/robots.txt?mockProductionEnv` to inspect production-style groups locally without enabling preview indexing.
 The sitemap uses the explicit page registry with `excludeAppSources: ['nuxt:pages']` so automatic entries cannot override authored image lists.
-Only the registered home page currently contributes content entries; the root language redirect, errors and legacy aliases are excluded.
+Only registered indexable pages contribute content entries; the root language redirect, errors and legacy aliases are excluded.
 The standalone [error shell](../../app/error.vue) preserves 404 and other error statuses and emits noindex without canonical/hreflang links.
 
 ## Publication Verification
