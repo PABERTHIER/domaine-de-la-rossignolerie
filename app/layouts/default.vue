@@ -3,11 +3,13 @@
     <a class="skip-link" href="#main-content" @click="focusMain">
       {{ t('components.layout.skip') }}
     </a>
+    <Header />
     <main id="main-content" ref="main" class="site-main" tabindex="-1">
       <div class="page-content">
         <slot />
       </div>
     </main>
+    <Footer />
   </div>
 </template>
 

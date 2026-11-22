@@ -15,6 +15,15 @@ export const externalLinks = {
   directions: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`,
 } as const
 
+export const socialLinks = [
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    url: externalLinks.instagram,
+    icon: 'lucide:instagram',
+  },
+] as const
+
 export const team = [
   { id: 'michel', name: 'Michel' },
   { id: 'christophe', name: 'Christophe' },

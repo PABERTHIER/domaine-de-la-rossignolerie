@@ -68,6 +68,7 @@ This table groups every direct entry by responsibility.
 | `@nuxtjs/i18n`                                                                           | French/English messages, prefixed routes and language preference          |
 | `@nuxtjs/seo`                                                                            | Site metadata, robots, sitemap and structured-data modules                |
 | `@nuxt/fonts`                                                                            | Resolves Oswald and Roboto and emits locally served font files            |
+| `@nuxt/icon`, `@iconify-json/lucide`                                                     | Icon component and locally bundled Lucide icons                           |
 | `lenis`                                                                                  | Client smooth scrolling, reduced motion and coordinated route restoration |
 | `rolldown`                                                                               | Build tooling satisfying Nuxt's bundler peer dependency                   |
 | `@nuxt/eslint`, `eslint`, `eslint-config-prettier`, `eslint-plugin-prettier`, `prettier` | Linting and formatting configuration/tooling                              |
