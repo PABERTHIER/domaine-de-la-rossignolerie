@@ -6,6 +6,8 @@ $vine: #075f47;
 $ink: #0d2120;
 $sage: #b3bfb0;
 $yellow: #ffb84d;
+$viewer-surface: #183b39;
+$viewer-control-hover: #356c69;
 
 // fonts
 $heading-font: 'Oswald', 'Arial Narrow', sans-serif;
@@ -13,12 +15,16 @@ $body-font: 'Roboto', system-ui, sans-serif;
 
 // spaces
 $space-4: 4px;
+$space-6: 6px;
+$space-7: 7px;
 $space-8: 8px;
+$space-10: 10px;
 $space-12: 12px;
 $space-16: 16px;
 $space-20: 20px;
 $space-24: 24px;
 $space-32: 32px;
+$space-60: 60px;
 
 // layout
 $content-max-width: 88rem;
@@ -27,10 +33,23 @@ $page-gutter: clamp(16px, 4.2vw, 64px);
 
 // controls
 $control-size: 44px;
+$viewer-max-width: 1100px;
+$viewer-max-height: 850px;
+$viewer-stage-min-height: 120px;
+$viewer-zoom-max-width: 500px;
+$viewer-slider-max-width: 200px;
+$viewer-compact-width: 480px;
+$short-viewport-height: 480px;
+$viewer-skeleton-base: $green;
+$viewer-skeleton-highlight: $ink;
+$viewer-skeleton-text: $paper;
 
 // borders and focus
 $focus-width: 3px;
 $focus-offset: 4px;
+$border-width: 1px;
+$radius-control: 6px;
+$radius-panel: 12px;
 
 // z-index
 $header-z-index: 20;
@@ -38,6 +57,7 @@ $skip-link-z-index: 200;
 
 // motion
 $transition-ui: 0.2s ease;
+$transition-viewer: 0.25s ease;
 
 // breakpoints
 $breakpoint-compact: 320px;

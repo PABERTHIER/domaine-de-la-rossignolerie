@@ -115,7 +115,7 @@ Rendered heading/body rules select the families; inspect computed styles and act
 | [Default layout](app/layouts/default.vue)                         | Skip link, focusable main and safe-area-aware flex shell                                     |
 | [Pages](app/pages/)                                               | File-based page compositions and localized page metadata                                     |
 | [Error shell](app/error.vue)                                      | Status-preserving localized error metadata and recovery                                      |
-| [Common components](app/components/common/)                       | Shared image, logo and language controls                                                     |
+| [Common components](app/components/common/)                       | Shared image, photo grid/viewer, logo and language controls                                  |
 | [Layout components](app/components/layout/)                       | Header, primary navigation and footer                                                        |
 | [Composables](app/composables/)                                   | Page SEO, media queries, screen-size state and overlay-lease lifecycle                       |
 | [Data](app/data/)                                                 | Site/wine/project identities, responsive media, measured dimensions, SEO and legacy mappings |

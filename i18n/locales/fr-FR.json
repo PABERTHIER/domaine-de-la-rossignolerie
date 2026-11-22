@@ -46,6 +46,25 @@
     },
     "lang_switcher": {
       "label": "Langue"
+    },
+    "photo_grid": {
+      "open": "Agrandir : {caption}"
+    },
+    "photo_viewer": {
+      "close_label": "Fermer les photos",
+      "previous": "Photo précédente",
+      "next": "Photo suivante",
+      "zoom_label": "Zoom de la photo",
+      "zoom_in": "Agrandir",
+      "zoom_out": "Réduire",
+      "zoom_fit": "Vue entière",
+      "image_region": "Photo agrandie",
+      "aria_label": "Aperçu de la photo",
+      "image_loading": "Chargement de la photo…",
+      "image_unavailable": "La photo n’a pas pu être chargée.",
+      "retry": "Réessayer",
+      "pan_hint": "Faites glisser la photo agrandie ou utilisez les flèches du clavier pour vous déplacer. Cliquez sur la photo ou utilisez les commandes de zoom pour l’agrandir.",
+      "dimensions_label": "Dimensions"
     }
   },
   "pages": {
@@ -85,6 +104,81 @@
     },
     "tanguy": {
       "title": "Tanguy dans les vignes"
+    },
+    "cellar": {
+      "title": "Le caveau du domaine"
+    },
+    "pruned-vines": {
+      "title": "Vigne de Chenin taillée court"
+    },
+    "photo-1": {
+      "title": "Le bâtiment du domaine avant les travaux de bardage"
+    },
+    "photo-2": {
+      "title": "Le caveau après la pose du bardage en bois"
+    },
+    "photo-3": {
+      "title": "Les rangs de vignes au soleil"
+    },
+    "photo-6": {
+      "title": "Le feuillage des vignes au soleil"
+    },
+    "photo-9": {
+      "title": "Un chemin entre deux rangs de vignes"
+    },
+    "photo-10": {
+      "title": "Vue du vignoble et des coteaux"
+    },
+    "photo-11": {
+      "title": "Le vignoble et le paysage au loin"
+    },
+    "photo-14": {
+      "title": "Les travaux de bardage du caveau"
+    },
+    "photo-16": {
+      "title": "La vigne et ses feuilles éclairées par le soleil"
+    },
+    "photo-18": {
+      "title": "Les couches de terre révélées par la fosse pédologique"
+    },
+    "photo-24": {
+      "title": "Observation du sol dans une fosse au milieu des vignes"
+    },
+    "photo-25": {
+      "title": "Les rangs de vignes sur le coteau du domaine"
+    },
+    "photo-26": {
+      "title": "Une grappe de Chenin sur la vigne"
+    },
+    "photo-27": {
+      "title": "Les vignes sous la lumière du soleil"
+    },
+    "photo-29": {
+      "title": "Les ruches dans l’herbe près du domaine"
+    },
+    "photo-30": {
+      "title": "La lumière du soleil entre les rangs de vignes"
+    },
+    "photo-31": {
+      "title": "Examen de la terre extraite de la fosse pédologique"
+    },
+    "photo-34": {
+      "title": "Une allée de vignes bordée d’arbres"
+    },
+    "photo-35": {
+      "title": "La nouvelle façade en bois du caveau"
+    },
+    "photo-37": {
+      "title": "Le bâtiment du domaine pendant son aménagement"
+    },
+    "photo-38": {
+      "title": "Les différents horizons du sol du domaine"
+    },
+    "photo-40": {
+      "title": "Deux nichoirs installés dans un arbre"
+    },
+    "photo-41": {
+      "title": "Les vignes du domaine devant les arbres"
     }
   }
 }
