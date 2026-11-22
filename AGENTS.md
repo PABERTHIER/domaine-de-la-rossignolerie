@@ -85,8 +85,10 @@ Inspect generated font CSS and actual requests before claiming a family, weight 
 app/
 ├── app.vue, error.vue                 # Locale head and independent error shell
 ├── layouts/default.vue               # Skip link and focusable main
-├── pages/index.vue                   # Minimal home container and SEO
-├── data/                             # Identity, wines, projects, media, SEO and legacy paths
+├── pages/                            # File-based page compositions and page SEO
+├── components/common/                # Shared image, logo and language controls
+├── components/layout/                # Header, primary navigation and footer
+├── data/                             # Identity, navigation, media, SEO and legacy paths
 ├── composables/                      # Page SEO, media queries and overlay lifecycle
 ├── types/                            # Image and SEO contracts
 ├── styles/                           # CSS-free tokens, base rules, shared keyframes and classes
@@ -94,7 +96,7 @@ app/
 └── router.options.ts                 # History, anchor and page scrolling
 i18n/locales/                         # French source and US English messages
 public/                               # Estate assets, favicon, licenses and crawler policy
-server/middleware/legacy-redirects.ts # Permanent legacy redirects to the French home
+server/middleware/legacy-redirects.ts # Permanent redirects for recorded aliases
 ```
 
 | Concern                 | Owner                                                                                                     | Contract                                                                                                               |
@@ -111,7 +113,8 @@ server/middleware/legacy-redirects.ts # Permanent legacy redirects to the French
 | SEO                     | [registry](app/data/seo.ts), [helper](app/composables/usePageSeo.ts), [types](app/types/seo.ts)           | Actual pages only, reactive head/schema and typed image references                                                     |
 | Styles                  | [styles](app/styles/)                                                                                     | CSS-free tokens injected once; base, shared keyframes and classes loaded once                                          |
 | Public media            | [manifest](app/data/media.json), [dimension catalog](app/data/imageDimensions.ts), [public](public/)      | Supplied variants and measured file dimensions, with stable identities                                                 |
-| Legacy URLs             | [redirect mappings](app/data/legacyRoutes.ts), [server middleware](server/middleware/legacy-redirects.ts) | Incoming recorded paths redirect to the French home with their query preserved                                         |
+| Navigation              | [navigation.ts](app/data/navigation.ts)                                                                   | Ordered primary paths and translation keys; the brand owns the home link                                               |
+| Legacy URLs             | [redirect mappings](app/data/legacyRoutes.ts), [server middleware](server/middleware/legacy-redirects.ts) | Recorded source URLs redirect to French pages with query preservation                                                  |
 
 Plugins are client-only and ordered by named dependencies: smooth scrolling, overlay locking, then navigation focus.
 Call an overlay release on dismissal and unmount, and keep native-scroll overlay regions marked `data-lenis-prevent`.
@@ -122,6 +125,7 @@ The focus destination and shell landmark ID must agree; inspect their actual con
 ## Routes And Page Workflow
 
 French and English routes use `/fr` and `/en` through Nuxt I18n's `prefix` strategy.
+Use file-based page paths under both locale prefixes.
 The root `/` is the language-detection entry point, with French as default and the `i18n_redirected` cookie preserving preference.
 Keep explicit localized URLs authoritative even when browser language or a saved preference differs.
 For requested page work:
@@ -191,10 +195,9 @@ Do not install dependencies or introduce application scaffolding solely to valid
 
 ### Content, URLs And Integrations
 
-Preserve meaningful content identities and record explicit redirects when localized paths change.
+Preserve meaningful content identities and record explicit redirects when implemented page paths change.
 Use locale-aware route helpers instead of assembling prefixes or translating path fragments by hand.
 Keep public asset URLs and external links outside locale routing.
-Verify accented and decomposed-Unicode project paths without silently normalizing their identity.
 
 Keep secrets and provider configuration server-side.
 Form success must correspond to acceptance by the configured delivery service; provider acceptance does not prove inbox arrival.

@@ -14,14 +14,16 @@ The source uses Nuxt 4, Vue 3, TypeScript, SCSS, French/US English locales and V
 | Entry           | URL                  | Current behavior                                                          |
 | --------------- | -------------------- | ------------------------------------------------------------------------- |
 | Language entry  | `/`                  | Nuxt I18n selects a locale from browser language or its preference cookie |
-| French home     | `/fr`                | Minimal home container with localized metadata                            |
-| English home    | `/en`                | Equivalent minimal container with US English metadata                     |
+| French pages    | `/fr`, `/fr/...`     | French content and metadata using file-based paths                        |
+| English pages   | `/en`, `/en/...`     | Equivalent US English content on the same page paths                      |
 | Legacy home     | `/home`              | One-hop permanent redirect to the French home                             |
 | Unknown content | Unmatched URL        | Localized 404 shell and home recovery                                     |
 | Former services | Recorded legacy path | One-hop permanent redirect to the French home                             |
 
 The default layout owns the skip link, focusable `main-content` landmark and content-driven flex shell.
-The homepage deliberately contains only an empty HTML container and its page metadata.
+Page compositions and their metadata calls live in [app/pages](app/pages/).
+The header brand returns home; primary destinations belong in [navigation.ts](app/data/navigation.ts).
+Compact navigation opens below the header without moving page content, with native links still visible when JavaScript is unavailable.
 The independent error shell has its own skip link, main, status heading, proportional bird mark and localized recovery.
 Native modified clicks remain available on recovery links.
 
@@ -111,15 +113,17 @@ Rendered heading/body rules select the families; inspect computed styles and act
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | [app.vue](app/app.vue)                                            | Root page/layout composition, route announcements and locale head ownership                  |
 | [Default layout](app/layouts/default.vue)                         | Skip link, focusable main and safe-area-aware flex shell                                     |
-| [Home page](app/pages/index.vue)                                  | Empty home container and localized page metadata                                             |
+| [Pages](app/pages/)                                               | File-based page compositions and localized page metadata                                     |
 | [Error shell](app/error.vue)                                      | Status-preserving localized error metadata and recovery                                      |
-| [Components](app/components/)                                     | Shared UI components                                                                         |
+| [Common components](app/components/common/)                       | Shared image, logo and language controls                                                     |
+| [Layout components](app/components/layout/)                       | Header, primary navigation and footer                                                        |
 | [Composables](app/composables/)                                   | Page SEO, media queries, screen-size state and overlay-lease lifecycle                       |
 | [Data](app/data/)                                                 | Site/wine/project identities, responsive media, measured dimensions, SEO and legacy mappings |
+| [Navigation catalogue](app/data/navigation.ts)                    | Ordered primary destinations and translation keys                                            |
 | [Shared types](app/types/)                                        | Image/media and page SEO contracts                                                           |
 | [Styles](app/styles/)                                             | CSS-free tokens, global defaults/focus/motion and reusable classes                           |
 | [Plugins](app/plugins/), [router options](app/router.options.ts)  | Lenis, overlay coordination, completed focus and pointer/keyboard modality                   |
-| [Server legacy middleware](server/middleware/legacy-redirects.ts) | Permanent redirects from recorded incoming legacy paths to the French home                   |
+| [Server legacy middleware](server/middleware/legacy-redirects.ts) | Permanent redirects from recorded source URLs to French pages                                |
 | [Locale files](i18n/locales/)                                     | Matching `fr-FR.json` and `en-US.json` message ownership                                     |
 | [Public files](public/)                                           | Estate imagery, favicon, licenses and authored crawler policy                                |
 | [Nuxt configuration](nuxt.config.ts)                              | Modules, fonts, stylesheet injection, origins, sitemap and organization schema               |

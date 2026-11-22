@@ -15,4 +15,5 @@ export const legacyDestinations: Record<string, string> = {
   'my-orders': '/',
   'my-bookings': '/',
   'account-settings': '/',
+  'à-propos-du-domaine': '/about',
 }

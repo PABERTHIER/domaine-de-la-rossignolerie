@@ -15,7 +15,6 @@ Do not combine competing automatic and manual locale-head modes.
 Preserve full localized titles/descriptions, one brand occurrence and representative estate imagery with truthful dimensions and alternatives.
 Keep translated head and schema reactive through route and language changes.
 
-Preserve meaningful French paths, equivalent English destinations and supplied Unicode project identity.
 Use self-canonicals, reciprocal language alternates and French `x-default` for complete indexable translations.
 Keep trusted environment origins consistent across metadata, schema and sitemaps.
 Native image delivery must remain on the serving origin.

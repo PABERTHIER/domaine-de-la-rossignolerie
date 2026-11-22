@@ -1,6 +1,5 @@
 {
   "app": {
-    "name": "Domaine de la Rossignolerie",
     "logo_alt": "Domaine de la Rossignolerie — home"
   },
   "seo": {
@@ -11,50 +10,9 @@
       "title": "Domaine de la Rossignolerie — Home",
       "description": "Discover Domaine de la Rossignolerie in Chalonnes-sur-Loire, Anjou."
     },
-    "estate": {
+    "about": {
       "title": "Our story — Domaine de la Rossignolerie",
       "description": "Discover the story of Domaine de la Rossignolerie and meet the team behind this ten-hectare wine estate in Anjou."
-    },
-    "wines": {
-      "title": "Our wines — Domaine de la Rossignolerie",
-      "description": "Chenin and Grolleau: discover the estate's six wines."
-    },
-    "contact": {
-      "title": "Contact — Domaine de la Rossignolerie",
-      "description": "A question about our wines or a visit to the estate? Get in touch."
-    },
-    "gallery": {
-      "title": "Photo gallery — Domaine de la Rossignolerie",
-      "description": "Welcome to the estate's photo gallery. Explore a selection of our work and projects. Enjoy your visit!"
-    },
-    "legal": {
-      "title": "Legal notice — Domaine de la Rossignolerie",
-      "description": "Legal information for Domaine de la Rossignolerie, subject to completion and verification before publication."
-    },
-    "cookies": {
-      "title": "Cookies — Domaine de la Rossignolerie",
-      "description": "Information about cookies and services used by the Domaine de la Rossignolerie website."
-    },
-    "privacy": {
-      "title": "Privacy — Domaine de la Rossignolerie",
-      "description": "Information about the handling of contact details and messages sent to Domaine de la Rossignolerie."
-    },
-    "image_alt": "Vineyards at Domaine de la Rossignolerie in Anjou",
-    "gallery_spring": {
-      "title": "The return of sunny days — Domaine de la Rossignolerie",
-      "description": "A few photos from May as the sunshine returned: two nesting boxes beneath a tree near the estate, bees out and about again, and a soil pit revealing the different layers of our soil."
-    },
-    "gallery_vineyards": {
-      "title": "The estate vineyards — Domaine de la Rossignolerie",
-      "description": "The estate vineyards — Chalonnes-sur-Loire, Anjou."
-    },
-    "gallery_renovation": {
-      "title": "The renovation — Domaine de la Rossignolerie",
-      "description": "The estate's new cladding!"
-    },
-    "gallery_chenin": {
-      "title": "Chenin grapes — Domaine de la Rossignolerie",
-      "description": "Chenin grapes — Chalonnes-sur-Loire, Anjou."
     }
   },
   "error": {
@@ -75,74 +33,23 @@
       "skip": "Skip to main content"
     },
     "header": {
+      "back_home": "Back to home",
       "nav": "Main navigation",
       "menu": "Menu",
       "close_menu": "Close menu"
     },
     "footer": {
       "details": "Find us",
-      "information": "Information",
       "instagram": "Follow the estate on Instagram",
       "back_top": "Back to top",
       "copyright": "© {year} Domaine de la Rossignolerie"
     },
     "lang_switcher": {
-      "label": "Language",
-      "french": "Français",
-      "english": "English"
-    },
-    "contact_form": {
-      "name": "Name",
-      "phone": "Telephone",
-      "email": "Email",
-      "message": "Message",
-      "required": "Fields marked with an asterisk are required.",
-      "send": "Send",
-      "sending": "Sending…",
-      "success": "Your message has been accepted by the sending service. Thank you for getting in touch.",
-      "unavailable": "The inquiry form is currently unavailable. Please contact us by email or telephone.",
-      "failure": "Your message could not be sent. Your details remain in the form. You can try again or contact us directly.",
-      "rate": "Too many attempts. Please wait a few minutes before trying again.",
-      "invalid": "Please check the highlighted fields.",
-      "email_error": "Enter a valid email address.",
-      "length_error": "This field is too long.",
-      "privacy": "Your contact details and message are used to respond to your inquiry.",
-      "privacy_link": "About your personal data",
-      "website": "Leave this field empty"
-    },
-    "photo_viewer": {
-      "open": "Enlarge: {caption}",
-      "close": "Close photos",
-      "previous": "Previous photo",
-      "next": "Next photo",
-      "count": "Photo {number} of {total}",
-      "full": "Open full photo",
-      "error": "The photo could not be loaded.",
-      "zoom": "Photo zoom",
-      "zoom_in": "Zoom in",
-      "zoom_out": "Zoom out",
-      "zoom_reset": "Fit photo",
-      "zoom_level": "Zoom level",
-      "image_area": "Photo. Use + and − to zoom, 0 to fit. Scroll to explore a zoomed photo.",
-      "photo_navigation": "Photo navigation",
-      "loading": "Loading photo…"
+      "label": "Language"
     }
   },
   "pages": {
-    "home": {
-      "tab_name": "Home",
-      "introduction": "The estate, its wines and its landscapes.",
-      "contact": "Contact us",
-      "region": "Chalonnes-sur-Loire · Anjou",
-      "estate": "The estate",
-      "history": "Our story",
-      "wines": "Our wines",
-      "visit": "Visit us",
-      "gallery": "A glimpse of the estate",
-      "gallery_link": "Explore the gallery",
-      "intro": "From the vineyards to the cellar, a personal journey in Anjou."
-    },
-    "estate": {
+    "about": {
       "tab_name": "About the estate",
       "title": "Our story",
       "intro": "A lifelong wine enthusiast, I took over a ten-hectare wine estate in Anjou toward the end of my career, after working in a different field. Guided by quality, I am learning this demanding craft with humility, as part of a shared adventure with people and nature.",
@@ -161,149 +68,23 @@
         "role": "Marketing and sales manager",
         "bio": "Studying business at the École supérieure des agricultures in Angers as part of a work-study program, Tanguy can introduce you to the different wines. You may find him at the estate between university sessions."
       }
-    },
-    "wines": {
-      "tab_name": "Our wines",
-      "title": "Our wines",
-      "intro": "Chenin and Grolleau: discover the estate's six wines.",
-      "production": "Annual production: {count} bottles",
-      "enquiry": "Ask us about this wine",
-      "items": {
-        "anjou25": {
-          "title": "Anjou blanc sec 2025",
-          "origin": "Chenin grown on our oldest plot, “Rossignolerie”.",
-          "notes": "An aromatic nose with yellow peach notes. A fairly full palate with lime blossom aromas and a lovely acacia finish.",
-          "alt": "Bottle — Anjou blanc sec 2025"
-        },
-        "anjou24": {
-          "title": "Anjou blanc sec 2024",
-          "origin": "Chenin grown on our schist-rich terroir, which gives it its mineral character.",
-          "notes": "Aromas of white flowers, pastries and white peach. A structured palate with lovely tension, flinty notes and a light hint of mint.",
-          "alt": "Bottle — Anjou blanc sec 2024"
-        },
-        "rose25": {
-          "title": "Rosé de Loire sec 2025",
-          "origin": "100% Grolleau from a small, well-exposed hillside, giving a lovely pink hue and tangy fruit notes.",
-          "notes": "A generous, rounded palate with a raspberry finish.",
-          "alt": "Bottle — Rosé de Loire sec 2025"
-        },
-        "epure": {
-          "title": "White sparkling wine",
-          "origin": "L'Epure: a cuvée shaped by Chenin, like a carpenter shaping their work.",
-          "notes": "A lightly brioche-scented nose with green apple aromas. A fruit-led palate opening into notes of white flowers.",
-          "alt": "Bottle — White sparkling wine"
-        },
-        "eclat": {
-          "title": "Rosé sparkling wine",
-          "origin": "L'Eclat: a lively cuvée with a lovely hue from Grolleau and a hint of sweetness.",
-          "notes": "Slightly tangy red berry aromas. A rounded, generous palate with a rose finish.",
-          "alt": "Bottle — Rosé sparkling wine"
-        },
-        "layon25": {
-          "title": "Coteaux du Layon 2025",
-          "origin": "Chenin picked at peak ripeness from a vigorous, steep plot called Monts Pertus.",
-          "notes": "Ripe fruit aromas, including mango and yellow apple. A gently sweet palate with lavender honey notes and a long finish.",
-          "alt": "Bottle — Coteaux du Layon 2025"
-        }
-      }
-    },
-    "contact": {
-      "tab_name": "Contact",
-      "title": "Contact us",
-      "intro": "A question about our wines or a visit to the estate? Get in touch.",
-      "visit": "Visit us",
-      "hours": "Monday-Friday: 9:00 AM-12:00 PM and 2:00 PM-5:30 PM",
-      "directions": "Get directions"
-    },
-    "gallery": {
-      "tab_name": "Photo gallery",
-      "title": "Photo gallery",
-      "intro": "Welcome to the estate's photo gallery. Explore a selection of our work and projects. Enjoy your visit!",
-      "back": "All projects",
-      "previous_project": "Previous project",
-      "next_project": "Next project",
-      "projects": {
-        "spring": {
-          "title": "The return of sunny days",
-          "date": "May 2026",
-          "description": "A few photos from May as the sunshine returned: two nesting boxes beneath a tree near the estate, bees out and about again, and a soil pit revealing the different layers of our soil."
-        },
-        "vineyards": {
-          "title": "The estate vineyards",
-          "date": "October 2025",
-          "description": ""
-        },
-        "renovation": {
-          "title": "The renovation",
-          "date": "June 2025",
-          "description": "The estate's new cladding!"
-        },
-        "chenin": {
-          "title": "Chenin grapes",
-          "date": "September 2025",
-          "description": ""
-        }
-      },
-      "cladding": "Cladding"
-    },
-    "policies": {
-      "pending": "This information must be completed and approved before public launch.",
-      "legal": {
-        "tab_name": "Legal notice",
-        "title": "Legal notice",
-        "body": "The archived site identifies the business as SARL La Rossignolerie, represented by Michel Pittiglio. Complete legal and hosting information will be published after verification."
-      },
-      "cookies": {
-        "tab_name": "Cookies",
-        "title": "Cookies",
-        "body": "This site uses a language preference managed by Nuxt I18n. The i18n_redirected cookie may remember your French or English choice; /fr and /en URLs remain directly accessible. Information about other services must be verified before publication."
-      },
-      "privacy": {
-        "tab_name": "Privacy",
-        "title": "Privacy",
-        "body": "The form collects your name, telephone number, email and message so that the estate can respond. Only email is required. You can also contact the estate directly. The sending provider, hosting and retention period must be confirmed before the form is activated."
-      }
     }
   },
   "pictures": {
-    "hero": "Vineyards and hills at the estate in Anjou",
-    "history": "Rows of vines at the estate",
-    "home-estate": "The estate vineyard",
-    "home-wine": "A bottle of the estate's Anjou blanc",
-    "home-visit": "The cellar and its timber cladding",
-    "cellar": "The estate cellar",
-    "contact": "The cellar facade and entrance",
-    "pruned-vines": "Short-pruned Chenin vines",
-    "michel": "Michel in the vineyard",
-    "christophe": "Christophe in the cellar",
-    "tanguy": "Tanguy in the vineyard",
-    "photo-1": "The estate building before the cladding work",
-    "photo-2": "The cellar after the timber cladding was fitted",
-    "photo-3": "Rows of vines in the sunshine",
-    "photo-6": "Vine leaves in the sunshine",
-    "photo-9": "A path between two rows of vines",
-    "photo-10": "A view across the vineyard and hills",
-    "photo-11": "The vineyard with the landscape beyond",
-    "photo-14": "Cladding work at the cellar",
-    "photo-16": "Sunlit leaves on the vines",
-    "photo-18": "Soil layers revealed by the soil pit",
-    "photo-24": "Examining the soil in a pit among the vines",
-    "photo-25": "Rows of vines on the estate hillside",
-    "photo-26": "A bunch of Chenin grapes on the vine",
-    "photo-27": "Vines in the sunlight",
-    "photo-29": "Beehives in the grass near the estate",
-    "photo-30": "Sunlight between the vine rows",
-    "photo-31": "Examining earth from the soil pit",
-    "photo-34": "A vine row beside trees",
-    "photo-35": "The cellar's new timber facade",
-    "photo-37": "The estate building during renovation",
-    "photo-38": "The different layers of the estate's soil",
-    "photo-40": "Two nesting boxes installed in a tree",
-    "photo-41": "The estate vines with trees beyond"
-  },
-  "miscellaneous": {
-    "address": "Address",
-    "phone": "Telephone",
-    "email": "Email"
+    "social": {
+      "title": "Vineyards at Domaine de la Rossignolerie in Anjou"
+    },
+    "history": {
+      "title": "Rows of vines at the estate"
+    },
+    "michel": {
+      "title": "Michel in the vineyard"
+    },
+    "christophe": {
+      "title": "Christophe in the cellar"
+    },
+    "tanguy": {
+      "title": "Tanguy in the vineyard"
+    }
   }
 }
