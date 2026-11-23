@@ -6,6 +6,7 @@ export type PageName =
   | 'gallery_spring'
   | 'gallery_vineyards'
   | 'gallery_renovation'
+  | 'gallery_chenin'
   | 'about'
 
 export interface PageSeoDefinition {

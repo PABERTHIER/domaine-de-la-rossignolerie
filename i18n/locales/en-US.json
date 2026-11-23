@@ -29,6 +29,10 @@
     "gallery_renovation": {
       "title": "The renovation — Domaine de la Rossignolerie",
       "description": "The estate's new cladding!"
+    },
+    "gallery_chenin": {
+      "title": "Chenin grapes — Domaine de la Rossignolerie",
+      "description": "Chenin grapes — Chalonnes-sur-Loire, Anjou."
     }
   },
   "error": {
@@ -108,6 +112,10 @@
           "title": "The renovation",
           "date": "June 2025",
           "description": "The estate's new cladding!"
+        },
+        "chenin": {
+          "title": "Chenin grapes",
+          "date": "September 2025"
         }
       }
     },
