@@ -13,6 +13,14 @@
     "about": {
       "title": "Notre histoire — Domaine de la Rossignolerie",
       "description": "Découvrez l'histoire du Domaine de la Rossignolerie et l'équipe de ce domaine viticole de dix hectares en Anjou."
+    },
+    "gallery": {
+      "title": "Galerie photos — Domaine de la Rossignolerie",
+      "description": "Découvrez les travaux et projets du Domaine de la Rossignolerie à travers sa galerie photos."
+    },
+    "gallery_spring": {
+      "title": "Retour des beaux jours — Domaine de la Rossignolerie",
+      "description": "Le retour du soleil au Domaine de la Rossignolerie en mai : nichoirs, abeilles et découverte des différents horizons du sol."
     }
   },
   "error": {
@@ -50,6 +58,12 @@
     "photo_grid": {
       "open": "Agrandir : {caption}"
     },
+    "gallery_project": {
+      "back": "Tous les projets",
+      "navigation": "Navigation entre les projets",
+      "previous_project": "Projet précédent",
+      "next_project": "Projet suivant"
+    },
     "photo_viewer": {
       "close_label": "Fermer les photos",
       "previous": "Photo précédente",
@@ -68,6 +82,18 @@
     }
   },
   "pages": {
+    "gallery": {
+      "tab_name": "Galerie photos",
+      "title": "Galerie photos",
+      "intro": "Bienvenue sur la galerie photos du domaine ! Vous trouverez ici une sélection de nos différents travaux et projets. Bonne découverte !",
+      "projects": {
+        "spring": {
+          "title": "Retour des beaux jours",
+          "date": "Mai 2026",
+          "description": "Voici quelques photos prises au mois de mai avec le retour du soleil : deux nichoirs sous un arbre près du domaine, les abeilles de nouveau de sortie et une fosse pédologique qui nous a permis de voir les différents horizons de notre sol."
+        }
+      }
+    },
     "about": {
       "tab_name": "À propos du domaine",
       "title": "Notre histoire",

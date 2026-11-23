@@ -49,5 +49,5 @@ Image alternatives use `pictures.<media-id>.title`; the sharing JPEG uses `pictu
 The hyphens are part of those existing identities and do not justify renaming the assets or deriving a numbered range.
 Wine bottle alternatives are `pages.wines.items.<id>.alt`.
 Project descriptions may be empty where no authored description was supplied; do not fill them with invented text.
-Use `components.photo_viewer.*` for viewer actions and `pages.gallery.previous_project` / `next_project` for project navigation.
+Use `components.photo_viewer.*` for viewer actions and `components.gallery_project.*` for the return link and project navigation.
 Keep image navigation distinct from project navigation and preserve `{number}`, `{total}` and `{caption}` interpolation names.

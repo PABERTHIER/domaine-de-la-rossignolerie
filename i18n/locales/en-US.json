@@ -13,6 +13,14 @@
     "about": {
       "title": "Our story — Domaine de la Rossignolerie",
       "description": "Discover the story of Domaine de la Rossignolerie and meet the team behind this ten-hectare wine estate in Anjou."
+    },
+    "gallery": {
+      "title": "Photo gallery — Domaine de la Rossignolerie",
+      "description": "Explore work and projects at Domaine de la Rossignolerie through the estate’s photo gallery."
+    },
+    "gallery_spring": {
+      "title": "The return of sunny days — Domaine de la Rossignolerie",
+      "description": "Sunshine returns to Domaine de la Rossignolerie in May: nesting boxes, bees and a closer look at the different layers of the soil."
     }
   },
   "error": {
@@ -50,6 +58,12 @@
     "photo_grid": {
       "open": "Enlarge: {caption}"
     },
+    "gallery_project": {
+      "back": "All projects",
+      "navigation": "Project navigation",
+      "previous_project": "Previous project",
+      "next_project": "Next project"
+    },
     "photo_viewer": {
       "close_label": "Close photos",
       "previous": "Previous photo",
@@ -68,6 +82,18 @@
     }
   },
   "pages": {
+    "gallery": {
+      "tab_name": "Photo gallery",
+      "title": "Photo gallery",
+      "intro": "Welcome to the estate’s photo gallery. Explore a selection of our work and projects. Enjoy your visit!",
+      "projects": {
+        "spring": {
+          "title": "The return of sunny days",
+          "date": "May 2026",
+          "description": "A few photos from May as the sunshine returned: two nesting boxes beneath a tree near the estate, bees out and about again, and a soil pit revealing the different layers of our soil."
+        }
+      }
+    },
     "about": {
       "tab_name": "About the estate",
       "title": "Our story",

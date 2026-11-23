@@ -1,4 +1,6 @@
 import type { PageName, PageSeoDefinition } from '../types/seo'
+import { galleryProjects, projects } from './gallery'
+import media from './media.json'
 
 // Shared by Nuxt Robots (HTTP/SSR), content pages and error recovery (client)
 export const robotsContent = {
@@ -16,6 +18,20 @@ export const pageSeo: Record<PageName, PageSeoDefinition> = {
     image: '/images/social.jpg',
     imageAlt: 'pictures.social.title',
     images: [],
+  },
+  gallery: {
+    path: '/gallery',
+    type: 'CollectionPage',
+    image: '/images/photo-40-1468.webp',
+    imageAlt: 'pictures.photo-40.title',
+    images: galleryProjects.map(project => media[project.images[0]].src),
+  },
+  gallery_spring: {
+    path: '/photos/spring',
+    type: 'ItemPage',
+    image: '/images/photo-40-1468.webp',
+    imageAlt: 'pictures.photo-40.title',
+    images: projects[0].images.map(photo => media[photo].src),
   },
   about: {
     path: '/about',
