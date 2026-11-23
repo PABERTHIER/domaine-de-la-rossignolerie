@@ -10,12 +10,14 @@
         :key="project.id"
         class="gallery__project"
         :to="localePath(project.path)">
-        <Image
-          class="gallery__cover"
-          :src="media[project.images[0]].src"
-          :alt="t(`pictures.${project.images[0]}.title`)"
-          sizes="(min-width: 1536px) 453px, (min-width: 1280px) 30vw, (min-width: 640px) 45vw, 92vw"
-          :priority="index === 0" />
+        <span class="gallery__cover-frame">
+          <Image
+            class="gallery__cover"
+            :src="media[project.images[0]].src"
+            :alt="t(`pictures.${project.images[0]}.title`)"
+            sizes="(min-width: 1536px) 453px, (min-width: 1280px) 30vw, (min-width: 640px) 45vw, 92vw"
+            :priority="index === 0" />
+        </span>
         <h2>{{ t(`pages.gallery.projects.${project.id}.title`) }}</h2>
         <p>{{ t(`pages.gallery.projects.${project.id}.date`) }}</p>
       </NuxtLink>
@@ -79,10 +81,15 @@ useHead(usePageSeo('gallery'))
     }
   }
 
+  &__cover-frame {
+    display: block;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+
   &__cover {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1;
+    height: 100%;
     object-fit: cover;
   }
 }
@@ -96,6 +103,19 @@ useHead(usePageSeo('gallery'))
 @media (min-width: $breakpoint-desktop) {
   .gallery__projects {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gallery__cover {
+    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .gallery__project:focus-visible .gallery__cover,
+    .gallery__project:hover .gallery__cover {
+      transform: scale(1.04);
+    }
   }
 }
 </style>

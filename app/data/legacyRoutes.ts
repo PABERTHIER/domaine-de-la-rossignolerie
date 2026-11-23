@@ -18,4 +18,6 @@ export const legacyDestinations: Record<string, string> = {
   'à-propos-du-domaine': '/about',
   portfolio: '/gallery',
   'portfolio-collections/my-portfolio/retour-des-beaux-jours': '/photos/spring',
+  'portfolio-collections/my-portfolio/les-vignes-du-domaine':
+    '/photos/vineyards',
 }
