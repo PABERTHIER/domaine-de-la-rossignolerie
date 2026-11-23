@@ -16,7 +16,7 @@
     },
     "gallery": {
       "title": "Photo gallery — Domaine de la Rossignolerie",
-      "description": "Explore work and projects at Domaine de la Rossignolerie through the estate’s photo gallery."
+      "description": "Explore work and projects at Domaine de la Rossignolerie through the estate's photo gallery."
     },
     "gallery_spring": {
       "title": "The return of sunny days — Domaine de la Rossignolerie",
@@ -25,6 +25,10 @@
     "gallery_vineyards": {
       "title": "The estate vineyards — Domaine de la Rossignolerie",
       "description": "The estate vineyards — Chalonnes-sur-Loire, Anjou."
+    },
+    "gallery_renovation": {
+      "title": "The renovation — Domaine de la Rossignolerie",
+      "description": "The estate's new cladding!"
     }
   },
   "error": {
@@ -89,7 +93,7 @@
     "gallery": {
       "tab_name": "Photo gallery",
       "title": "Photo gallery",
-      "intro": "Welcome to the estate’s photo gallery. Explore a selection of our work and projects. Enjoy your visit!",
+      "intro": "Welcome to the estate's photo gallery. Explore a selection of our work and projects. Enjoy your visit!",
       "projects": {
         "spring": {
           "title": "The return of sunny days",
@@ -99,6 +103,11 @@
         "vineyards": {
           "title": "The estate vineyards",
           "date": "October 2025"
+        },
+        "renovation": {
+          "title": "The renovation",
+          "date": "June 2025",
+          "description": "The estate's new cladding!"
         }
       }
     },
@@ -200,13 +209,13 @@
       "title": "A vine row beside trees"
     },
     "photo-35": {
-      "title": "The cellar’s new timber facade"
+      "title": "The cellar's new timber facade"
     },
     "photo-37": {
       "title": "The estate building during renovation"
     },
     "photo-38": {
-      "title": "The different layers of the estate’s soil"
+      "title": "The different layers of the estate's soil"
     },
     "photo-40": {
       "title": "Two nesting boxes installed in a tree"

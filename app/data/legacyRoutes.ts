@@ -20,4 +20,5 @@ export const legacyDestinations: Record<string, string> = {
   'portfolio-collections/my-portfolio/retour-des-beaux-jours': '/photos/spring',
   'portfolio-collections/my-portfolio/les-vignes-du-domaine':
     '/photos/vineyards',
+  'portfolio-collections/my-portfolio/laménagement': '/photos/renovation',
 }

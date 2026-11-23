@@ -25,6 +25,10 @@
     "gallery_vineyards": {
       "title": "Les vignes du domaine — Domaine de la Rossignolerie",
       "description": "Les vignes du domaine — Chalonnes-sur-Loire, Anjou."
+    },
+    "gallery_renovation": {
+      "title": "L'aménagement — Domaine de la Rossignolerie",
+      "description": "Voici le nouveau bardage du domaine !"
     }
   },
   "error": {
@@ -79,9 +83,9 @@
       "image_region": "Photo agrandie",
       "aria_label": "Aperçu de la photo",
       "image_loading": "Chargement de la photo…",
-      "image_unavailable": "La photo n’a pas pu être chargée.",
+      "image_unavailable": "La photo n'a pas pu être chargée.",
       "retry": "Réessayer",
-      "pan_hint": "Faites glisser la photo agrandie ou utilisez les flèches du clavier pour vous déplacer. Cliquez sur la photo ou utilisez les commandes de zoom pour l’agrandir.",
+      "pan_hint": "Faites glisser la photo agrandie ou utilisez les flèches du clavier pour vous déplacer. Cliquez sur la photo ou utilisez les commandes de zoom pour l'agrandir.",
       "dimensions_label": "Dimensions"
     }
   },
@@ -99,6 +103,11 @@
         "vineyards": {
           "title": "Les vignes du domaine",
           "date": "Octobre 2025"
+        },
+        "renovation": {
+          "title": "L'aménagement",
+          "date": "Juin 2025",
+          "description": "Voici le nouveau bardage du domaine !"
         }
       }
     },
@@ -188,7 +197,7 @@
       "title": "Les vignes sous la lumière du soleil"
     },
     "photo-29": {
-      "title": "Les ruches dans l’herbe près du domaine"
+      "title": "Les ruches dans l'herbe près du domaine"
     },
     "photo-30": {
       "title": "La lumière du soleil entre les rangs de vignes"
@@ -197,7 +206,7 @@
       "title": "Examen de la terre extraite de la fosse pédologique"
     },
     "photo-34": {
-      "title": "Une allée de vignes bordée d’arbres"
+      "title": "Une allée de vignes bordée d'arbres"
     },
     "photo-35": {
       "title": "La nouvelle façade en bois du caveau"

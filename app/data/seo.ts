@@ -40,6 +40,13 @@ export const pageSeo: Record<PageName, PageSeoDefinition> = {
     imageAlt: 'pictures.photo-3.title',
     images: projects[1].images.map(photo => media[photo].src),
   },
+  gallery_renovation: {
+    path: '/photos/renovation',
+    type: 'ItemPage',
+    image: '/images/photo-35-1600.webp',
+    imageAlt: 'pictures.photo-35.title',
+    images: projects[2].images.map(photo => media[photo].src),
+  },
   about: {
     path: '/about',
     type: 'AboutPage',
