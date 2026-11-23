@@ -34,4 +34,15 @@ export const projects = [
 
 export type ProjectId = (typeof projects)[number]['id']
 
+// Register a project only when its page exists; keep the curated source order
+const projectPaths: Partial<Record<ProjectId, string>> = {
+  spring: '/photos/spring',
+}
+
+export const galleryProjects = projects.flatMap(project => {
+  const path = projectPaths[project.id]
+
+  return path ? [{ ...project, path }] : []
+})
+
 export const homePhotos = ['cellar', 'photo-10', 'pruned-vines'] as const
