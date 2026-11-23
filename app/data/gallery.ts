@@ -39,6 +39,7 @@ const projectPaths: Partial<Record<ProjectId, string>> = {
   spring: '/photos/spring',
   vineyards: '/photos/vineyards',
   renovation: '/photos/renovation',
+  chenin: '/photos/chenin',
 }
 
 export const galleryProjects = projects.flatMap(project => {

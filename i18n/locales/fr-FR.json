@@ -29,6 +29,10 @@
     "gallery_renovation": {
       "title": "L'aménagement — Domaine de la Rossignolerie",
       "description": "Voici le nouveau bardage du domaine !"
+    },
+    "gallery_chenin": {
+      "title": "Grappe de Chenin — Domaine de la Rossignolerie",
+      "description": "Grappe de Chenin — Chalonnes-sur-Loire, Anjou."
     }
   },
   "error": {
@@ -108,6 +112,10 @@
           "title": "L'aménagement",
           "date": "Juin 2025",
           "description": "Voici le nouveau bardage du domaine !"
+        },
+        "chenin": {
+          "title": "Grappe de Chenin",
+          "date": "Septembre 2025"
         }
       }
     },

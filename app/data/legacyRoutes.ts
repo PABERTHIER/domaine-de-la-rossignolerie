@@ -21,4 +21,5 @@ export const legacyDestinations: Record<string, string> = {
   'portfolio-collections/my-portfolio/les-vignes-du-domaine':
     '/photos/vineyards',
   'portfolio-collections/my-portfolio/laménagement': '/photos/renovation',
+  'portfolio-collections/my-portfolio/grappe-de-chenin': '/photos/chenin',
 }
