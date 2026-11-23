@@ -21,6 +21,10 @@
     "gallery_spring": {
       "title": "The return of sunny days — Domaine de la Rossignolerie",
       "description": "Sunshine returns to Domaine de la Rossignolerie in May: nesting boxes, bees and a closer look at the different layers of the soil."
+    },
+    "gallery_vineyards": {
+      "title": "The estate vineyards — Domaine de la Rossignolerie",
+      "description": "The estate vineyards — Chalonnes-sur-Loire, Anjou."
     }
   },
   "error": {
@@ -91,6 +95,10 @@
           "title": "The return of sunny days",
           "date": "May 2026",
           "description": "A few photos from May as the sunshine returned: two nesting boxes beneath a tree near the estate, bees out and about again, and a soil pit revealing the different layers of our soil."
+        },
+        "vineyards": {
+          "title": "The estate vineyards",
+          "date": "October 2025"
         }
       }
     },

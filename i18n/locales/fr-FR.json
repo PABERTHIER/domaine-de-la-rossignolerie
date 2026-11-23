@@ -21,6 +21,10 @@
     "gallery_spring": {
       "title": "Retour des beaux jours — Domaine de la Rossignolerie",
       "description": "Le retour du soleil au Domaine de la Rossignolerie en mai : nichoirs, abeilles et découverte des différents horizons du sol."
+    },
+    "gallery_vineyards": {
+      "title": "Les vignes du domaine — Domaine de la Rossignolerie",
+      "description": "Les vignes du domaine — Chalonnes-sur-Loire, Anjou."
     }
   },
   "error": {
@@ -91,6 +95,10 @@
           "title": "Retour des beaux jours",
           "date": "Mai 2026",
           "description": "Voici quelques photos prises au mois de mai avec le retour du soleil : deux nichoirs sous un arbre près du domaine, les abeilles de nouveau de sortie et une fosse pédologique qui nous a permis de voir les différents horizons de notre sol."
+        },
+        "vineyards": {
+          "title": "Les vignes du domaine",
+          "date": "Octobre 2025"
         }
       }
     },
