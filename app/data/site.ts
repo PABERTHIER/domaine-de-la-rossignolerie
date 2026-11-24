@@ -2,6 +2,12 @@ export const siteName = 'Domaine de la Rossignolerie'
 
 export const contactEmail = 'domaine.larossignolerie@gmail.com'
 
+// TODO: Supplied legal wording awaiting verification before policy publication
+export const legalIdentity = {
+  companyName: 'SARL La Rossignolerie',
+  representative: 'Michel Pittiglio',
+} as const
+
 export const phone = {
   display: '06 07 22 80 39',
   href: 'tel:+33607228039',

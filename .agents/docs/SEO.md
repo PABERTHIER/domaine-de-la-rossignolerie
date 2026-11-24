@@ -164,6 +164,9 @@ The module supplies the environment-correct sitemap declaration and blocks devel
 Use `/robots.txt?mockProductionEnv` to inspect production-style groups locally without enabling preview indexing.
 The sitemap uses the explicit page registry with `excludeAppSources: ['nuxt:pages']` so automatic entries cannot override authored image lists.
 Only registered indexable pages contribute content entries; the root language redirect, errors and legacy aliases are excluded.
+The legal, cookies and privacy review pages are registered with `indexable: false` and use [usePolicySeo](../../app/composables/usePolicySeo.ts) for HTTP 503, noindex and no-store responses.
+Their page metadata marks them `reviewOnly`; the root head owner filters canonical and language-alternate tags after resolution, including the SEO module's automatic canonical.
+Keep their provisional presentation and sitemap exclusion until publication facts and policy content are explicitly approved.
 The standalone [error shell](../../app/error.vue) preserves 404 and other error statuses and emits noindex without canonical/hreflang links.
 
 ## Publication Verification

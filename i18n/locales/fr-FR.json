@@ -33,6 +33,18 @@
     "gallery_chenin": {
       "title": "Grappe de Chenin — Domaine de la Rossignolerie",
       "description": "Grappe de Chenin — Chalonnes-sur-Loire, Anjou."
+    },
+    "legal": {
+      "title": "Mentions légales provisoires — Domaine de la Rossignolerie",
+      "description": "Informations légales en cours de vérification, à compléter et à valider avant publication."
+    },
+    "cookies": {
+      "title": "Informations provisoires sur les cookies — Domaine de la Rossignolerie",
+      "description": "Présentation provisoire du cookie de préférence linguistique et des services utilisés par cette version du site."
+    },
+    "privacy": {
+      "title": "Confidentialité : document provisoire — Domaine de la Rossignolerie",
+      "description": "Présentation provisoire du traitement des demandes de contact et des informations restant à confirmer avant publication."
     }
   },
   "error": {
@@ -59,6 +71,7 @@
       "close_menu": "Fermer le menu"
     },
     "footer": {
+      "policies": "Informations provisoires — à valider",
       "details": "Nous retrouver",
       "instagram": "Suivre le domaine sur Instagram",
       "back_top": "Haut de page",
@@ -94,6 +107,47 @@
     }
   },
   "pages": {
+    "policies": {
+      "review_title": "Document provisoire — en cours de validation",
+      "pending": "Ces informations doivent être complétées et validées avant publication. Elles ne constituent pas une politique définitive.",
+      "legal": {
+        "title": "Mentions légales",
+        "identity": {
+          "title": "Identité de l'éditeur",
+          "body": "Les éléments fournis présentent l'entreprise sous le nom {companyName}, représentée par {representative}. L'identité juridique complète, les coordonnées légales, les numéros d'immatriculation et les informations relatives à la direction de la publication restent à vérifier avant publication."
+        },
+        "hosting": {
+          "title": "Hébergement",
+          "body": "Le projet est prévu pour un hébergement sur Vercel. Le prestataire effectivement retenu, ses coordonnées et les informations d'hébergement doivent être confirmés avant publication des mentions définitives."
+        }
+      },
+      "cookies": {
+        "title": "Cookies",
+        "language": {
+          "title": "Préférence linguistique",
+          "body": "Le site utilise le cookie i18n_redirected pour mémoriser la langue choisie, avec une durée configurée de 365 jours. À l'entrée du site par l'adresse racine, cette préférence, ou à défaut la langue du navigateur, permet de choisir entre le français et l'anglais ; le français est la langue par défaut. Les adresses commençant par /fr ou /en conservent la langue demandée. Vous pouvez changer de langue avec le sélecteur du site et supprimer ce cookie dans les réglages de votre navigateur."
+        },
+        "services": {
+          "title": "Autres services",
+          "body": "Cette version de l'application n'intègre ni publicité, ni mesure d'audience, ni carte embarquée, ni widget de réseau social. Les polices sont servies par le site. Les liens externes ouvrent les services concernés à votre initiative ; ceux-ci peuvent appliquer leurs propres règles. Les éventuels cookies et journaux ajoutés par l'hébergement devront être vérifiés sur le déploiement retenu."
+        }
+      },
+      "privacy": {
+        "title": "Confidentialité",
+        "enquiries": {
+          "title": "Demandes de contact",
+          "body": "Le traitement de contact prévu permet au domaine de répondre à vos demandes. Seule l'adresse e-mail est obligatoire ; le nom, le téléphone et le message sont facultatifs. Lorsqu'il est activé et configuré, le service transmet ces informations par Resend au destinataire choisi par le domaine, avec un identifiant technique pour limiter les envois en double. L'envoi est désactivé par défaut. Vous pouvez aussi contacter directement le domaine par e-mail ou par téléphone."
+        },
+        "protection": {
+          "title": "Protection contre les abus",
+          "body": "Le serveur utilise l'adresse IP de la connexion pour limiter les demandes. Les compteurs partagés dans Upstash Redis contiennent des identifiants calculés à partir de cette adresse et de l'origine du site, sans adresse IP en clair ni contenu de demande. Le compteur lié à l'adresse IP expire après 15 minutes ; les compteurs globaux expirent après une heure et 24 heures. L'application n'ajoute ni journal des messages, ni base de données des demandes. Ces délais ne décrivent pas la conservation des journaux ou sauvegardes des prestataires."
+        },
+        "review": {
+          "title": "Informations à confirmer",
+          "body": "L'identité et les coordonnées du responsable du traitement, la base juridique, les modalités d'exercice des droits, les destinataires et prestataires effectivement retenus, les régions de traitement, les garanties contractuelles ainsi que les durées de conservation chez les prestataires et dans la messagerie du domaine doivent être confirmés. Les journaux d'hébergement et les pratiques de suppression restent également à vérifier. Aucune durée générale de conservation ni garantie de localisation n'est établie par ce document provisoire."
+        }
+      }
+    },
     "gallery": {
       "tab_name": "Galerie photos",
       "title": "Galerie photos",

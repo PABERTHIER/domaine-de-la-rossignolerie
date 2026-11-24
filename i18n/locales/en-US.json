@@ -33,6 +33,18 @@
     "gallery_chenin": {
       "title": "Chenin grapes — Domaine de la Rossignolerie",
       "description": "Chenin grapes — Chalonnes-sur-Loire, Anjou."
+    },
+    "legal": {
+      "title": "Provisional legal notice — Domaine de la Rossignolerie",
+      "description": "Legal information under review, to be completed and approved before publication."
+    },
+    "cookies": {
+      "title": "Provisional cookie information — Domaine de la Rossignolerie",
+      "description": "Provisional information about the language preference cookie and the services used by this version of the website."
+    },
+    "privacy": {
+      "title": "Privacy: provisional document — Domaine de la Rossignolerie",
+      "description": "Provisional information about contact inquiry processing and the details still to be confirmed before publication."
     }
   },
   "error": {
@@ -59,6 +71,7 @@
       "close_menu": "Close menu"
     },
     "footer": {
+      "policies": "Provisional information — awaiting approval",
       "details": "Find us",
       "instagram": "Follow the estate on Instagram",
       "back_top": "Back to top",
@@ -94,6 +107,47 @@
     }
   },
   "pages": {
+    "policies": {
+      "review_title": "Provisional document — under review",
+      "pending": "This information must be completed and approved before publication. It is not a final policy.",
+      "legal": {
+        "title": "Legal notice",
+        "identity": {
+          "title": "Publisher identity",
+          "body": "The supplied material identifies the business as {companyName}, represented by {representative}. The complete legal identity, legal contact details, registration numbers and details of the person responsible for publication still need verification before publication."
+        },
+        "hosting": {
+          "title": "Hosting",
+          "body": "The project is intended to be hosted on Vercel. The provider ultimately selected, its contact details and the hosting information must be confirmed before the final legal notice is published."
+        }
+      },
+      "cookies": {
+        "title": "Cookies",
+        "language": {
+          "title": "Language preference",
+          "body": "The website uses the i18n_redirected cookie to remember the selected language, with a configured lifetime of 365 days. When you enter through the root address, this preference, or otherwise your browser language, selects French or English; French is the default. Addresses beginning with /fr or /en keep the requested language. You can change language using the website's selector and delete this cookie in your browser settings."
+        },
+        "services": {
+          "title": "Other services",
+          "body": "This version of the application includes no advertising, audience analytics, embedded map or social media widget. Fonts are served by the website. External links open the relevant services when you choose to follow them; those services may apply their own rules. Any cookies and logs added by the hosting service must be checked on the selected deployment."
+        }
+      },
+      "privacy": {
+        "title": "Privacy",
+        "enquiries": {
+          "title": "Contact inquiries",
+          "body": "The intended contact processing allows the estate to respond to your inquiries. Only an email address is required; name, phone number and message are optional. When enabled and configured, the service sends this information through Resend to the recipient selected by the estate, with a technical identifier to limit duplicate sends. Sending is disabled by default. You can also contact the estate directly by email or phone."
+        },
+        "protection": {
+          "title": "Abuse protection",
+          "body": "The server uses the connection's IP address to limit requests. Shared counters in Upstash Redis contain identifiers calculated from that address and the website origin, without a plain IP address or inquiry content. The IP-related counter expires after 15 minutes; aggregate counters expire after one hour and 24 hours. The application adds no message log or inquiry database. These periods do not describe how long providers retain logs or backups."
+        },
+        "review": {
+          "title": "Details to confirm",
+          "body": "The data controller's identity and contact details, legal basis, procedures for exercising rights, actual recipients and providers, processing regions, contractual safeguards, and retention periods at providers and in the estate's mailbox must be confirmed. Hosting logs and deletion practices also need verification. This provisional document establishes no general retention period or location guarantee."
+        }
+      }
+    },
     "gallery": {
       "tab_name": "Photo gallery",
       "title": "Photo gallery",

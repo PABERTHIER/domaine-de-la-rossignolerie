@@ -66,4 +66,28 @@ export const pageSeo: Record<PageName, PageSeoDefinition> = {
       '/images/tanguy-1282.webp',
     ],
   },
+  legal: {
+    path: '/legal',
+    type: 'WebPage',
+    image: '/images/social.jpg',
+    imageAlt: 'pictures.social.title',
+    images: [],
+    indexable: false,
+  },
+  cookies: {
+    path: '/cookies',
+    type: 'WebPage',
+    image: '/images/social.jpg',
+    imageAlt: 'pictures.social.title',
+    images: [],
+    indexable: false,
+  },
+  privacy: {
+    path: '/privacy',
+    type: 'WebPage',
+    image: '/images/social.jpg',
+    imageAlt: 'pictures.social.title',
+    images: [],
+    indexable: false,
+  },
 }
