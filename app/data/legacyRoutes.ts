@@ -16,6 +16,9 @@ export const legacyDestinations: Record<string, string> = {
   'my-bookings': '/',
   'account-settings': '/',
   'à-propos-du-domaine': '/about',
+  'mentions-légales': '/legal',
+  'politique-de-cookies': '/cookies',
+  confidentialite: '/privacy',
   portfolio: '/gallery',
   'portfolio-collections/my-portfolio/retour-des-beaux-jours': '/photos/spring',
   'portfolio-collections/my-portfolio/les-vignes-du-domaine':

@@ -1,5 +1,7 @@
 import type { imageDimensions } from '~/data/imageDimensions'
 
+export type PolicyName = 'legal' | 'cookies' | 'privacy'
+
 export type PageName =
   | 'home'
   | 'gallery'
@@ -8,6 +10,7 @@ export type PageName =
   | 'gallery_renovation'
   | 'gallery_chenin'
   | 'about'
+  | PolicyName
 
 export interface PageSeoDefinition {
   path: string

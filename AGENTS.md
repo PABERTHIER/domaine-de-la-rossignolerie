@@ -142,6 +142,13 @@ For requested page work:
 
 Use [gallery-page](.agents/skills/gallery-page/SKILL.md) for a photo-project workflow rather than treating a translation-only edit as page creation.
 
+## Policy Review Pages
+
+The legal, cookies and privacy pages are provisional review documents at `/legal`, `/cookies` and `/privacy` under both locale prefixes.
+Preserve HTTP 503, `noindex, nofollow`, `Cache-Control: no-store` and sitemap exclusion until the user explicitly approves publication facts and final wording.
+The root head owner suppresses canonical and language-alternate tags on these review routes; ordinary language-switcher links remain available.
+Use [usePolicySeo](app/composables/usePolicySeo.ts) with an explicit request event for server response status, and the [SEO guide](.agents/docs/SEO.md) for metadata ownership.
+
 ## Localization And Content Boundaries
 
 | Namespace         | Content                                                                           |

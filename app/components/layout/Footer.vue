@@ -29,6 +29,22 @@
             </a>
           </div>
         </div>
+        <nav
+          class="site-footer__policies"
+          :aria-label="t('components.footer.policies')">
+          <h2 class="site-footer__heading site-footer__policy-heading">
+            {{ t('components.footer.policies') }}
+          </h2>
+          <ul class="site-footer__policy-links">
+            <li v-for="policy in policies" :key="policy">
+              <NuxtLink
+                class="site-footer__link"
+                :to="localePath(`/${policy}`)">
+                {{ t(`pages.policies.${policy}.title`) }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div class="site-footer__bottom">
         <p class="site-footer__copyright">
@@ -64,6 +80,8 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 
 const year = useState('copyright-year', () => new Date().getUTCFullYear())
+
+const policies = ['legal', 'cookies', 'privacy'] as const
 </script>
 
 <style lang="scss" scoped>
@@ -91,10 +109,11 @@ const year = useState('copyright-year', () => new Date().getUTCFullYear())
   }
 
   &__main {
-    display: flex;
-    align-items: flex-start;
-    gap: $space-20;
-    padding-block: $space-20 $space-8;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: $space-24 $space-20;
+    padding-block: $space-24;
     border-top: 1px solid rgba($green, 0.25);
   }
 
@@ -147,6 +166,24 @@ const year = useState('copyright-year', () => new Date().getUTCFullYear())
     text-wrap: pretty;
   }
 
+  &__policies {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+  &__policy-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 $space-24;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      min-width: 0;
+    }
+  }
+
   &__icon {
     flex: none;
     width: 1em;
@@ -183,9 +220,59 @@ const year = useState('copyright-year', () => new Date().getUTCFullYear())
 }
 
 @media (max-width: $breakpoint-mobile) {
-  .site-footer__main {
-    gap: $space-12;
-    padding-top: $space-16;
+  .site-footer {
+    &__main {
+      gap: $space-8 $space-12;
+      padding-block: $space-16 $space-24;
+    }
+
+    &__home,
+    &__heading {
+      align-self: center;
+    }
+
+    &__details {
+      display: contents;
+    }
+
+    &__heading {
+      margin-bottom: 0;
+    }
+
+    &__address,
+    &__contacts,
+    &__policies {
+      grid-column: 1 / -1;
+    }
+
+    &__policies {
+      margin-top: $space-16;
+    }
+
+    &__policy-links {
+      gap: 0 $space-16;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      gap: $space-4;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .site-footer {
+    &__main {
+      grid-template-columns: auto minmax(0, 1.25fr) minmax(0, 1fr);
+      column-gap: clamp(24px, 3vw, 48px);
+    }
+
+    &__policies {
+      grid-column: 3;
+      justify-self: end;
+      max-width: 24rem;
+    }
   }
 }
 </style>
