@@ -124,6 +124,7 @@ Rendered heading/body rules select the families; inspect computed styles and act
 | [Styles](app/styles/)                                             | CSS-free tokens, global defaults/focus/motion and reusable classes                           |
 | [Plugins](app/plugins/), [router options](app/router.options.ts)  | Lenis, overlay coordination, completed focus and pointer/keyboard modality                   |
 | [Server legacy middleware](server/middleware/legacy-redirects.ts) | Permanent redirects from recorded source URLs to French pages                                |
+| [Contact API](server/api/), [utilities](server/utils/)            | Private mail delivery, request validation and shared Redis abuse protection                  |
 | [Locale files](i18n/locales/)                                     | Matching `fr-FR.json` and `en-US.json` message ownership                                     |
 | [Public files](public/)                                           | Estate imagery, favicon, licenses and authored crawler policy                                |
 | [Nuxt configuration](nuxt.config.ts)                              | Modules, fonts, stylesheet injection, origins, sitemap and organization schema               |
@@ -175,6 +176,9 @@ AI Ready, Skew Protection and generated OG images are disabled.
 See [SEO guidance](.agents/docs/SEO.md) for metadata, environment and crawler checks.
 
 ## Configuration And CI
+
+The [contact setup and processing guide](.agents/docs/contact-processing.md) covers Resend, shared Upstash Redis protection, private environment variables, API contracts and policy facts to confirm.
+The contact API is disabled by default; configuration readiness does not establish provider health or inbox delivery.
 
 | Location                                                                                           | Responsibility                                                        |
 | -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |

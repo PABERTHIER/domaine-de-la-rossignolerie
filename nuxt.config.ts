@@ -64,6 +64,14 @@ export default defineNuxtConfig({
   build: {
     transpile: [],
   },
+  nitro: {
+    vercel: {
+      functions: {
+        // Allow the bounded Redis, body-reading and mail deadlines to finish
+        maxDuration: 30,
+      },
+    },
+  },
   typescript: {
     strict: true,
   },
@@ -78,6 +86,17 @@ export default defineNuxtConfig({
     dirs: [],
   },
   runtimeConfig: {
+    contact: {
+      enabled: false,
+      origin: siteUrl,
+      apiKey: '',
+      from: '',
+      to: '',
+      ipSource: 'vercel',
+      rateLimitSecret: '',
+      redisUrl: '',
+      redisToken: '',
+    },
     public: {
       i18n: {
         baseUrl: siteUrl,

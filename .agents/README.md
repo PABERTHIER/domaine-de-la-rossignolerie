@@ -34,14 +34,15 @@ Source inspection does not establish browser behavior, measured contrast, screen
 
 ## Reference Guides
 
-| Guide                                          | Read for                                                                                 |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| [Brand context](docs/brand-context.md)         | Estate identity, supplied contact information, visitor priorities and factual boundaries |
-| [Content direction](docs/content-direction.md) | French-first voice, wine presentations, project order and natural English                |
-| [Design system](docs/design-system.md)         | Winery palette, typography, page compositions and stylesheet responsibility              |
-| [UX principles](docs/ux-principles.md)         | Navigation, wine selection, photo viewing, enquiries and mobile acceptance               |
-| [Accessibility](docs/accessibility.md)         | Semantics, dialogs, focus, forms, motion and manual audit coverage                       |
-| [SEO](docs/SEO.md)                             | Localized URLs, head ownership, indexability, structured data and publication checks     |
+| Guide                                            | Read for                                                                                    |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| [Brand context](docs/brand-context.md)           | Estate identity, supplied contact information, visitor priorities and factual boundaries    |
+| [Content direction](docs/content-direction.md)   | French-first voice, wine presentations, project order and natural English                   |
+| [Design system](docs/design-system.md)           | Winery palette, typography, page compositions and stylesheet responsibility                 |
+| [UX principles](docs/ux-principles.md)           | Navigation, wine selection, photo viewing, enquiries and mobile acceptance                  |
+| [Accessibility](docs/accessibility.md)           | Semantics, dialogs, focus, forms, motion and manual audit coverage                          |
+| [SEO](docs/SEO.md)                               | Localized URLs, head ownership, indexability, structured data and publication checks        |
+| [Contact processing](docs/contact-processing.md) | Private configuration, operator setup, API contract, abuse protection and policy boundaries |
 
 ## Skills
 
