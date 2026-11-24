@@ -97,6 +97,8 @@ app/
 i18n/locales/                         # French source and US English messages
 public/                               # Estate assets, favicon, licenses and crawler policy
 server/middleware/legacy-redirects.ts # Permanent redirects for recorded aliases
+server/api/                           # Contact submission and configuration-readiness endpoints
+server/utils/                         # Contact validation, delivery, request limits and shared abuse controls
 ```
 
 | Concern                 | Owner                                                                                                     | Contract                                                                                                               |
@@ -215,14 +217,15 @@ These criteria do not establish device compatibility or accessibility conformanc
 
 ## Reference Documentation
 
-| Guide             | File                                                      | Read for                                                       |
-| ----------------- | --------------------------------------------------------- | -------------------------------------------------------------- |
-| Brand context     | [brand-context.md](.agents/docs/brand-context.md)         | Estate identity, factual positioning and contact information   |
-| Content direction | [content-direction.md](.agents/docs/content-direction.md) | French-first voice, wine copy and English adaptation           |
-| Design system     | [design-system.md](.agents/docs/design-system.md)         | Palette, typography, page composition and stylesheet ownership |
-| UX principles     | [ux-principles.md](.agents/docs/ux-principles.md)         | Navigation, wines, photos, enquiries and responsive acceptance |
-| Accessibility     | [accessibility.md](.agents/docs/accessibility.md)         | Semantics, focus, touch, readability and audit coverage        |
-| SEO               | [SEO.md](.agents/docs/SEO.md)                             | Localized URLs, metadata, indexing and publication checks      |
+| Guide              | File                                                        | Read for                                                                             |
+| ------------------ | ----------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Brand context      | [brand-context.md](.agents/docs/brand-context.md)           | Estate identity, factual positioning and contact information                         |
+| Content direction  | [content-direction.md](.agents/docs/content-direction.md)   | French-first voice, wine copy and English adaptation                                 |
+| Design system      | [design-system.md](.agents/docs/design-system.md)           | Palette, typography, page composition and stylesheet ownership                       |
+| UX principles      | [ux-principles.md](.agents/docs/ux-principles.md)           | Navigation, wines, photos, enquiries and responsive acceptance                       |
+| Accessibility      | [accessibility.md](.agents/docs/accessibility.md)           | Semantics, focus, touch, readability and audit coverage                              |
+| SEO                | [SEO.md](.agents/docs/SEO.md)                               | Localized URLs, metadata, indexing and publication checks                            |
+| Contact processing | [contact-processing.md](.agents/docs/contact-processing.md) | Private delivery configuration, API contract, abuse protection and policy boundaries |
 
 ## Available Skills
 
