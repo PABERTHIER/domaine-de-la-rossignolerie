@@ -8,7 +8,7 @@
     },
     "home": {
       "title": "Domaine de la Rossignolerie — Home",
-      "description": "Discover Domaine de la Rossignolerie in Chalonnes-sur-Loire, Anjou."
+      "description": "Discover Domaine de la Rossignolerie in Chalonnes-sur-Loire, Anjou: its story, wines, visiting information and photographs of the estate."
     },
     "about": {
       "title": "Our story — Domaine de la Rossignolerie",
@@ -143,6 +143,18 @@
     }
   },
   "pages": {
+    "home": {
+      "introduction": "The estate, its wines and its landscapes.",
+      "contact": "Contact us",
+      "region": "Chalonnes-sur-Loire · Anjou",
+      "estate": "The estate",
+      "history": "Our story",
+      "visit": "Visit us",
+      "gallery": "A glimpse of the estate",
+      "intro": "From the vineyards to the cellar, a personal journey in Anjou.",
+      "gallery_link": "Explore the gallery",
+      "wines": "Our wines"
+    },
     "policies": {
       "review_title": "Provisional document — under review",
       "pending": "This information must be completed and approved before publication. It is not a final policy.",
@@ -284,6 +296,9 @@
     }
   },
   "pictures": {
+    "hero": {
+      "title": "The vineyards of Domaine de la Rossignolerie"
+    },
     "social": {
       "title": "Vineyards at Domaine de la Rossignolerie in Anjou"
     },

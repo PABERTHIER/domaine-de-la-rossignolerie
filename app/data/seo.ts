@@ -1,5 +1,5 @@
 import type { PageName, PageSeoDefinition } from '../types/seo'
-import { galleryProjects, projects } from './gallery'
+import { galleryProjects, homePhotos, projects } from './gallery'
 import media from './media.json'
 import { wines } from './wines'
 
@@ -16,9 +16,15 @@ export const pageSeo: Record<PageName, PageSeoDefinition> = {
   home: {
     path: '/',
     type: 'WebPage',
-    image: '/images/social.jpg',
-    imageAlt: 'pictures.social.title',
-    images: [],
+    image: '/images/hero-1600.webp',
+    imageAlt: 'pictures.hero.title',
+    images: [
+      media.hero.src,
+      media['home-estate'].src,
+      media['home-wine'].src,
+      media['home-visit'].src,
+      ...homePhotos.map(photo => media[photo].src),
+    ],
   },
   gallery: {
     path: '/gallery',
