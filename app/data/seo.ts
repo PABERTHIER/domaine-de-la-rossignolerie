@@ -66,6 +66,13 @@ export const pageSeo: Record<PageName, PageSeoDefinition> = {
       '/images/tanguy-1282.webp',
     ],
   },
+  contact: {
+    path: '/contact',
+    type: 'ContactPage',
+    image: '/images/contact-1080.webp',
+    imageAlt: 'pictures.contact.title',
+    images: ['/images/contact-1080.webp'],
+  },
   legal: {
     path: '/legal',
     type: 'WebPage',

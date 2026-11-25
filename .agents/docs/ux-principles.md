@@ -85,7 +85,7 @@ Do not let image-navigation shortcuts consume arrows intended for a focused inpu
 ## Contact And Visits
 
 Preserve the supplied name, telephone, email and message fields.
-Email is required in the supplied form; do not silently make every field mandatory.
+Email and message are required; name and telephone remain optional.
 Use visible labels, appropriate autocomplete/type/inputmode and errors linked to the affected field.
 Explain the required information in the form itself.
 
