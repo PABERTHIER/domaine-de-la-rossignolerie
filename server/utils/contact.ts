@@ -1,4 +1,5 @@
 import { siteName } from '../../app/data/site'
+import type { ContactFieldError } from '../../app/types/contact'
 
 export const contactLimits = {
   name: 120,
@@ -9,8 +10,6 @@ export const contactLimits = {
 } as const
 
 export type ContactField = keyof typeof contactLimits
-export type ContactFieldError =
-  'length_error' | 'characters_error' | 'email_error'
 export type Enquiry = Record<ContactField, string> & { requestId: string }
 export type ContactCode = 'invalid' | 'failure' | 'unavailable' | 'rate'
 
@@ -81,7 +80,11 @@ export function validateEnquiry(input: unknown): Enquiry {
   }
 
   if (!fields.email && !validContactEmail(result.email)) {
-    fields.email = 'email_error'
+    fields.email = result.email ? 'email_error' : 'required_error'
+  }
+
+  if (!fields.message && !result.message) {
+    fields.message = 'required_error'
   }
 
   if (Object.keys(fields).length) {

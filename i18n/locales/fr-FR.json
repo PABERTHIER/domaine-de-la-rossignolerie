@@ -34,6 +34,10 @@
       "title": "Grappe de Chenin — Domaine de la Rossignolerie",
       "description": "Grappe de Chenin — Chalonnes-sur-Loire, Anjou."
     },
+    "contact": {
+      "title": "Contact — Domaine de la Rossignolerie",
+      "description": "Une question sur nos vins ou une envie de découvrir le Domaine de la Rossignolerie ? Retrouvez nos coordonnées et les informations pour venir au domaine."
+    },
     "legal": {
       "title": "Mentions légales provisoires — Domaine de la Rossignolerie",
       "description": "Informations légales en cours de vérification, à compléter et à valider avant publication."
@@ -79,6 +83,34 @@
     },
     "lang_switcher": {
       "label": "Langue"
+    },
+    "contact_form": {
+      "legend": "Votre demande",
+      "name": "Nom",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "message": "Message",
+      "required": "L'adresse e-mail et le message, marqués d'un astérisque, sont obligatoires.",
+      "send": "Envoyer",
+      "sending": "Envoi en cours…",
+      "checking": "Vérification de la disponibilité du formulaire…",
+      "available": "Vous pouvez nous écrire avec ce formulaire.",
+      "unavailable": "L'envoi par formulaire n'est pas disponible pour le moment. Contactez-nous par e-mail ou par téléphone.",
+      "status_failure": "La disponibilité du formulaire n'a pas pu être vérifiée. Réessayez ou contactez-nous par e-mail ou par téléphone.",
+      "check_again": "Vérifier à nouveau",
+      "javascript_required": "L'envoi par formulaire nécessite JavaScript. Vous pouvez nous contacter avec les liens e-mail et téléphone de cette page.",
+      "success": "Votre message a été accepté par le service d'envoi. Merci de nous avoir contactés. Cela ne confirme ni sa réception dans notre messagerie ni une réservation.",
+      "failure": "L'envoi n'a pas pu être confirmé. Vos informations sont conservées dans le formulaire. Vous pouvez réessayer ou nous contacter directement.",
+      "rate": "Trop de tentatives. Veuillez patienter avant de réessayer ou nous contacter directement.",
+      "invalid": "Veuillez vérifier votre demande et les éventuels champs indiqués ci-dessous.",
+      "email_error": "Saisissez une adresse e-mail valide.",
+      "required_error": "Veuillez remplir ce champ.",
+      "length_error": "Ce champ est trop long. Raccourcissez votre saisie.",
+      "characters_error": "Supprimez les caractères de contrôle de ce champ.",
+      "retry_expired": "Cette tentative date de plus de 24 heures. Contactez-nous directement pour vérifier sa réception avant d'envoyer une nouvelle demande.",
+      "privacy": "Vos coordonnées et votre message servent à répondre à votre demande.",
+      "privacy_link": "Informations sur vos données — document provisoire",
+      "website": "Laissez ce champ vide"
     },
     "photo_grid": {
       "open": "Agrandir : {caption}"
@@ -136,7 +168,7 @@
         "title": "Confidentialité",
         "enquiries": {
           "title": "Demandes de contact",
-          "body": "Le traitement de contact prévu permet au domaine de répondre à vos demandes. Seule l'adresse e-mail est obligatoire ; le nom, le téléphone et le message sont facultatifs. Lorsqu'il est activé et configuré, le service transmet ces informations par Resend au destinataire choisi par le domaine, avec un identifiant technique pour limiter les envois en double. L'envoi est désactivé par défaut. Vous pouvez aussi contacter directement le domaine par e-mail ou par téléphone."
+          "body": "Le traitement de contact prévu permet au domaine de répondre à vos demandes. L'adresse e-mail et le message sont obligatoires ; le nom et le téléphone sont facultatifs. Lorsqu'il est activé et configuré, le service transmet ces informations par Resend au destinataire choisi par le domaine, avec un identifiant technique pour limiter les envois en double. L'envoi est désactivé par défaut. Vous pouvez aussi contacter directement le domaine par e-mail ou par téléphone."
         },
         "protection": {
           "title": "Protection contre les abus",
@@ -192,6 +224,14 @@
         "role": "Responsable marketing et commerce",
         "bio": "Alternant en commerce à l'École supérieure des agricultures d'Angers, Tanguy pourra vous faire déguster les différentes cuvées. Vous pourrez le retrouver au domaine entre deux sessions universitaires."
       }
+    },
+    "contact": {
+      "tab_name": "Contact",
+      "title": "Contactez-nous",
+      "intro": "Une question sur nos vins ou une envie de découvrir le domaine ? Écrivez-nous.",
+      "visit": "Rendez-nous visite",
+      "hours": "Lundi-vendredi : 9h-12h et 14h-17h30",
+      "directions": "Calculer mon itinéraire"
     }
   },
   "pictures": {
@@ -209,6 +249,9 @@
     },
     "tanguy": {
       "title": "Tanguy dans les vignes"
+    },
+    "contact": {
+      "title": "La façade et l'entrée du caveau"
     },
     "cellar": {
       "title": "Le caveau du domaine"

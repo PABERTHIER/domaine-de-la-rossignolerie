@@ -87,7 +87,7 @@ The body must be a JSON object with these fields and no unknown keys:
 | `email`     | Yes      | 254                       | Valid plain reply mailbox                      |
 | `name`      | No       | 120                       | Text                                           |
 | `phone`     | No       | 60                        | Text; no invented telephone-format requirement |
-| `message`   | No       | 5000                      | Text; tabs and line breaks allowed             |
+| `message`   | Yes      | 5000                      | Nonempty text; tabs and line breaks allowed    |
 | `website`   | No       | 200                       | Honeypot; empty after trimming                 |
 | `requestId` | Yes      | 36                        | UUID v4 generated for this enquiry             |
 
@@ -95,7 +95,7 @@ Optional fields may be omitted; supplied values must be strings.
 Lengths are checked before trimming.
 Control characters are rejected, with the documented message whitespace exception.
 Text is trimmed and line endings normalized to LF.
-Only email is required, preserving the supplied enquiry journey.
+Email and a nonempty message are required; name and telephone remain optional.
 
 The entire UTF-8 body is limited to 24,000 bytes independently of its declared length.
 Streamed/chunked bodies are counted while reading; incomplete bodies time out after five seconds of body reading.
@@ -105,7 +105,7 @@ The Node adapter also checks already supplied raw buffers/strings and rejects pr
 HTTP 200 with `{ "accepted": true }` is returned only after Resend returns a successful response containing a nonempty email ID.
 This confirms provider acceptance, without promising inbox arrival or a reservation.
 Handled failures use `{ "accepted": false, "error": { "code": "…", "fields": {} } }`.
-HTTP 422 field errors use `length_error`, `characters_error` or `email_error` under `error.fields`.
+HTTP 422 field errors use `required_error`, `length_error`, `characters_error` or `email_error` under `error.fields`.
 Transport errors and upstream response bodies are never returned to visitors.
 
 | HTTP status | Error code    | Meaning                                                             |

@@ -34,6 +34,10 @@
       "title": "Chenin grapes — Domaine de la Rossignolerie",
       "description": "Chenin grapes — Chalonnes-sur-Loire, Anjou."
     },
+    "contact": {
+      "title": "Contact — Domaine de la Rossignolerie",
+      "description": "Have a question about our wines or a visit to Domaine de la Rossignolerie? Find our contact details and information for visiting the estate."
+    },
     "legal": {
       "title": "Provisional legal notice — Domaine de la Rossignolerie",
       "description": "Legal information under review, to be completed and approved before publication."
@@ -79,6 +83,34 @@
     },
     "lang_switcher": {
       "label": "Language"
+    },
+    "contact_form": {
+      "legend": "Your inquiry",
+      "name": "Name",
+      "phone": "Telephone",
+      "email": "Email",
+      "message": "Message",
+      "required": "Email and message, marked with an asterisk, are required.",
+      "send": "Send",
+      "sending": "Sending…",
+      "checking": "Checking form availability…",
+      "available": "You can write to us using this form.",
+      "unavailable": "The inquiry form is currently unavailable. Please contact us by email or telephone.",
+      "status_failure": "Form availability could not be checked. Try again or contact us by email or telephone.",
+      "check_again": "Check again",
+      "javascript_required": "Sending this form requires JavaScript. You can contact us using the email and telephone links on this page.",
+      "success": "Your message has been accepted by the sending service. Thank you for getting in touch. This does not confirm inbox delivery or a reservation.",
+      "failure": "Sending could not be confirmed. Your details remain in the form. You can try again or contact us directly.",
+      "rate": "Too many attempts. Please wait before trying again or contact us directly.",
+      "invalid": "Please check your inquiry and any fields listed below.",
+      "email_error": "Enter a valid email address.",
+      "required_error": "Please fill in this field.",
+      "length_error": "This field is too long. Shorten your entry.",
+      "characters_error": "Remove control characters from this field.",
+      "retry_expired": "This attempt is more than 24 hours old. Contact us directly to check whether it was received before sending a new inquiry.",
+      "privacy": "Your contact details and message are used to respond to your inquiry.",
+      "privacy_link": "About your personal data — provisional document",
+      "website": "Leave this field empty"
     },
     "photo_grid": {
       "open": "Enlarge: {caption}"
@@ -136,7 +168,7 @@
         "title": "Privacy",
         "enquiries": {
           "title": "Contact inquiries",
-          "body": "The intended contact processing allows the estate to respond to your inquiries. Only an email address is required; name, phone number and message are optional. When enabled and configured, the service sends this information through Resend to the recipient selected by the estate, with a technical identifier to limit duplicate sends. Sending is disabled by default. You can also contact the estate directly by email or phone."
+          "body": "The intended contact processing allows the estate to respond to your inquiries. Email and message are required; name and phone number are optional. When enabled and configured, the service sends this information through Resend to the recipient selected by the estate, with a technical identifier to limit duplicate sends. Sending is disabled by default. You can also contact the estate directly by email or phone."
         },
         "protection": {
           "title": "Abuse protection",
@@ -192,6 +224,14 @@
         "role": "Marketing and sales manager",
         "bio": "Studying business at the École supérieure des agricultures in Angers as part of a work-study program, Tanguy can introduce you to the different wines. You may find him at the estate between university sessions."
       }
+    },
+    "contact": {
+      "tab_name": "Contact",
+      "title": "Contact us",
+      "intro": "Have a question about our wines or a visit to the estate? Get in touch.",
+      "visit": "Visit us",
+      "hours": "Monday-Friday: 9 AM-noon and 2-5:30 PM",
+      "directions": "Get directions"
     }
   },
   "pictures": {
@@ -209,6 +249,9 @@
     },
     "tanguy": {
       "title": "Tanguy in the vineyard"
+    },
+    "contact": {
+      "title": "The cellar facade and entrance"
     },
     "cellar": {
       "title": "The estate cellar"

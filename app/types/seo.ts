@@ -10,6 +10,7 @@ export type PageName =
   | 'gallery_renovation'
   | 'gallery_chenin'
   | 'about'
+  | 'contact'
   | PolicyName
 
 export interface PageSeoDefinition {
