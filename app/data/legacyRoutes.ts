@@ -16,6 +16,7 @@ export const legacyDestinations: Record<string, string> = {
   'my-bookings': '/',
   'account-settings': '/',
   'à-propos-du-domaine': '/about',
+  'nos-vins': '/wines',
   'mentions-légales': '/legal',
   'politique-de-cookies': '/cookies',
   confidentialite: '/privacy',
