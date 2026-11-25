@@ -11,6 +11,7 @@ export type PageName =
   | 'gallery_chenin'
   | 'about'
   | 'contact'
+  | 'wines'
   | PolicyName
 
 export interface PageSeoDefinition {

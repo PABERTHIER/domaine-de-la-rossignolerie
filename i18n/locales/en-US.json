@@ -49,6 +49,10 @@
     "privacy": {
       "title": "Privacy: provisional document — Domaine de la Rossignolerie",
       "description": "Provisional information about contact inquiry processing and the details still to be confirmed before publication."
+    },
+    "wines": {
+      "title": "Our wines — Domaine de la Rossignolerie",
+      "description": "Chenin and Grolleau: discover the estate's six wines."
     }
   },
   "error": {
@@ -232,6 +236,51 @@
       "visit": "Visit us",
       "hours": "Monday-Friday: 9 AM-noon and 2-5:30 PM",
       "directions": "Get directions"
+    },
+    "wines": {
+      "tab_name": "Our wines",
+      "title": "Our wines",
+      "intro": "Chenin and Grolleau: discover the estate's six wines.",
+      "production": "Annual production: {count} bottles",
+      "enquiry": "Ask us about this wine",
+      "items": {
+        "anjou25": {
+          "title": "Anjou blanc sec 2025",
+          "origin": "Chenin grown on our oldest plot, “Rossignolerie”.",
+          "notes": "An aromatic nose with yellow peach notes. A fairly full palate with lime blossom aromas and a lovely acacia finish.",
+          "alt": "Bottle — Anjou blanc sec 2025"
+        },
+        "anjou24": {
+          "title": "Anjou blanc sec 2024",
+          "origin": "Chenin grown on our schist-rich terroir, which gives it its mineral character.",
+          "notes": "Aromas of white flowers, pastries and white peach. A structured palate with lovely tension, flinty notes and a light hint of mint.",
+          "alt": "Bottle — Anjou blanc sec 2024"
+        },
+        "rose25": {
+          "title": "Rosé de Loire sec 2025",
+          "origin": "100% Grolleau from a small, well-exposed hillside, giving a lovely pink hue and tangy fruit notes.",
+          "notes": "A generous, rounded palate with a raspberry finish.",
+          "alt": "Bottle — Rosé de Loire sec 2025"
+        },
+        "epure": {
+          "title": "White sparkling wine",
+          "origin": "L'Epure: a cuvée shaped by Chenin, like a carpenter shaping their work.",
+          "notes": "A lightly brioche-scented nose with green apple aromas. A fruit-led palate opening into notes of white flowers.",
+          "alt": "Bottle — White sparkling wine"
+        },
+        "eclat": {
+          "title": "Rosé sparkling wine",
+          "origin": "L'Eclat: a lively cuvée with a lovely hue from Grolleau and a hint of sweetness.",
+          "notes": "Slightly tangy red berry aromas. A rounded, generous palate with a rose finish.",
+          "alt": "Bottle — Rosé sparkling wine"
+        },
+        "layon25": {
+          "title": "Coteaux du Layon 2025",
+          "origin": "Chenin picked at peak ripeness from a vigorous, steep plot called Monts Pertus.",
+          "notes": "Ripe fruit aromas, including mango and yellow apple. A gently sweet palate with lavender honey notes and a long finish.",
+          "alt": "Bottle — Coteaux du Layon 2025"
+        }
+      }
     }
   },
   "pictures": {

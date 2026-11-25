@@ -49,6 +49,10 @@
     "privacy": {
       "title": "Confidentialité : document provisoire — Domaine de la Rossignolerie",
       "description": "Présentation provisoire du traitement des demandes de contact et des informations restant à confirmer avant publication."
+    },
+    "wines": {
+      "title": "Nos vins — Domaine de la Rossignolerie",
+      "description": "Chenin, Grolleau : découvrez les six cuvées du domaine."
     }
   },
   "error": {
@@ -232,6 +236,51 @@
       "visit": "Rendez-nous visite",
       "hours": "Lundi-vendredi : 9h-12h et 14h-17h30",
       "directions": "Calculer mon itinéraire"
+    },
+    "wines": {
+      "tab_name": "Nos vins",
+      "title": "Nos vins",
+      "intro": "Chenin, Grolleau : découvrez les six cuvées du domaine.",
+      "production": "Production annuelle : {count} bouteilles",
+      "enquiry": "Une question sur cette cuvée ?",
+      "items": {
+        "anjou25": {
+          "title": "Anjou blanc sec 2025",
+          "origin": "Chenin nourri sur notre parcelle la plus ancienne, la « Rossignolerie ».",
+          "notes": "Nez aromatique aux notes de pêche jaune. Bouche assez opulente sur des arômes de tilleul et avec une jolie finale d'acacia.",
+          "alt": "Bouteille — Anjou blanc sec 2025"
+        },
+        "anjou24": {
+          "title": "Anjou blanc sec 2024",
+          "origin": "Chenin sur notre terroir riche en schiste, qui lui procure toute sa minéralité.",
+          "notes": "Arômes de fleurs blanches, de pâtisseries et de pêche blanche. Une bouche structurée avec une jolie tension et des notes de pierre à fusil, légèrement mentholées.",
+          "alt": "Bouteille — Anjou blanc sec 2024"
+        },
+        "rose25": {
+          "title": "Rosé de Loire sec 2025",
+          "origin": "100 % Grolleau sur un petit coteau bien exposé, lui donnant un joli reflet rosé avec des notes de fruits acidulés.",
+          "notes": "Bouche ample et gourmande avec une touche finale de framboise.",
+          "alt": "Bouteille — Rosé de Loire sec 2025"
+        },
+        "epure": {
+          "title": "Fines bulles blanches",
+          "origin": "L'Epure, pour une cuvée charpentée par le Chenin comme les coupes d'un charpentier sur son ouvrage.",
+          "notes": "Un nez légèrement brioché aux arômes de pomme verte. Bouche sur le fruit qui s'ouvre sur des notes de fleurs blanches.",
+          "alt": "Bouteille — Fines bulles blanches"
+        },
+        "eclat": {
+          "title": "Fines bulles rosées",
+          "origin": "L'Eclat, pour une cuvée qui exprime toute sa vivacité en bouche. Jolie robe colorée par le Grolleau avec une pointe de sucrosité.",
+          "notes": "Arômes de petits fruits rouges, légèrement acidulés. Bouche ronde, gourmande, avec une finale de rose.",
+          "alt": "Bouteille — Fines bulles rosées"
+        },
+        "layon25": {
+          "title": "Coteaux du Layon 2025",
+          "origin": "Le Chenin cueilli dans sa meilleure maturité dans une parcelle pentue en pleine vigueur appelée Monts Pertus.",
+          "notes": "Arômes de fruits mûrs comme la mangue ou la pomme jaune. Bouche légèrement moelleuse sur des arômes de miel de lavande avec une belle longueur.",
+          "alt": "Bouteille — Coteaux du Layon 2025"
+        }
+      }
     }
   },
   "pictures": {

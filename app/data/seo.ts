@@ -1,6 +1,7 @@
 import type { PageName, PageSeoDefinition } from '../types/seo'
 import { galleryProjects, projects } from './gallery'
 import media from './media.json'
+import { wines } from './wines'
 
 // Shared by Nuxt Robots (HTTP/SSR), content pages and error recovery (client)
 export const robotsContent = {
@@ -72,6 +73,13 @@ export const pageSeo: Record<PageName, PageSeoDefinition> = {
     image: '/images/contact-1080.webp',
     imageAlt: 'pictures.contact.title',
     images: ['/images/contact-1080.webp'],
+  },
+  wines: {
+    path: '/wines',
+    type: 'CollectionPage',
+    image: '/images/anjou-320.webp',
+    imageAlt: 'pages.wines.items.anjou25.alt',
+    images: [...new Set(wines.map(wine => media[wine.image].src))],
   },
   legal: {
     path: '/legal',
