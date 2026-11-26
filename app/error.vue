@@ -82,7 +82,7 @@ useSeoMeta({
   ogLocale: () => localeProperties.value.language?.replace('-', '_'),
   ogImage: () => new URL(imagePath, site.url).href,
   ogImageAlt: () => t(pageSeo.home.imageAlt),
-  ogImageType: 'image/jpeg',
+  ogImageType: imagePath.endsWith('.webp') ? 'image/webp' : 'image/jpeg',
   ogImageWidth: imageWidth,
   ogImageHeight: imageHeight,
   twitterCard: 'summary_large_image',

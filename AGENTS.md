@@ -97,6 +97,7 @@ app/
 i18n/locales/                         # French source and US English messages
 public/                               # Estate assets, favicon, licenses and crawler policy
 server/middleware/legacy-redirects.ts # Permanent redirects for recorded aliases
+server/plugins/error-robots.ts        # Noindex headers for HTTP error responses
 server/api/                           # Contact submission and configuration-readiness endpoints
 server/utils/                         # Contact validation, delivery, request limits and shared abuse controls
 ```

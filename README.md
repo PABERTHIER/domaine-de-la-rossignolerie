@@ -124,6 +124,7 @@ Rendered heading/body rules select the families; inspect computed styles and act
 | [Styles](app/styles/)                                             | CSS-free tokens, global defaults/focus/motion and reusable classes                           |
 | [Plugins](app/plugins/), [router options](app/router.options.ts)  | Lenis, overlay coordination, completed focus and pointer/keyboard modality                   |
 | [Server legacy middleware](server/middleware/legacy-redirects.ts) | Permanent redirects from recorded source URLs to French pages                                |
+| [Error response plugin](server/plugins/error-robots.ts)           | Non-indexable HTTP error responses, including JSON errors                                    |
 | [Contact API](server/api/), [utilities](server/utils/)            | Private mail delivery, request validation and shared Redis abuse protection                  |
 | [Locale files](i18n/locales/)                                     | Matching `fr-FR.json` and `en-US.json` message ownership                                     |
 | [Public files](public/)                                           | Estate imagery, favicon, licenses and authored crawler policy                                |
@@ -157,6 +158,7 @@ The canonical origin defaults to `https://domainedelarossignolerie.vercel.app`.
 Override it with build-time `NUXT_SITE_URL` in the Production environment only.
 Development uses localhost; Vercel previews use their own `VERCEL_URL`.
 Production and local production builds are indexable; development and non-production Vercel environments are not.
+This build-time selection takes priority over the SEO module's environment defaults so locale links, social metadata, schema and sitemaps use the same origin.
 Check the actual resolved URLs and response directives for each environment.
 
 French/English routes use `/fr` and `/en`.
