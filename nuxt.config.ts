@@ -179,6 +179,8 @@ export default defineNuxtConfig({
     enabled: true,
   },
   site: {
+    // Resolve origin/indexing above once, ahead of the module's runtime-env priority (0)
+    _priority: 1,
     url: siteUrl,
     name: siteName,
     defaultLocale: 'fr-FR',
