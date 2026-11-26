@@ -213,6 +213,7 @@
         "renovation": {
           "title": "L'aménagement",
           "date": "Juin 2025",
+          "type": "Bardage",
           "description": "Voici le nouveau bardage du domaine !"
         },
         "chenin": {

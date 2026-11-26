@@ -1,3 +1,5 @@
+const projectLocation = 'Chalonnes-sur-Loire'
+
 export const projects = [
   {
     id: 'spring',
@@ -12,6 +14,7 @@ export const projects = [
   },
   {
     id: 'vineyards',
+    location: projectLocation,
     images: [
       'photo-3',
       'photo-11',
@@ -27,9 +30,10 @@ export const projects = [
   },
   {
     id: 'renovation',
+    location: projectLocation,
     images: ['photo-35', 'photo-1', 'photo-14', 'photo-37', 'photo-2'],
   },
-  { id: 'chenin', images: ['photo-26'] },
+  { id: 'chenin', location: projectLocation, images: ['photo-26'] },
 ] as const
 
 export type ProjectId = (typeof projects)[number]['id']
