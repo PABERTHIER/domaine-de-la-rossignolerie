@@ -127,6 +127,7 @@
     },
     "photo_viewer": {
       "close_label": "Close photos",
+      "count": "Photo {number} of {total}",
       "previous": "Previous photo",
       "next": "Next photo",
       "zoom_label": "Photo zoom",

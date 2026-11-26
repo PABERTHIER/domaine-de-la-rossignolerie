@@ -162,8 +162,21 @@
             </button>
           </div>
 
-          <div class="photo-viewer__details">
-            <p>{{ image.alt }}</p>
+          <div
+            class="photo-viewer__details"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true">
+            <p class="photo-viewer__caption">{{ image.alt }}</p>
+            <p v-if="position" class="photo-viewer__position">
+              <span class="photo-viewer__sr-only">{{ position }}</span>
+              <span class="photo-viewer__position-full" aria-hidden="true">
+                {{ position }}
+              </span>
+              <span class="photo-viewer__position-compact" aria-hidden="true">
+                {{ n(currentIndex + 1) }}/{{ n(sequence.length) }}
+              </span>
+            </p>
             <p v-if="image.dimensions">
               <strong>
                 {{ t('components.photo_viewer.dimensions_label') }}:
@@ -174,13 +187,6 @@
           <p :id="hintId" class="photo-viewer__sr-only">
             {{ t('components.photo_viewer.pan_hint') }}
           </p>
-          <span
-            class="photo-viewer__sr-only"
-            role="status"
-            aria-live="polite"
-            aria-atomic="true">
-            {{ displayTitle }}
-          </span>
         </div>
       </dialog>
     </Transition>
@@ -202,7 +208,7 @@ const props = withDefaults(
 
 const emit = defineEmits<{ close: []; select: [image: ImageSource] }>()
 
-const { t } = useI18n()
+const { t, n } = useI18n()
 const route = useRoute()
 const { $overlayScroll } = useNuxtApp()
 const { lockScroll, unlockScroll } = useOverlayScrollLock()
@@ -251,6 +257,14 @@ const sequence = computed(() =>
 )
 const currentIndex = computed(() =>
   sequence.value.findIndex(image => image.src === props.image.src)
+)
+const position = computed(() =>
+  currentIndex.value >= 0
+    ? t('components.photo_viewer.count', {
+        number: n(currentIndex.value + 1),
+        total: n(sequence.value.length),
+      })
+    : ''
 )
 
 const baseSize = computed(() => {
@@ -819,7 +833,7 @@ onBeforeUnmount(() => {
   &__details {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: $space-4 $space-16;
     padding: $space-8 $space-20;
     border-top: $border-width solid rgba($sage, 0.3);
@@ -831,6 +845,20 @@ onBeforeUnmount(() => {
     p {
       margin: 0;
     }
+
+    .photo-viewer__caption {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .photo-viewer__position {
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+    }
+  }
+
+  &__position-compact {
+    display: none;
   }
 
   &__skeleton,
@@ -910,6 +938,14 @@ onBeforeUnmount(() => {
 
     &__toolbar {
       padding: $space-8;
+    }
+
+    &__position-full {
+      display: none;
+    }
+
+    &__position-compact {
+      display: inline;
     }
   }
 }
