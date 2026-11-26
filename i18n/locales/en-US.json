@@ -213,6 +213,7 @@
         "renovation": {
           "title": "The renovation",
           "date": "June 2025",
+          "type": "Cladding",
           "description": "The estate's new cladding!"
         },
         "chenin": {

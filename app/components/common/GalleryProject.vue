@@ -8,7 +8,9 @@
       <h1>{{ t(`pages.gallery.projects.${project.id}.title`) }}</h1>
       <p class="gallery-project__date">
         {{ t(`pages.gallery.projects.${project.id}.date`) }}
+        <span v-if="location">· {{ location }}</span>
       </p>
+      <p v-if="projectType">{{ projectType }}</p>
       <p v-if="description">{{ description }}</p>
     </header>
     <PhotoGrid
@@ -52,6 +54,17 @@ const { t, te } = useI18n()
 const localePath = useLocalePath()
 
 const project = computed(() => projects.find(project => project.id === id)!)
+
+const location = computed(() =>
+  'location' in project.value ? project.value.location : ''
+)
+
+const projectType = computed(() => {
+  const key = `pages.gallery.projects.${project.value.id}.type`
+
+  return te(key) ? t(key) : ''
+})
+
 const description = computed(() => {
   const key = `pages.gallery.projects.${project.value.id}.description`
 
